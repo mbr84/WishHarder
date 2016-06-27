@@ -12,7 +12,7 @@ because once you start implementing your flux loops, that's precisely
 what you'll need to do.
 
 
-## Note Cycles
+## Project Cycles
 
 ### Projects API Request Actions
 
@@ -22,13 +22,13 @@ what you'll need to do.
   0. `receiveAllProjects` is set as the callback.
 
 * `createProject`
-  0. invoked from at end of project creation, button `onClick`
+  0. invoked from at end of project creation
   0. `POST /api/projects` is called.
   0. `receiveSingleProject` is set as the callback.
 
-* `fetchSingleNote`
-  0. invoked from `NoteDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/project/:id` is called.
+* `fetchSingleProject`
+  0. invoked from `ProjectDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/projects/:id` is called.
   0. `receiveSingleProject` is set as the callback.
 
 * `updateProject`
@@ -37,7 +37,7 @@ what you'll need to do.
   0. `receiveSingleProject` is set as the callback.
 
 * `destroyProject`
-  0. invoked from delete note button `onClick`
+  0. invoked from delete project button `onClick` or when project fails
   0. `DELETE /api/projects/:id` is called.
   0. `removeProject` is set as the callback.
 
@@ -67,23 +67,13 @@ what you'll need to do.
 
 * `fetchAllCategories`
   0. invoked from `CategoriesIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks` is called.
+  0. `GET /api/discover/` is called.
   0. `receiveAllCategories` is set as the callback.
 
-* `fetchSingleCategory`
+* `fetchCategoryProjects`
   0. invoked from `CategoryDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/categories/:id` is called.
-  0. `receiveSingleCategory` is set as the callback.
-
-* `updateCategory`
-  0. invoked from `CategoryForm` `onSubmit`
-  0. `POST /api/categories` is called.
-  0. `receiveSingleCategory` is set as the callback.
-
-* `destroyCategory`
-  0. invoked from delete notebook button `onClick`
-  0. `DELETE /api/categories/:id` is called.
-  0. `removeCategory` is set as the callback.
+  0. `GET /api/discover/categories/:id` is called.
+  0. `receiveCategoryProjects` is set as the callback.
 
 ### Categories API Response Actions
 
@@ -95,30 +85,6 @@ what you'll need to do.
   0. invoked from an API callback.
   0. `Category` store updates `_categories[id]` and emits change.
 
-* `removeCategory`
-  0. invoked from an API callback.
-  0. `Category` store removes `_categories[id]` and emits change.
-
 ### Store Listeners
 
 * `CategoriesIndex` component listens to `Category` store.
-
-
-## SearchSuggestion Cycles
-
-* `fetchSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when there is text
-  0. `GET /api/notes` is called with `text` param.
-  0. `receiveSearchSuggestions` is set as the callback.
-
-* `receiveSearchSuggestions`
-  0. invoked from an API callback.
-  0. `SearchSuggestion` store updates `_suggestions` and emits change.
-
-* `removeSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when empty
-  0. `SearchSuggestion` store resets `_suggestions` and emits change.
-
-### Store Listeners
-
-* `SearchBarSuggestions` component listens to `SearchSuggestion` store.

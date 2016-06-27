@@ -13,7 +13,7 @@
 ![search]
 
 ## Backing
-![backing]
+![backing-component]
 
 ## Discover
 ![discover]
@@ -22,5 +22,5 @@
 [new-session]: ./wireframes/new_session.png
 [project]: ./wireframes/project.png
 [search]: ./wireframes/search.png
-[backing]: ./wireframes/backing.png
+[backing-component]: ./wireframes/backing_component.png
 [discover]: ./wireframes/discover.png

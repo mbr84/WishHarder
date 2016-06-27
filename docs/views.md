@@ -16,15 +16,15 @@
 ![backing-component]
 
 ## Discover
-![discover]
+![discover-page]
 
 ## Category
-![category]
+![category-page]
 
 [new-user]: ./wireframes/new_user.png
 [new-session]: ./wireframes/new_session.png
 [project]: ./wireframes/project.png
 [search]: ./wireframes/search.png
 [backing-component]: ./wireframes/backing_component.png
-[discover]: ./wireframes/discover.png
-[category]: ./wireframes/category.png
+[discover-page]: ./wireframes/discover-page.png
+[category-page]: ./wireframes/category_page.png

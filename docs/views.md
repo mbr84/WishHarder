@@ -26,5 +26,5 @@
 [project]: ./wireframes/project.png
 [search]: ./wireframes/search.png
 [backing-component]: ./wireframes/backing_component.png
-[discover-page]: ./wireframes/discover-page.png
+[discover-page]: ./wireframes/discover_page.png
 [category-page]: ./wireframes/category_page.png

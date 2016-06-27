@@ -20,34 +20,31 @@
 
 ## JSON API
 
-### Notes
+### Projects
 
-- `GET /api/notes`
-  - Notes index/search
-  - accepts `tag_name` query param to list notes by tag
-  - accepts pagination params (if I get there)
-- `POST /api/notes`
-- `GET /api/notes/:id`
-- `PATCH /api/notes/:id`
-- `DELETE /api/notes/:id`
+- `GET /api/projects`
+  - Projects index/search
+- `POST /api/projects`
+- `GET /api/projects/:id`
+- `PATCH /api/projects/:id`
+- `DELETE /api/projects/:id`
 
-### Notebooks
+### Rewards
 
-- `GET /api/notebooks`
-- `POST /api/notebooks`
-- `GET /api/notebooks/:id`
-- `PATCH /api/notebooks/:id`
-- `DELETE /api/notebooks/:id`
-- `GET /api/notebooks/:id/notes`
-  - index of all notes for a notebook
-  - accepts pagination params (if I get there)
+- `GET /api/projects/:id/rewards/new`
+- `POST /api/projects/:id/rewards`
+- `GET /api/projects/:id/rewards/:id`
+- `PATCH /api/projects/:id/rewards/:id`
+- `DELETE /api/projects/:id/rewards/:id`
+- `GET /api/projects/:id/rewards`
+  - index of all rewards for a project
 
-### Tags
+### Rewardings
 
-- A note's tags will be included in the note show template
-- `GET /api/tags`
-  - includes query param for typeahead suggestions
-- `POST /api/notes/:note_id/tags`: add tag to note by name
-  - if note doesn't already exist, it will be created
-- `DELETE /api/notes/:note_id/tags/:tag_name`: remove tag from note by
-  name
+- `Not quite sure yet`
+
+### Categories
+
+- `GET /api/discover/`
+  - In lieu of a proper index - gets all categories
+- `GET /api/discover/categories/:id

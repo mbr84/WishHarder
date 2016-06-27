@@ -1,46 +1,40 @@
 # Schema Information
 
-## notes
+## projects
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-title       | string    | not null
-body        | text      | not null
+title       | string    | not null,
+introduction| text      | not null, (still working out the details of where and how to store body)
 author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+category_id | integer   | not null, foreign key (references categories), indexed
+complete    | boolean   | not null, default: false
+duration    | interval  | not null,
+goal        | integer   | not null,
+pledged     | integer   | not null
 
-## notebooks
+## rewards
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
+name        | string    | not null,
+value       | integer   | not null,
+description | text      | not null,
+project_id  | integer   | not null, foreign key (references projects), indexed
+limit       | integer   | not null
 
-## reminders
+## rewardings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
+backer_id   | integer   | not null, foreign key (references users), indexed
+reward_id   | string    | not null, foreign key (references rewards), indexed
 
-## tags
+## categories
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
 
 ## users
 column name     | data type | details

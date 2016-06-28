@@ -5,18 +5,19 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login_user!(@user)
-      render :show
+      render json: 'users/show'
     else
-      render json: { errors: @user.errors}
+      render status: 404
     end
   end
 
   def destroy
+    debugger
     if logged_in?
       logout
       render json: {}
     else
-      raise ActionController::RoutingError.new('Not Found')
+      render status: 404
     end
   end
 

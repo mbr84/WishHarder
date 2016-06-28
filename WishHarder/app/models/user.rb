@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
 
   def self.find_by_credentials(parameters)
-    username = parameters[:usermane]
+    username = parameters[:username]
     password = parameters[:password]
 
     user = User.find_by(username: username)
@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
 
   def reset_session_token!
     self.session_token = SecureRandom::urlsafe_base64
+    self.save!
+    self.session_token
   end
 
   def ensure_session_token

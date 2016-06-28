@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :login_user!, :logout, :user_params, :logged_in?
 
   def current_user
-    @current_user ||= User.find_by(session[:session_token])
+    @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
   def login_user!(user)
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :fname, :lname, :email)
   end
 
 end

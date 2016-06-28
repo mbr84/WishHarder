@@ -12,6 +12,7 @@ complete    | boolean   | not null, default: false
 duration    | interval  | not null,
 goal        | integer   | not null,
 pledged     | integer   | not null
+featured    | boolean   | not null
 
 ## rewards
 column name | data type | details

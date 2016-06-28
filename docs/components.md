@@ -7,26 +7,37 @@ associated routes, so the nesting of your bolded components must
 _**exactly**_ match the nesting of your routes.)
 
 * **App**
-  * **ProjectDetail**
-    * HeaderComponent
-      * MediaComponent
+  * Navbar
+    * Search
+  * **ProjectShow**
+    * Header Component
+      * Media Component
         * Media
         * ShareBar
       * HeaderSidebar
         * Stats
         * Backing
-    * BodyComponent
-      * ProjectNavComponent
+    * Body Component
+      * ProjectNav Component
       * ProjectDetail
-      * RewardIndexComponent
+      * RewardIndex Component
         * RewardIndexItem
-  * **DiscoverComponent**
-    * CategoriesIndex
-      * ProjectsIndex
-        * ProjectIndexItem
-    * **CategoryComponent**
+  * **ProjectsIndex Component**
+    * Categories
+      * CategoryItem
+    * Features
+      * FeatureRow Comp
+        * ProjectDetail
+    * **Category Component**
+      * Header Component
       * CategoryIndex
-        * CategoryIndexItem
+        * ProjectDetail
+
 
 
 ## Routes
+
+  * component App path /
+    * component ProjectIndex path /Discover
+      * component Category
+    * component ProjectShow path /projects/:id

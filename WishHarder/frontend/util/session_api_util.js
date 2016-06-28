@@ -8,7 +8,7 @@ module.exports = {
         successCallback(res);
       },
       error: function (res) {
-        errorCallback(res);
+        console.log(res);
       },
     });
   },
@@ -22,7 +22,7 @@ module.exports = {
         successCallback(res);
       },
       error: function (res) {
-        errorCallback(res);
+        console.log(res);
       },
     });
   },
@@ -35,7 +35,7 @@ module.exports = {
         successCallback(res);
       },
       error: function (res) {
-        errorCallback(res);
+        console.log(res);
       },
     });
   },

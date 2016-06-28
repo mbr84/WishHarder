@@ -28,6 +28,18 @@ module WishHarder
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.paperclip_defaults = {
+      storage: :s3,
+      s3_protocol: 'http',
+      url: 's3_domain_url',
+      path: 'images/:class/:id.:style.:extension',
+      s3_host_name: 'us-west-1.amazonaws.com/wishharderdev/',
+      s3_credentials: {
+        bucket: ENV['AWS_BUCKET'], #these values safely stored in application.yml thanks to figaro!
+        access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+      }
+    }
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true

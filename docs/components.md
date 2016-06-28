@@ -8,17 +8,25 @@ _**exactly**_ match the nesting of your routes.)
 
 * **App**
   * **ProjectDetail**
-    * ProjectBacking
-  * **DiscoverIndex**
-    * CategoryIndexItem
-    * **CategoryDetail**
-      * CategoryIndexItem
-
+    * HeaderComponent
+      * MediaComponent
+        * Media
+        * ShareBar
+      * HeaderSidebar
+        * Stats
+        * Backing
+    * BodyComponent
+      * ProjectNavComponent
+      * ProjectDetail
+      * RewardIndexComponent
+        * RewardIndexItem
+  * **DiscoverComponent**
+    * CategoriesIndex
+      * ProjectsIndex
+        * ProjectIndexItem
+    * **CategoryComponent**
+      * CategoryIndex
+        * CategoryIndexItem
 
 
 ## Routes
-
-
-
-For Routes that have no `notebookId`, `NotesIndex` will render all
-notes.

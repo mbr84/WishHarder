@@ -40,42 +40,59 @@ const SignUpForm = React.createClass({
 
   render(){
     return (
-      <div>
+      <div className="signup-container">
+        <div className="Signup-title">Sign Up</div>
         <form onSubmit={this._handleSubmit}>
-          <div>
-            <label className="signup-field">Username</label>
-            <input type="text"
-                   onChange={this.update("username")}
-                   value={this.state.username} />
-            <br />
-            <label className="signup-field">Password</label>
-            <input type="password"
-                   onChange={this.update("password")}
-                   value={this.state.password} />
-            <br />
-          </div>
-          <div>
-            <label className="signup-field">Email</label>
-            <input type="text"
-                   onChange={this.update("email")}
-                   value={this.state.email} />
-            <br />
-            <label className="signup-field">First</label>
-            <input type="text"
-                   onChange={this.update("fname")}
-                   value={this.state.fname} />
-            <br />
-            <label className="signup-field">Last</label>
-            <input type="text"
-                   onChange={this.update("lname")}
-                   value={this.state.lname} />
-            <br />
-          </div>
-          <div>
-            <input type="submit" value="Log In" className="signup-button"/>
-          </div>
+          <ul>
+            <div>
+              <li>
+                <label className="signup-field"></label>
+                <input type="text"
+                       placeholder="username"
+                       onChange={this.update("username")}
+                       value={this.state.username} />
+              </li>
+
+              <li>
+                <label className="signup-field"></label>
+                <input type="password"
+                       placeholder="password"
+                       onChange={this.update("password")}
+                       value={this.state.password} />
+              </li>
+
+            </div>
+            <div>
+              <li>
+                <label className="signup-field"></label>
+                <input type="text"
+                       placeholder="email"
+                       onChange={this.update("email")}
+                       value={this.state.email} />
+              </li>
+
+              <li>
+                <label className="signup-field"></label>
+                <input type="text"
+                       placeholder="first"
+                       onChange={this.update("fname")}
+                       value={this.state.fname} />
+              </li>
+
+              <li>
+                <label className="signup-field"></label>
+                <input type="text"
+                       placeholder="last"
+                       onChange={this.update("lname")}
+                       value={this.state.lname} />
+              </li>
+              <li>
+                <input type="submit" value="Log In" className="signup-button"/>
+              </li>
+            </div>
+          </ul>
         </form>
-        <div><Link to={'/signup'}>Already have an account?</Link></div>
+        <div className="wrong-form"><Link to={'/signup'}>Already have an account?</Link></div>
       </div>
     );
   }

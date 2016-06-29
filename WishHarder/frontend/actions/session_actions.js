@@ -10,7 +10,8 @@ const SessionActions = {
     SessionApiUtil.signup(
       data,
       SessionActions.receiveCurrentUser,
-      ErrorActions.setErrors);
+      ErrorActions.setErrors
+    );
   },
 
   login(data){

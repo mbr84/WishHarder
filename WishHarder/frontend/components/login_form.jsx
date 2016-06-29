@@ -24,9 +24,14 @@ const LoginForm = React.createClass({
   },
 
   loginRedirect(){
+    console.log("login form")
     if (SessionStore.isUserLoggedIn()) {
       this.context.router.push("/")
     }
+  },
+
+  _handleDemo() {
+    SessionActions.login({ user: { username: "user", password: "password" } })
   },
 
   _handleSubmit(e){
@@ -56,7 +61,7 @@ const LoginForm = React.createClass({
                          placeholder="username"
                          onChange={this.nameChange}
                          value={this.state.username} />
-                  </label>
+                </label>
               </li>
               <li>
                 <label className="signin-field">
@@ -68,13 +73,26 @@ const LoginForm = React.createClass({
                 </label>
               </li>
               <li>
-                <div className="no-pass">Forgot your Password?</div>
+                <div className="wrong-form">
+                  Forgot your Password?
+                </div>
               </li>
               <li>
-                <input type="submit" value="Log Me In!" className="login-button"/>
+                <input type="submit"
+                       value="Log Me In!"
+                       className="login-button"/>
               </li>
               <li className="check" >
-                <input className="check-box" type="checkbox" /> Remember Me
+                <input className="check-box"
+                       type="checkbox" /> Remember Me
+              </li>
+              <li className="form-text">Or</li>
+              <li>
+                <input type="button"
+                       value="Log in with Demo"
+                       className="demo"
+                       onClick={this._handleDemo} />
+                     <p className="form-text">We'll never post anything on Demo without your permission</p>
               </li>
             </ul>
           </form>

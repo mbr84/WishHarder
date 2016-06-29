@@ -1,14 +1,25 @@
 const React = require('react')
 const SessionActions = require('../actions/session_actions')
-const SessionStore = require('../stores/session_store')
+const SessionStore = require('../stores/session_store');
+const ErrorStore = require('../stores/error_store')
 
 const LoginForm = React.createClass({
   getInitialState(){
     return ({ username: "", password: "" })
   },
 
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+	},
+
   componentDidMount(){
-    SessionStore.addListener(this.loginRedirect)
+    this.loginListener = SessionStore.addListener(this.loginRedirect);
+    this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
+  },
+
+  componentWillUnmount() {
+    this.errorListener.remove();
+    this.loginListener.remove();
   },
 
   loginRedirect(){
@@ -32,22 +43,28 @@ const LoginForm = React.createClass({
 
   render(){
     return (
-      <div>
-        <form onSubmit={this._handleSubmit}>
-          <label className="signin-field">Username</label>
-          <input type="text"
-                 onChange={this.nameChange}
-                 value={this.state.username} />
-          <br />
-          <label className="signin-field">Password</label>
-          <input type="password"
-                 onChange={this.passwordChange}
-                 value={this.state.password} />
-          <br />
-          <div>
-            <input type="submit" value="Log In" className="login-button"/>
-          </div>
-        </form>
+      <div className="login-container">
+        <div>
+          <form onSubmit={this._handleSubmit}>
+            <label className="signin-field">Username
+
+              <input type="text"
+                     onChange={this.nameChange}
+                     value={this.state.username} />
+            </label>
+            <br />
+            <label className="signin-field">Password
+
+              <input type="password"
+                     onChange={this.passwordChange}
+                     value={this.state.password} />
+            </label>
+            <br />
+            <div>
+              <input type="submit" value="Log In" className="login-button"/>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

@@ -6,12 +6,12 @@ let _currentUser = {};
 
 const SessionStore = new Store(AppDispatcher);
 
-const _login = function (user) {
+function _login (user) {
   _currentUser = user;
   SessionStore.__emitChange();
 };
 
-const _logout = function () {
+function _logout () {
   _currentUser = {};
   SessionStore.__emitChange();
 };

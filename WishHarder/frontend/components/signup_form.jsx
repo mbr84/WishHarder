@@ -1,7 +1,8 @@
 const React = require('react');
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
-const ErrorStore = require('../stores/error_store')
+const Link = require('react-router').Link;
+const ErrorStore = require('../stores/error_store');
 
 const SignUpForm = React.createClass({
   getInitialState(){
@@ -53,7 +54,6 @@ const SignUpForm = React.createClass({
                    value={this.state.password} />
             <br />
           </div>
-          
           <div>
             <label className="signup-field">Email</label>
             <input type="text"
@@ -75,6 +75,7 @@ const SignUpForm = React.createClass({
             <input type="submit" value="Log In" className="signup-button"/>
           </div>
         </form>
+        <div><Link to={'/signup'}>Already have an account?</Link></div>
       </div>
     );
   }

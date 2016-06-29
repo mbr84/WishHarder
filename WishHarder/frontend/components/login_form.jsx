@@ -2,6 +2,7 @@ const React = require('react')
 const SessionActions = require('../actions/session_actions')
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store')
+const Link = require('react-router').Link
 
 const LoginForm = React.createClass({
   getInitialState(){
@@ -44,25 +45,38 @@ const LoginForm = React.createClass({
   render(){
     return (
       <div className="login-container">
-        <div>
+        <div className="login-title">Log In</div>
+        <div className="login-inner">
           <form onSubmit={this._handleSubmit}>
-            <label className="signin-field">Username
+            <ul>
+              <li>
+                <label className="signin-field">
 
-              <input type="text"
-                     onChange={this.nameChange}
-                     value={this.state.username} />
-            </label>
-            <br />
-            <label className="signin-field">Password
+                  <input type="text"
+                         placeholder="username"
+                         onChange={this.nameChange}
+                         value={this.state.username} />
+                  </label>
+              </li>
+              <li>
+                <label className="signin-field">
 
-              <input type="password"
-                     onChange={this.passwordChange}
-                     value={this.state.password} />
-            </label>
-            <br />
-            <div>
-              <input type="submit" value="Log In" className="login-button"/>
-            </div>
+                  <input type="password"
+                         placeholder="password"
+                         onChange={this.passwordChange}
+                         value={this.state.password} />
+                </label>
+              </li>
+              <li>
+                <div className="no-pass">Forgot your Password?</div>
+              </li>
+              <li>
+                <input type="submit" value="Log Me In!" className="login-button"/>
+              </li>
+              <li className="check" >
+                <input className="check-box" type="checkbox" /> Remember Me
+              </li>
+            </ul>
           </form>
         </div>
       </div>

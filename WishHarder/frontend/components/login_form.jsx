@@ -12,7 +12,7 @@ const LoginForm = React.createClass({
   },
 
   loginRedirect(){
-    if (SessionStore.UserIsLoggedIn()) {
+    if (SessionStore.isUserLoggedIn()) {
       this.context.router.push("/")
     }
   },

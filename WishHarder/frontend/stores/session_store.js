@@ -20,20 +20,17 @@ SessionStore.currentUser = function () {
   return _currentUser;
 };
 
-SessionStore.isUserLoggedIn = function () {
-  if (_currentUser.id) {
-    return true;
-  }
-  return false;
+SessionStore.isUserLoggedIn = function() {
+  return !!_currentUser.id;
 };
 
 SessionStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case SessionConstants.LOGIN:
-      _login(payload.user);
+      _login(payload.currentUser);
       break;
     case SessionConstants.LOGOUT:
-      _logout(payload.user)
+      _logout();
       break;
   }
 };

@@ -9,6 +9,7 @@ const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 const LoginForm = require('./components/login_form');
+const SignUpForm = require('./components/signup_form');
 
 
 const App = React.createClass({
@@ -26,10 +27,12 @@ const routes = (
 <Router history={ hashHistory }>
   <Route path="/" component={App} >
     <Route path="login" component={LoginForm} />
+    <Route path="signup" component={SignUpForm} />
   </Route>
 </Router>
 );
 
 document.addEventListener("DOMContentLoaded", function() {
+  SessionActions.receiveCurrentUser(window.currentUser);
   ReactDOM.render(routes, document.getElementById('content'));
 });

@@ -77,24 +77,24 @@ const LoginForm = React.createClass({
           <form onSubmit={this._handleSubmit}>
             <ul>
                  { this.fieldErrors("errors") }
-              <li>
+              <li className="li">
                 <input type="text"
                        placeholder="username"
                        onChange={this.nameChange}
                        value={this.state.username} />
               </li>
-              <li>
+              <li className="li">
                   <input type="password"
                          placeholder="password"
                          onChange={this.passwordChange}
                          value={this.state.password} />
               </li>
-              <li>
+              <li className="li">
                 <div className="wrong-form">
                   Forgot your Password?
                 </div>
               </li>
-              <li>
+              <li className="li">
                 <input type="submit"
                        value="Log Me In!"
                        className="login-button"/>
@@ -104,7 +104,7 @@ const LoginForm = React.createClass({
                        type="checkbox" /> Remember Me
               </li>
               <li className="form-text">Or</li>
-              <li>
+              <li className="li">
                 <input type="button"
                        value="Log in with Demo"
                        className="demo"

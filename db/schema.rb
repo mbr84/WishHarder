@@ -11,24 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628190307) do
+ActiveRecord::Schema.define(version: 20160630234141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.text     "content",     null: false
+    t.integer  "author_id"
+    t.integer  "category_id"
+    t.boolean  "complete",    null: false
+    t.integer  "duration",    null: false
+    t.integer  "goal",        null: false
+    t.integer  "pledged"
+    t.boolean  "featured"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "projects", ["author_id"], name: "index_projects_on_author_id", using: :btree
+  add_index "projects", ["category_id"], name: "index_projects_on_category_id", using: :btree
+
   create_table "users", force: :cascade do |t|
-    t.string   "username",                 null: false
-    t.string   "password_digest",          null: false
-    t.string   "session_token",            null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "profile_img_file_name"
-    t.string   "profile_img_content_type"
-    t.integer  "profile_img_file_size"
-    t.datetime "profile_img_updated_at"
-    t.string   "email",                    null: false
-    t.string   "fname",                    null: false
-    t.string   "lname",                    null: false
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
+    t.string   "session_token",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "email",           null: false
+    t.string   "fname",           null: false
+    t.string   "lname",           null: false
   end
 
 end

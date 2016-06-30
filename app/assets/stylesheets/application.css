@@ -32,6 +32,7 @@ nav, .nav-left, .nav-right {
   font-family: 'Montserrat', sans-serif;
 }
 
+
 .nav-left, .nav-right {
 
   font-size:13px;
@@ -40,17 +41,62 @@ h1 {
   vertical-align: middle;
 }
 
-a, i {
+.drop-li {
+  text-align: left;
+}
+.drop-li a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-link, i {
   text-decoration: none;
   color: black;
   margin-left: 24px;
   margin-right: 24px;
+}
+i {
+  vertical-align: baseline;
+}
+
+.logout:hover, i:hover {
+  cursor: pointer;
 }
 
 span {
   margin-top: 20px;
 }
 
-.logo {
-  /*max-width: 100px;*/
+.user-links {
+  position:relative;
+}
+
+.hide {
+  position: absolute;
+  display: none;
+}
+
+.my-projects {
+  float:left;
+  padding-left: 10px;
+}
+
+.user-options {
+  float: right;
+  padding-right: 10px;
+}
+
+#dd {
+  margin-top: 20px;
+  margin-right: 25px;
+}
+
+.show {
+  position: absolute;
+  z-index: 100;
+  width: 250px;
+  left: -110px;
+  top: 65px;
+  background: white;
+  box-shadow: -1px 1px 3px #ccc;
 }

@@ -56,14 +56,14 @@ const SignUpForm = React.createClass({
         <form onSubmit={this._handleSubmit}>
           <ul>
             <div>
-              <li>
+              <li className="li">
                 { this.fieldErrors("errors") }
                 <input type="text"
                        placeholder="username"
                        onChange={this.update("username")}
                        value={this.state.username} />
               </li>
-              <li>
+              <li className="li">
                 <input type="password"
                        placeholder="password"
                        onChange={this.update("password")}
@@ -72,25 +72,25 @@ const SignUpForm = React.createClass({
 
             </div>
             <div>
-              <li>
+              <li className="li">
                 <input type="text"
                        placeholder="email"
                        onChange={this.update("email")}
                        value={this.state.email} />
               </li>
-              <li>
+              <li className="li">
                 <input type="text"
                        placeholder="first"
                        onChange={this.update("fname")}
                        value={this.state.fname} />
               </li>
-              <li>
+              <li className="li">
                 <input type="text"
                        placeholder="last"
                        onChange={this.update("lname")}
                        value={this.state.lname} />
               </li>
-              <li>
+              <li className="li">
                 <input type="submit" value="Log In" className="signup-button"/>
               </li>
             </div>

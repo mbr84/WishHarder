@@ -12,7 +12,7 @@ const Nav = React.createClass({
     const userLinks = (SessionStore.isUserLoggedIn()) ? (
       <div className="nav-right">
         <span onClick={this._toggleSearch}><i className="material-icons">search</i></span>
-        <div>{DropDown}</div>
+        <div>DropDown</div>
       </div>
     ) :
       (<div className="nav-right">

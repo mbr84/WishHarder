@@ -11,14 +11,14 @@ const hashHistory = ReactRouter.hashHistory;
 const LoginForm = require('./components/login_form');
 const SignUpForm = require('./components/signup_form');
 const Modal = require('react-modal');
-const SessionHeader = require('./components/session_header');
+const Navbar = require('./components/navbar');
 
 
 const App = React.createClass({
   render () {
     return (
       <div>
-        <h1></h1>
+        <Navbar />
         {this.props.children}
       </div>
     );
@@ -36,6 +36,5 @@ const routes = (
 
 document.addEventListener("DOMContentLoaded", function() {
   SessionActions.receiveCurrentUser(window.currentUser);
-  // Modal.setAppElement(document.body);
   ReactDOM.render(routes, document.getElementById('content'));
 });

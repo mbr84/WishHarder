@@ -29,6 +29,17 @@ const SignUpForm = React.createClass({
     }
   },
 
+  fieldErrors(field) {
+    const errors = ErrorStore.formErrors("signup");
+
+    if (!errors) { return; }
+    const messages = errors[field].map( (errorMsg, i) => {
+      return <li key={ i }>{ errorMsg }</li>;
+    });
+
+    return <ul>{ messages }</ul>;
+  },
+
   _handleSubmit(e){
     e.preventDefault();
     SessionActions.signup({ user: this.state });
@@ -41,20 +52,18 @@ const SignUpForm = React.createClass({
   render(){
     return (
       <div className="signup-container">
-        <div className="Signup-title">Sign Up</div>
+        <div className="signup-title">Sign Up</div>
         <form onSubmit={this._handleSubmit}>
           <ul>
             <div>
               <li>
-                <label className="signup-field"></label>
+                { this.fieldErrors("errors") }
                 <input type="text"
                        placeholder="username"
                        onChange={this.update("username")}
                        value={this.state.username} />
               </li>
-
               <li>
-                <label className="signup-field"></label>
                 <input type="password"
                        placeholder="password"
                        onChange={this.update("password")}
@@ -64,23 +73,18 @@ const SignUpForm = React.createClass({
             </div>
             <div>
               <li>
-                <label className="signup-field"></label>
                 <input type="text"
                        placeholder="email"
                        onChange={this.update("email")}
                        value={this.state.email} />
               </li>
-
               <li>
-                <label className="signup-field"></label>
                 <input type="text"
                        placeholder="first"
                        onChange={this.update("fname")}
                        value={this.state.fname} />
               </li>
-
               <li>
-                <label className="signup-field"></label>
                 <input type="text"
                        placeholder="last"
                        onChange={this.update("lname")}
@@ -92,7 +96,7 @@ const SignUpForm = React.createClass({
             </div>
           </ul>
         </form>
-        <div className="wrong-form"><Link to={'/signup'}>Already have an account?</Link></div>
+        <div className="wrong-form"><Link to={'/login'}>Already have an account?</Link></div>
       </div>
     );
   }

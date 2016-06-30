@@ -7,8 +7,9 @@ module.exports = {
       success: function (res) {
         successCallback(res);
       },
-      error: function (res) {
-        errorCallback(res);
+      error(xhr) {
+  			const errors = xhr.responseJSON;
+				errorCallback("signup", errors);
       },
     });
   },
@@ -21,8 +22,9 @@ module.exports = {
       success: function (res) {
         successCallback(res);
       },
-      error: function (res) {
-        errorCallback(res);
+      error(xhr) {
+				const errors = xhr.responseJSON;
+				errorCallback("login", errors);
       },
     });
   },
@@ -35,7 +37,7 @@ module.exports = {
         successCallback(res);
       },
       error: function (res) {
-        console.log(res);
+        errorCallback(res);
       },
     });
   },

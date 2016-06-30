@@ -7,7 +7,6 @@ let _currentUser = {};
 const SessionStore = new Store(AppDispatcher);
 
 function _login (user) {
-  console.log("hello")
   _currentUser = user;
   SessionStore.__emitChange();
 };
@@ -22,11 +21,13 @@ SessionStore.currentUser = function () {
 };
 
 SessionStore.isUserLoggedIn = function() {
+  if (_currentUser === undefined) {
+    return false;
+  }
   return !!_currentUser.id;
 };
 
 SessionStore.__onDispatch = function (payload) {
-  console.log("store")
   switch (payload.actionType) {
     case SessionConstants.LOGIN:
       _login(payload.currentUser);

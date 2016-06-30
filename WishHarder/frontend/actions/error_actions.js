@@ -1,8 +1,9 @@
 const ErrorConstants = require('../constants/error_constants');
+const AppDispatcher = require('../dispatcher/dispatcher');
 
 module.exports = {
-  setErrors(payload){
-    Dispatcher.dispatch({
+  setErrors(form, errors){
+    AppDispatcher.dispatch({
       actionType: ErrorConstants.SET_ERRORS,
       form: form,
       errors: errors
@@ -10,7 +11,7 @@ module.exports = {
   },
 
   clearErrors(payload){
-    Dispatcher.dispatch({
+    AppDispatcher.dispatch({
       actionType: ErrorConstants.CLEAR_ERRORS,
     });
   }

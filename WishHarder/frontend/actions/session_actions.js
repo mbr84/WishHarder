@@ -23,7 +23,6 @@ const SessionActions = {
 
   logout() {
     SessionApiUtil.logout(SessionActions.removeCurrentUser);
-
   },
 
   fetchCurrentUser(complete){

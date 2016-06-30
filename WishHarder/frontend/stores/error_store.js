@@ -14,7 +14,7 @@ ErrorStore.formErrors = function(form){
 };
 
 ErrorStore.form = function() {
-  return _from;
+  return _form;
 }
 
 function setErrors(payload){

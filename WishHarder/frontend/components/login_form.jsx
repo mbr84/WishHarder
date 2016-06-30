@@ -2,7 +2,6 @@ const React = require('react')
 const SessionActions = require('../actions/session_actions')
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store')
-const Link = require('react-router').Link
 
 const LoginForm = React.createClass({
   getInitialState(){
@@ -23,15 +22,38 @@ const LoginForm = React.createClass({
     this.loginListener.remove();
   },
 
+  fieldErrors(field) {
+    let errors = ErrorStore.formErrors("login");
+
+    if (!errors || !errors[field]) { return; }
+    const messages = errors[field].map( (errorMsg, i) => {
+      return <li key={ i }>{ errorMsg }</li>;
+    });
+
+    return <ul>{ messages }</ul>;
+  },
+
   loginRedirect(){
-    console.log("login form")
     if (SessionStore.isUserLoggedIn()) {
       this.context.router.push("/")
     }
   },
 
   _handleDemo() {
-    SessionActions.login({ user: { username: "user", password: "password" } })
+    const that = this
+    let i = 1;
+    const demoUser = "breakfast"
+    const intervalID = setInterval(function () {
+      if (i < 10) {
+        that.setState({ username: demoUser.slice(0, i) });
+      } else if (i === 10) {
+        that.setState({ password: "password" });
+      } else {
+        window.clearInterval(intervalID);
+        SessionActions.login({ user: that.state })
+      }
+      i++
+    }, 100);
   },
 
   _handleSubmit(e){
@@ -54,23 +76,18 @@ const LoginForm = React.createClass({
         <div className="login-inner">
           <form onSubmit={this._handleSubmit}>
             <ul>
+                 { this.fieldErrors("errors") }
               <li>
-                <label className="signin-field">
-
-                  <input type="text"
-                         placeholder="username"
-                         onChange={this.nameChange}
-                         value={this.state.username} />
-                </label>
+                <input type="text"
+                       placeholder="username"
+                       onChange={this.nameChange}
+                       value={this.state.username} />
               </li>
               <li>
-                <label className="signin-field">
-
                   <input type="password"
                          placeholder="password"
                          onChange={this.passwordChange}
                          value={this.state.password} />
-                </label>
               </li>
               <li>
                 <div className="wrong-form">

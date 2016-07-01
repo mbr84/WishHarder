@@ -91,7 +91,7 @@ const SignUpForm = React.createClass({
                        value={this.state.lname} />
               </li>
               <li className="li">
-                <input type="submit" value="Log In" className="signup-button"/>
+                <input type="submit" value="Sign Up" className="signup-button"/>
               </li>
             </div>
           </ul>

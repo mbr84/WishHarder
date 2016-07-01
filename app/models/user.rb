@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
   attr_reader :password
   validates :username, :session_token, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  has_attached_file :profile_img
-  validates_attachment_content_type :profile_img, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token
 

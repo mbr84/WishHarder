@@ -28,27 +28,24 @@ const Nav = React.createClass({
   },
 
   render(){
-    const dropDown = (
-      <div className={this.state.dropDownClass}>
-        <div className="my-projects">
-          <h3>My Projects</h3>
-
-        </div>
-        <div className="user-options">
-          <h3>Settings</h3>
-          <ul>
-            <li className="drop-li"><Link to={`/users/${SessionStore.currentUser().id}`}>Edit Profile</Link></li>
-            <li className="logout drop-li" onClick={this._handleLogout}>Logout</li>
-          </ul>
-        </div>
-      </div>
-    )
     const userLinks = (SessionStore.isUserLoggedIn()) ? (
       <div className="nav-right">
         <span onClick={this._toggleSearch}><i className="material-icons">search</i></span>
         <div className="drop-down-button">
           <i onClick={this._handleDrop} id="dd" className="material-icons">arrow_drop_down</i>
-          {dropDown}
+            <div className={this.state.dropDownClass}>
+              <div className="my-projects">
+                <h3>My Projects</h3>
+
+              </div>
+              <div className="user-options">
+                <h3>Settings</h3>
+                <ul>
+                  <li className="drop-li"><Link to={`/users/${SessionStore.currentUser().id}`}>Edit Profile</Link></li>
+                  <li className="logout drop-li" onClick={this._handleLogout}>Logout</li>
+                </ul>
+              </div>
+            </div>
         </div>
       </div>
     ) :

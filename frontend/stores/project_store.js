@@ -32,3 +32,5 @@ ProjectStore.__onDispatch = function (payload) {
       break;
   }
 };
+
+module.exports = ProjectStore;

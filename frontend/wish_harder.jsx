@@ -10,8 +10,9 @@ const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 const LoginForm = require('./components/login_form');
 const SignUpForm = require('./components/signup_form');
-const Modal = require('react-modal');
 const Navbar = require('./components/navbar');
+const ProjectApiUtil = window.ProjectApiUtil = require('./util/project_api_util');
+
 
 
 const App = React.createClass({
@@ -30,6 +31,7 @@ const routes = (
   <Route path="/" component={App} >
     <Route path="login" component={LoginForm} />
     <Route path="signup" component={SignUpForm} />
+    <Route path="discover" component={ProjectIndex} />
   </Route>
 </Router>
 );

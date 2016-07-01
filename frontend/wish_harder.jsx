@@ -14,9 +14,9 @@ const Navbar = require('./components/navbar');
 const ProjectApiUtil = require('./util/project_api_util');
 const ProjectActions = require('./actions/project_actions');
 const ProjectIndex = require('./components/project_index');
+const ProjectStore = window.ProjectStore = require('./stores/project_store')
 
-
-
+window.ProjectActions = ProjectActions
 const App = React.createClass({
   render () {
     return (

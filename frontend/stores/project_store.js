@@ -5,7 +5,7 @@ const ProjectConstants = require('../constants/project_constants');
 
 const ProjectStore = new Store(AppDispatcher);
 
-let _projects = {};
+let _projects = [];
 
 ProjectStore.all = function() {
   return _projects.slice();
@@ -23,12 +23,15 @@ ProjectStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case ProjectConstants.PROJECTS_RECEIVED:
       this.resetPrejects(payload.projects)
+      this.__emitChange()
       break;
     case ProjectConstants.PROJECT_RECEIVED:
       this.addProject(payload.project)
+      this.__emitChange()
       break;
     case ProjectConstants.PROJECT_REMOVED:
       this.removeProject(id)
+      this.__emitChange()
       break;
   }
 };

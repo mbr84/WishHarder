@@ -22,7 +22,6 @@ class Api::ProjectsController < ApplicationController
       render :show
     else
       render json: { errors: @project.errors}
-      render :edit
     end
   end
 
@@ -33,6 +32,7 @@ class Api::ProjectsController < ApplicationController
   def destroy
     Project.destroy(params[:id])
     render :index
+    #make destroy jbuilder to send id and have store push to index
   end
 
   def show
@@ -44,7 +44,7 @@ class Api::ProjectsController < ApplicationController
    def project_params
      params.require(:project).permit(
       :title,
-      :content, 
+      :content,
       :author_id,
       :category_id,
       :complete,

@@ -2,6 +2,8 @@ json.array! @projects do |project|
   json.id project.id
   json.title project.title
   json.content project.content
+  json.blurb project.blurb
+  json.primary_img project.primary_img
   json.author do
     json.fname project.author.fname
     json.lname project.author.lname

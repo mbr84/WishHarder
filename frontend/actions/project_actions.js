@@ -16,5 +16,9 @@ module.exports = {
       actionType: ProjectConstants.PROJECTS_RECEIVED,
       projects: projects
     });
+  },
+
+  removeDeletedProject(project){
+    AppDispatcher.dispatch
   }
 };

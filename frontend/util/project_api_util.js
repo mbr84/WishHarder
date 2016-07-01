@@ -8,12 +8,12 @@ module.exports = {
     });
   },
 
-  removeProject(id) {
+  removeProject(id, cb) {
     $.ajax({
       url: `/api/projects/${id}`,
       type: 'DELETE',
       success: function(res) {
-        console.log(res)
+        cb(res)
       }
     });
   }

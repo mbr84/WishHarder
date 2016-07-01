@@ -1,4 +1,4 @@
-const Store = require('flex/utils').Store;
+const Store = require('flux/utils').Store;
 const AppDispatcher = require('../dispatcher/dispatcher');
 const ProjectConstants = require('../constants/project_constants');
 

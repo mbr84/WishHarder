@@ -1,6 +1,6 @@
-const SessionApiUtil = window.SessionApiUtil= require('./util/session_api_util');
-const SessionStore = window.SessionStore= require('./stores/session_store');
-const SessionActions = window.SessionActions = require('./actions/session_actions');
+const SessionApiUtil = require('./util/session_api_util');
+const SessionStore = require('./stores/session_store');
+const SessionActions = require('./actions/session_actions');
 const React = require('react');
 const ReactDOM = require('react-dom');
 const ReactRouter = require('react-router');
@@ -11,7 +11,9 @@ const hashHistory = ReactRouter.hashHistory;
 const LoginForm = require('./components/login_form');
 const SignUpForm = require('./components/signup_form');
 const Navbar = require('./components/navbar');
-const ProjectApiUtil = window.ProjectApiUtil = require('./util/project_api_util');
+const ProjectApiUtil = require('./util/project_api_util');
+const ProjectActions = require('./actions/project_actions');
+const ProjectIndex = require('./components/project_index');
 
 
 

@@ -15,3 +15,5 @@ const ProjectIndex = React.createClass({
     );
   }
 });
+
+module.exports = ProjectIndex;

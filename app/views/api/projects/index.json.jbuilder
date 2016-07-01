@@ -1,6 +1,7 @@
 json.array! @projects do |project|
+  json.id project.id
   json.title project.title
-  json.content. body.content
+  json.content project.content
   json.author do
     json.fname project.author.fname
     json.lname project.author.lname

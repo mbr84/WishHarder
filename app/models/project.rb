@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  validates :tite, :content, :duration, :interval, :goal, presence: true
+  validates :title, :content, :duration, :goal, presence: true
 
   belongs_to :author,
     primary_key: :id,

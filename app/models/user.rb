@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :projects,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: "Project"
+
 
   def self.find_by_credentials(parameters)
     username = parameters[:username]

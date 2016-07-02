@@ -1,0 +1,65 @@
+
+.index-item-img {
+  object-fit: cover;
+  height: 100%;
+  width:100%;
+}
+
+.percent-complete {
+  background-color: green;
+  height: .6em;
+  float:left;
+}
+
+.percent-left {
+  float:right;
+  background-color: #ccc;
+  height: .6em;
+}
+
+.index-item-container {
+  border: solid 1px #ddd;
+  border-radius: 5px;
+  float:left;
+  width: 315px;
+  height: 435px;
+  margin: 15px;
+  background-color: white;
+}
+
+.img-container {
+  height: 40%;
+}
+
+.completion-percent {
+  border-radius: 10px;
+}
+
+
+.description-element {
+  height: 25%;
+  padding: 10px
+}
+
+.stats {
+  height: 20%;
+  padding:45px 10px 10px 10px;
+}
+
+.index-item-title {
+  font-weight: bold;
+}
+
+.index-item-title, .index-blurb, .index-author {
+  font-family: Helvetica;
+  font-size: 14px;
+}
+
+ .index-author {
+   margin-bottom: 10px;
+ }
+
+
+.index-blurb, .index-author {
+  color: #888;
+}

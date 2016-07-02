@@ -16,7 +16,7 @@ const ProjectActions = require('./actions/project_actions');
 const ProjectIndex = require('./components/project_index');
 const ProjectStore = window.ProjectStore = require('./stores/project_store')
 
-window.ProjectActions = ProjectActions
+window.SessionActions = SessionActions
 const App = React.createClass({
   render () {
     return (

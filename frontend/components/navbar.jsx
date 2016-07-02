@@ -33,7 +33,7 @@ const Nav = React.createClass({
         <span onClick={this._toggleSearch}><i className="material-icons">search</i></span>
         <div className="drop-down-button">
           <i onClick={this._handleDrop} id="dd" className="material-icons">arrow_drop_down</i>
-            <div className={this.state.dropDownClass}>
+            <div className={this.state.dropDownClass} onMouseLeave={this._handleDrop}>
               <div className="my-projects">
                 <h3>My Projects</h3>
 
@@ -60,7 +60,7 @@ const Nav = React.createClass({
       <nav className="full-nav">
         <div className="site-links">
           <div className="nav-left">
-            <span><Link to={'/projects'} className="nav-link">Discover</Link></span>
+            <span><Link to={'/discover'} className="nav-link">Discover</Link></span>
             <span><Link to={'/projects/new'} className="nav-link">Wish</Link></span>
             <span><Link to={'/about'} className="nav-link">About Us</Link></span>
           </div>

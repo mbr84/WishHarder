@@ -5,3 +5,33 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Project.create([{
+  title: "My sweet project",
+  content: "character",
+  author_id: 49,
+  goal: 10000,
+  featured: false,
+  blurb: "click to learn more",
+  duration: "90",
+  complete: false,
+  primary_img:"http://www.bloggingways.net/wp-content/uploads/2014/07/stock-images-for-blog.jpg",
+  pledged: 100,
+
+}])
+
+projects = []
+users = []
+
+100.times do
+  user = {
+    username: Faker::Internet.user_name,
+    password: "password",
+    email: Faker::Internet.email,
+    fname: Faker::Name.first_name,
+    lname: Faker::Name.last_name
+  }
+  users << user
+end
+
+User.create(users)

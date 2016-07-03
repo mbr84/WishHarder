@@ -1,25 +1,6 @@
-
-.index-item-img {
-  object-fit: cover;
-  height: 100%;
-  width:100%;
-}
-
-.percent-complete {
-  background-color: green;
-  height: .6em;
-  float:left;
-}
-
-.percent-left {
-  float:right;
-  background-color: #ccc;
-  height: .6em;
-}
-
 .index-item-container {
   border: solid 1px #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
   float:left;
   width: 315px;
   height: 435px;
@@ -29,11 +10,67 @@
 
 .img-container {
   height: 40%;
+  border-radius: 5px;
 }
 
+.img-container:hover {
+  cursor: pointer;
+}
+
+.index-item-img {
+  object-fit: cover;
+  height: 100%;
+  width:100%;
+}
+
+.percent-complete {
+  background-color: #2bde73;
+  height: .6em;
+  float:left;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
 .completion-percent {
   border-radius: 10px;
+  background-color: #f1eeea;
 }
+
+.percent-left {
+  float:right;
+  background-color: #f1eeea;
+  height: .6em;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.ind-stats {
+  margin-bottom: 5px;
+}
+.index-pledged ul {
+  text-align: left;
+  font-family: Helvetica;
+  font-size: 12px;
+}
+
+.location {
+  margin-bottom: 5px;
+  font: inherit;
+}
+
+.index-pledged ul li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.ind-stats {
+  font-weight: bold;
+
+}
+
+.stat-item {
+  color: #888;
+}
+
 
 
 .description-element {
@@ -50,9 +87,9 @@
   font-weight: bold;
 }
 
-.index-item-title, .index-blurb, .index-author {
+.index-item-title, .index-blurb, .index-author, .stats {
   font-family: Helvetica;
-  font-size: 14px;
+  font-size: 12px;
 }
 
  .index-author {

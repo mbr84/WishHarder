@@ -15,8 +15,8 @@ const ProjectApiUtil = require('./util/project_api_util');
 const ProjectActions = require('./actions/project_actions');
 const ProjectIndex = require('./components/project_index');
 const ProjectStore = window.ProjectStore = require('./stores/project_store')
+const Project = require('./components/project')
 
-window.SessionActions = SessionActions
 const App = React.createClass({
   render () {
     return (
@@ -34,6 +34,7 @@ const routes = (
     <Route path="login" component={LoginForm} />
     <Route path="signup" component={SignUpForm} />
     <Route path="discover" component={ProjectIndex} />
+    <Route path="projects/:id" componenet={Project} />
   </Route>
 </Router>
 );

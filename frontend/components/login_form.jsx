@@ -2,6 +2,7 @@ const React = require('react')
 const SessionActions = require('../actions/session_actions')
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store')
+const ErrorActions = require('../actions/error_actions')
 
 const LoginForm = React.createClass({
   getInitialState(){
@@ -11,6 +12,10 @@ const LoginForm = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
 	},
+
+  componentWillMount() {
+    ErrorActions.clearErrors();
+  },
 
   componentDidMount(){
     this.loginListener = SessionStore.addListener(this.loginRedirect);

@@ -9,7 +9,7 @@
 Project.create([{
   title: "My sweet project",
   content: "character",
-  author_id: 49,
+  author_id: 150,
   goal: 10000,
   featured: false,
   blurb: "click to learn more",
@@ -17,7 +17,8 @@ Project.create([{
   complete: false,
   primary_img:"http://www.bloggingways.net/wp-content/uploads/2014/07/stock-images-for-blog.jpg",
   pledged: 100,
-
+  city: "Austin",
+  state: "TX"
 }])
 
 projects = []

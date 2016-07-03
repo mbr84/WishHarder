@@ -1,6 +1,8 @@
 const React = require('react');
+const hashHistory = require('react-router').hashHistory
 
 
+// onClick={  hashHistory.push(`/projects/${project.id}`)}
 const ProjectIndexItem = React.createClass({
 
 
@@ -20,13 +22,22 @@ const ProjectIndexItem = React.createClass({
           <div className="index-blurb" >{this.props.project.blurb}</div>
         </div>
         <div className="stats">
+          <div className="location">{this.props.project.city}, {this.props.project.state}</div>
           <div className="index-duration">{this.props.project.duration}</div>
-          <div className="index-pledged">{this.props.project.pledged}</div>
           <div className="completion-percent">
             <div className="percent-complete"
                  style={greenBar}></div>
             <div className="percent-left"
                  style={greyBar}></div>
+          </div>
+          <div className="index-pledged">
+            <ul id="stats-list">
+              <li><div className="ind-stats">{percentComplete}%</div>
+                <div className="stat-item">funded</div></li>
+              <li><div className="ind-stats">${this.props.project.pledged}</div>
+                <div className="stat-item">pledged</div></li>
+              <li></li>
+            </ul>
           </div>
         </div>
 

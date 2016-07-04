@@ -4,9 +4,10 @@ const ProjectHeader = React.createClass({
   render(){
     return (
       <div className="header">
-        <title>
-
-        </title>
+        <div className="title">
+          {this.props.project.title}
+          <div className="author">by {this.props.author.username}</div>
+        </div>
         <section className="header-content">
           <figure>
             <div className="project-image-container">

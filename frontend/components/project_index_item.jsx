@@ -1,10 +1,12 @@
 const React = require('react');
-const hashHistory = require('react-router').hashHistory
+const hashHistory = require('react-router').hashHistory;
 
 
 // onClick={  hashHistory.push(`/projects/${project.id}`)}
 const ProjectIndexItem = React.createClass({
-
+  navigateProject() {
+    hashHistory.push(`/projects/${this.props.project.id}`)
+  },
 
   render(){
     const percentComplete = Math.floor((this.props.project.pledged/this.props.project.goal)*100)
@@ -13,7 +15,8 @@ const ProjectIndexItem = React.createClass({
 
     return(
       <div className="index-item-container">
-        <div className="img-container">
+        <div className="img-container"
+             onClick={this.navigateProject}>
           <img className="index-item-img" src={this.props.project.primary_img}></img>
         </div>
         <div className="description-element">

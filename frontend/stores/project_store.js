@@ -23,7 +23,7 @@ ProjectStore.addProject = function (project) {
 };
 
 ProjectStore.find = function (id) {
-  return _projects[id] || {};
+  return _projects[id] || { author: {} };
 };
 
 ProjectStore.__onDispatch = function (payload) {

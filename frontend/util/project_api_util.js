@@ -8,6 +8,16 @@ module.exports = {
     });
   },
 
+  createProject(project, cb) {
+    $.ajax({
+      url: '/api/projects',
+      type: 'POST',
+      data: {project: project},
+      success: function(res) {
+        cb(res)}
+    })
+  },
+
   removeProject(id, cb) {
     $.ajax({
       url: `/api/projects/${id}`,

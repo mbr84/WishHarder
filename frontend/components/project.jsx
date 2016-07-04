@@ -20,12 +20,16 @@ const Project = React.createClass({
   render(){
     return (
       <div>
-        <ProjectHeader project={this.state.project} />
-        <div className="project-body">
-          <section className="project-content">
-            {this.state.project.content}
-          </section>
-          <aside className="rewards"></aside>
+        <div className="header-background">
+          <ProjectHeader project={this.state.project} author={this.state.project.author}/>
+        </div>
+        <div className="project-content-background">
+          <div className="project-body">
+            <section className="project-content">
+              {this.state.project.content}
+            </section>
+            <aside className="rewards"></aside>
+          </div>
         </div>
       </div>
     );

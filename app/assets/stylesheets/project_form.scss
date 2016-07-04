@@ -19,7 +19,7 @@
   border-radius: 10px;
   background-color: #f8f9fd;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 5px;
 
 }
 
@@ -33,11 +33,45 @@
 .form-submit-button {
   background-color: #2853ff;
   color: white;
-  width: 100%;
+  width: 50%;
   height: 50px;
   font-size: 24px;
 }
 
 .form-submit-button:hover {
   cursor: pointer;
+  background-color: #2853D3;
+}
+
+.form-title {
+  font-family: Helvetica;
+}
+
+.form-title p {
+  font-size: 18px;
+}
+
+.form-wrapper p {
+  max-width: 350px;
+  text-align: left;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+textarea {
+  border-radius: 10px;
+  border: thin solid #aaa;
+  font-size: 14px;
+}
+
+.label-wrapper label {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 25px;
+
+}
+
+.form-title h2 {
+  font-size: 36px;
 }

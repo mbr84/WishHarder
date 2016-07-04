@@ -19,7 +19,7 @@ ProjectStore.resetPrejects = function(projects) {
 };
 
 ProjectStore.addProject = function (project) {
-  _projects.push(project);
+  _projects[project.id] = project;
 };
 
 ProjectStore.find = function (id) {

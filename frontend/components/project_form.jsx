@@ -9,25 +9,35 @@ const ProjectForm = React.createClass({
       author_id: currentUser.id,
       duration: '',
       goal: '',
-      pledged: '',
+      pledged: 0,
       featured: false,
       blurb: '',
       primary_img: '',
       city: '',
-      state: ''
+      state: '',
+      complete: false
     };
   },
 
   update(property) {
-    return (e) => this.setState({[property]: e.target.value});
-  },
-  updateIntProp(property) {
-    return (e) => this.setState({[property]: parseInt(e.target.value)});
+    return (e) => this.setState({ [property]: e.target.value} );
   },
 
   _handleSubmit(e) {
+    debugger
     e.preventDefault();
+    this.setState({goal: parseInt(this.state.goal), duration: parseInt(this.state.duration)})
     ProjectActions.createProject(this.state)
+  },
+
+  updateImage(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(cloudinary_options, function(error, results){
+      if (!error) {
+        const url = results[0].url.replace('upload', 'upload/ar_1.77,c_crop');
+        this.setState({ primary_img: url });
+      }
+    }.bind(this));
   },
 
   render(){
@@ -40,6 +50,14 @@ const ProjectForm = React.createClass({
         <div className='project-form'>
           <form onSubmit={this._handleSubmit}>
             <ul>
+              <li className="project-form-li">
+                <div className="form-item">
+                  <div className="label-wrapper"><label>Project Cover Photo</label></div>
+                  <div className="form-wrapper">
+                    <button onClick={this.updateImage}>Upload Image</button>
+                  </div>
+                 </div>
+              </li>
               <li className="project-form-li">
                 <div className="form-item">
                   <div className="label-wrapper"><label>Wish title</label></div>
@@ -84,9 +102,11 @@ const ProjectForm = React.createClass({
                   <div className="form-wrapper">
                     <input type="text"
                            className="project-city"
+                           placeholder="San Francisco"
                            onChange={this.update("city")}
-                           value={this.state.city} />
+                           value={this.state.city} />,
                     <input type="text"
+                           placeholder="CA"
                            className="project-state"
                            onChange={this.update("state")}
                            value={this.state.state} />
@@ -99,7 +119,7 @@ const ProjectForm = React.createClass({
                   <div className="label-wrapper"><label>Wish Duration</label></div>
                   <div className="form-wrapper">
                     <input type="text"
-                           onChange={this.updateIntProp("duration")}
+                           onChange={this.update("duration")}
                            value={this.state.duration} />
                     <p>The length of time you have to secure funding for your wish.</p>
                   </div>
@@ -111,7 +131,7 @@ const ProjectForm = React.createClass({
                   <div className="form-wrapper">
                     <input type="text"
                            placeholder="0"
-                           onChange={this.updateIntProp("goal")}
+                           onChange={this.update("goal")}
                            value={this.state.goal} />
                   </div>
                 </div>

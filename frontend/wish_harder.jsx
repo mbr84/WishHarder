@@ -38,7 +38,7 @@ const routes = (
     <Route path="discover" component={ProjectIndex} />
     <Route path="projects/new" component={ProjectForm} />
     <Route path="projects/:id" component={Project} />
-
+    <Route path="projects/:id/rewards/new" component={ProjectRewardsForm} />
   </Route>
 </Router>
 );

@@ -43,6 +43,7 @@ class Api::ProjectsController < ApplicationController
   private
    def project_params
      params.require(:project).permit(
+      :id,
       :title,
       :content,
       :author_id,
@@ -51,6 +52,10 @@ class Api::ProjectsController < ApplicationController
       :duration,
       :goal,
       :pledged,
+      :blurb,
+      :city,
+      :state,
+      :primary_img,
       :featured)
    end
 end

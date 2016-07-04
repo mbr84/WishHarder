@@ -1,6 +1,6 @@
 .index-item-container {
   border: solid 1px #ddd;
-  border-radius: 10px;
+  border-radius: 6px;
   float:left;
   width: 315px;
   height: 435px;
@@ -14,8 +14,9 @@
 
 .img-container {
   height: 40%;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  overflow: hidden;
 }
 
 .index-body {

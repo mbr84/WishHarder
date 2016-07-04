@@ -30,6 +30,7 @@ const Nav = React.createClass({
   render(){
     const userLinks = (SessionStore.isUserLoggedIn()) ? (
       <div className="nav-right">
+        <div className="nav-filler-a"></div>
         <span onClick={this._toggleSearch}><i className="material-icons">search</i></span>
         <div className="drop-down-button">
           <i onClick={this._handleDrop} id="dd" className="material-icons">arrow_drop_down</i>
@@ -50,6 +51,7 @@ const Nav = React.createClass({
       </div>
     ) :
       (<div className="nav-right">
+        <div className="nav-filler-b"></div>
         <span onClick={this._toggleSearch}><i className="material-icons">search</i></span>
         <span><Link to={'/login'} className="nav-link">Log In</Link></span>
         <span><Link to={'/signup'} className="nav-link">Sign Up</Link></span>

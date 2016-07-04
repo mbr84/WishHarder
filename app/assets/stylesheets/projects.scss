@@ -1,3 +1,70 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.header {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure {
+  margin: 0px;
+}
+
+.header-content, .project-content {
+  width: 65%;
+  float: left;
+  padding: 0px 10px 0px 10px
+}
+
+.header-sidebar, .rewards {
+  width: 31%;
+  float: right;
+  padding: 0px 10px 0px 10px
+}
+
+.project-image-container {
+  width: 100%;
+}
+
+.where {
+  margin-bottom: 5px;
+}
+
+.header-image {
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.share-option {
+  display: inline-block;
+}
+
+.stat {
+  font-size: 48px;
+}
+
+.header-stats {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: Helvetica;
+}
+
+.stat-type {
+  color: #888;
+}
+
+.blurb {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.project-body {
+  clear:both;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}

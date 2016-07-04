@@ -1,6 +1,6 @@
 const SessionApiUtil = require('./util/session_api_util');
-const SessionStore = require('./stores/session_store');
-const SessionActions = require('./actions/session_actions');
+const SessionStore = window.SessionStore = require('./stores/session_store');
+const SessionActions = window.SessionActions = require('./actions/session_actions');
 const React = require('react');
 const ReactDOM = require('react-dom');
 const ReactRouter = require('react-router');
@@ -34,7 +34,7 @@ const routes = (
     <Route path="login" component={LoginForm} />
     <Route path="signup" component={SignUpForm} />
     <Route path="discover" component={ProjectIndex} />
-    <Route path="projects/:id" componenet={Project} />
+    <Route path="projects/:id" component={Project} />
   </Route>
 </Router>
 );

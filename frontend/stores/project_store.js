@@ -5,18 +5,25 @@ const ProjectConstants = require('../constants/project_constants');
 
 const ProjectStore = new Store(AppDispatcher);
 
-let _projects = [];
+let _projects = {};
 
 ProjectStore.all = function() {
-  return _projects.slice();
+  return Object.assign({}, _projects);
 };
 
 ProjectStore.resetPrejects = function(projects) {
-  _projects = projects;
+  _projects = {};
+  projects.forEach(project => {
+    _projects[project.id] = project;
+  });
 };
 
-ProjectStore.addProject = function(project) {
+ProjectStore.addProject = function (project) {
   _projects.push(project);
+};
+
+ProjectStore.find = function (id) {
+  return _projects[id] || {};
 };
 
 ProjectStore.__onDispatch = function (payload) {

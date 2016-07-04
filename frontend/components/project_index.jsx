@@ -10,22 +10,22 @@ const ProjectIndex = React.createClass({
   },
 
   componentDidMount(){
-    ProjectStore.addListener(this._onChange)
+    ProjectStore.addListener(this._projectChange)
   },
 
-  _onChange() {
+  _projectChange() {
     this.setState({ projects: ProjectStore.all() })
   },
 
   render(){
     return (
-      <div>
+      <section className="index-body">
         {
-          this.state.projects.map(project => {
-            return <ProjectIndexItem project={project} key={project.id} />
+          Object.keys(this.state.projects).map(key => {
+            return <ProjectIndexItem project={this.state.projects[key]} key={key} />
           })
         }
-      </div>
+      </section>
     );
   }
 });

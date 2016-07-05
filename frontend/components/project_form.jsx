@@ -32,7 +32,6 @@ const ProjectForm = React.createClass({
   updateImage(e) {
     e.preventDefault();
     cloudinary.openUploadWidget(cloudinary_options, function(error, results){
-      debugger
       if (!error) {
         const url = results[0].url.replace('upload', 'upload/ar_1.77,c_crop');
         this.setState({ primary_img: url });

@@ -45640,7 +45640,6 @@ return jQuery;
 	  updateImage: function updateImage(e) {
 	    e.preventDefault();
 	    cloudinary.openUploadWidget(cloudinary_options, function (error, results) {
-	      debugger;
 	      if (!error) {
 	        var url = results[0].url.replace('upload', 'upload/ar_1.77,c_crop');
 	        this.setState({ primary_img: url });

@@ -11,7 +11,7 @@ ProjectStore.all = function() {
   return Object.assign({}, _projects);
 };
 
-ProjectStore.resetPrejects = function(projects) {
+ProjectStore.resetProjects = function(projects) {
   _projects = {};
   projects.forEach(project => {
     _projects[project.id] = project;
@@ -29,7 +29,7 @@ ProjectStore.find = function (id) {
 ProjectStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case ProjectConstants.PROJECTS_RECEIVED:
-      this.resetPrejects(payload.projects)
+      this.resetProjects(payload.projects)
       this.__emitChange()
       break;
     case ProjectConstants.PROJECT_RECEIVED:

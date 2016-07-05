@@ -2,15 +2,16 @@ class Api::RewardsController < ApplicationController
 
   def create
     @reward = Reward.new(reward_params)
-    if @project.save
-      render "projects/#{reward_params[:project_id]}/show"
+    if @reward.save
+      @project = Project.find(@reward.project_id)
+      render "api/projects/show"
     else
-      render json: { errors: @project.errors}
+      render json: { errors: @reward.errors}
     end
   end
 
   def index
-    @rewards = Reward.where(project_id: project_params[:project_id])
+    @rewards = Reward.where(project_id: params[:project_id])
   end
 
   private

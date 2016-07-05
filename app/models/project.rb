@@ -6,4 +6,8 @@ class Project < ActiveRecord::Base
     foreign_key: :author_id,
     class_name: "User"
 
+  has_many :rewards
+  has_many :rewardings, through: :rewards
+  has_many :backers, through: :rewardings, source: :backer
+
 end

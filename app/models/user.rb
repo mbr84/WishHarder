@@ -10,6 +10,14 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     class_name: "Project"
 
+  has_many :rewardings,
+    primary_key: :id,
+    foreign_key: :backer_id,
+    class_name: "Rewarding"
+
+  has_many :rewards, through: :rewardings
+  has_many :projects_backed, through: :rewards, source: :projects
+
 
   def self.find_by_credentials(parameters)
     username = parameters[:username]

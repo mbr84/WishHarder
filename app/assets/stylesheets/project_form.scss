@@ -1,8 +1,6 @@
-.project-state {
-  width: 40px
-}
 
-.project-form {
+
+.project-form, .reward-form {
   font-family: Helvetica;
     max-width: 800px;
     margin-left: auto;
@@ -35,7 +33,8 @@
   color: white;
   width: 50%;
   height: 50px;
-  font-size: 24px;
+  font-size: 20px;
+
 }
 
 .form-submit-button:hover {
@@ -62,6 +61,7 @@ textarea {
   border-radius: 10px;
   border: thin solid #aaa;
   font-size: 14px;
+  padding: 5px;
 }
 
 .label-wrapper label {
@@ -70,6 +70,18 @@ textarea {
   font-weight: bold;
   margin-top: 25px;
 
+}
+
+.form-wrapper input {
+  width: 430px;
+}
+
+#project-city {
+  width: 360px;
+}
+
+#project-state {
+  width: 40px
 }
 
 .form-title h2 {

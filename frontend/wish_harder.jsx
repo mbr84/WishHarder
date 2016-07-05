@@ -18,6 +18,7 @@ const ProjectStore = window.ProjectStore = require('./stores/project_store');
 const Project = require('./components/project');
 const ProjectForm = require('./components/project_form');
 const ProjectRewardsForm = require('./components/project_rewards_form');
+const ProjectRewards = require('./components/project_rewards');
 
 const App = React.createClass({
   render () {
@@ -33,12 +34,14 @@ const App = React.createClass({
 const routes = (
 <Router history={ hashHistory }>
   <Route path="/" component={App} >
+    <IndexRoute component={ProjectIndex} />
     <Route path="login" component={LoginForm} />
     <Route path="signup" component={SignUpForm} />
     <Route path="discover" component={ProjectIndex} />
     <Route path="projects/new" component={ProjectForm} />
     <Route path="projects/:id" component={Project} />
     <Route path="projects/:id/rewards/new" component={ProjectRewardsForm} />
+    <Route path="projects/:id/rewards/" component={ProjectRewards} />
   </Route>
 </Router>
 );

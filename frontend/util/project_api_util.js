@@ -26,5 +26,16 @@ module.exports = {
         cb(res)
       }
     });
+  },
+
+  createReward(reward, cb) {
+    $.ajax({
+      url: '/api/rewards',
+      type: 'POST',
+      data: { reward: reward },
+      success: function(res) {
+        cb(res);
+      }
+    });
   }
 };

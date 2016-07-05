@@ -24,7 +24,6 @@ const ProjectForm = React.createClass({
   },
 
   _handleSubmit(e) {
-    debugger
     e.preventDefault();
     this.setState({goal: parseInt(this.state.goal), duration: parseInt(this.state.duration)})
     ProjectActions.createProject(this.state)
@@ -33,6 +32,7 @@ const ProjectForm = React.createClass({
   updateImage(e) {
     e.preventDefault();
     cloudinary.openUploadWidget(cloudinary_options, function(error, results){
+      debugger
       if (!error) {
         const url = results[0].url.replace('upload', 'upload/ar_1.77,c_crop');
         this.setState({ primary_img: url });
@@ -77,7 +77,7 @@ const ProjectForm = React.createClass({
                     <textarea
                            className="blurb-input"
                            rows="4"
-                           cols="40"
+                           cols="60"
                            onChange={this.update("blurb")}
                            value={this.state.blurb}></textarea>
                   </div>
@@ -101,13 +101,13 @@ const ProjectForm = React.createClass({
                   <div className="label-wrapper"><label>Wish Location</label></div>
                   <div className="form-wrapper">
                     <input type="text"
-                           className="project-city"
+                           id="project-city"
                            placeholder="San Francisco"
                            onChange={this.update("city")}
                            value={this.state.city} />,
                     <input type="text"
                            placeholder="CA"
-                           className="project-state"
+                           id="project-state"
                            onChange={this.update("state")}
                            value={this.state.state} />
                   </div>
@@ -129,7 +129,7 @@ const ProjectForm = React.createClass({
                 <div className="form-item">
                   <div className="label-wrapper"><label> Wish Cost</label></div>
                   <div className="form-wrapper">
-                    <input type="text"
+                    $<input type="text"
                            placeholder="0"
                            onChange={this.update("goal")}
                            value={this.state.goal} />

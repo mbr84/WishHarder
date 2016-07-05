@@ -1,16 +1,21 @@
 const React = require('react');
 const ProjectHeader = require('./project_header');
+const RewardSidebar = require('./rewards_sidebar');
 const ProjectStore = require('../stores/project_store');
 const ProjectActions = require('../actions/project_actions');
 
 const Project = React.createClass({
   getInitialState(){
-    ProjectActions.fetchProjects();
+    ProjectActions.fetchProject(parseInt(this.props.params.id));
     return ({ project: ProjectStore.find(this.props.params.id) })
   },
 
   componentDidMount(){
-    ProjectStore.addListener(this._onChange)
+    this.projectListener = ProjectStore.addListener(this._onChange)
+  },
+
+  componentWillUnmount() {
+    this.projectListener.remove();
   },
 
   _onChange() {
@@ -23,12 +28,14 @@ const Project = React.createClass({
         <div className="header-background">
           <ProjectHeader project={this.state.project} author={this.state.project.author}/>
         </div>
-        <div className="project-content-background">
-          <div className="project-body">
+        <div className="project-content-background cf">
+          <div className="project-body cf">
             <section className="project-content">
               {this.state.project.content}
             </section>
-            <aside className="rewards"></aside>
+            <aside className="reward-sidebar">
+              <RewardSidebar rewards={this.state.project.rewards} />
+            </aside>
           </div>
         </div>
       </div>

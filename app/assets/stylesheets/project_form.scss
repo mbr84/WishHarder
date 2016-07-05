@@ -1,6 +1,11 @@
 
+.cf:after {
+	content:"";
+	clear:both;
+	display:block;
+}
 
-.project-form, .reward-form {
+.project-form {
   font-family: Helvetica;
     max-width: 800px;
     margin-left: auto;

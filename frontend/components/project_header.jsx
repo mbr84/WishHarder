@@ -3,7 +3,7 @@ const React = require('react');
 const ProjectHeader = React.createClass({
   render(){
     return (
-      <div className="header">
+      <div className="header cf">
         <div className="title">
           {this.props.project.title}
           <div className="author">by {this.props.author.username}</div>
@@ -44,11 +44,10 @@ const ProjectHeader = React.createClass({
           <div className="header-stats">
             <div className="header-backers">
               <div className="stat">
-
-
+                {this.props.project.backers}
               </div>
               <span className="stat-type">
-
+                backers
               </span>
             </div>
             <div className="header-pledged">
@@ -61,9 +60,10 @@ const ProjectHeader = React.createClass({
             </div>
             <div className="header-time-left">
               <div className="stat">
-
+                {this.props.project.daysLeft}
               </div>
               <span className="stat-type">
+                days to go
               </span>
             </div>
           </div>

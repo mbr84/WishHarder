@@ -1,6 +1,7 @@
 const AppDispatcher = require('../dispatcher/dispatcher');
 const ProjectApiUtil = require('../util/project_api_util');
 const ProjectConstants = require('../constants/project_constants');
+const hashHistory = require('react-router').hashHistory
 
 
 module.exports = {
@@ -8,12 +9,16 @@ module.exports = {
     ProjectApiUtil.fetchProjects(this.receiveProjects);
   },
 
+  fetchProject(id){
+    ProjectApiUtil.fetchProject(id, this.receiveProject);
+  },
+
   removeProject() {
     ProjectApiUtil.removeProject(id, this.removeDeletedProject)
   },
 
   createProject(project) {
-    ProjectApiUtil.createProject(project, this.receiveProject)
+    ProjectApiUtil.createProject(project, this.receiveCreatedProject)
   },
 
   createReward(reward) {
@@ -25,7 +30,14 @@ module.exports = {
       actionType: ProjectConstants.PROJECT_RECEIVED,
       project: project
     });
-    hashHistory.push('/projects/id/rewards/new')
+  },
+
+  receiveCreatedProject(project) {
+    AppDispatcher.dispatch({
+      actionType: ProjectConstants.PROJECT_RECEIVED,
+      project: project
+    });
+    hashHistory.push('/projects/id/rewards/new');
   },
 
   receiveProjects(projects){

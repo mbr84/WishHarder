@@ -10,11 +10,15 @@ const ProjectIndex = React.createClass({
   },
 
   componentDidMount(){
-    ProjectStore.addListener(this._projectChange)
+    this.projectListener = ProjectStore.addListener(this._projectChange)
   },
 
   _projectChange() {
     this.setState({ projects: ProjectStore.all() })
+  },
+
+  componentWillUnmount() {
+    this.projectListener.remove()
   },
 
   render(){

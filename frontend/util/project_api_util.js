@@ -8,6 +8,15 @@ module.exports = {
     });
   },
 
+  fetchProject(id, cb) {
+    $.ajax({
+      url: `/api/projects/${id}`,
+      type: 'GET',
+      success: function(res) {
+        cb(res)}
+    });
+  },
+
   createProject(project, cb) {
     $.ajax({
       url: '/api/projects',

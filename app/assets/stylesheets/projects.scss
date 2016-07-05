@@ -7,6 +7,15 @@
   max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 20px;
+}
+
+.header-stats > div {
+  margin-bottom: 10px;
+}
+
+.project-body {
+  padding-top: 20px;
 }
 
 figure {
@@ -17,16 +26,27 @@ figure {
   font-size: 14px;
   text-align: center;
   margin-top: 5px;
+}
 
+.project-content-background {
+  width: 100%;
+  background-color: white;
 }
 
 .header-content, .project-content {
   width: 65%;
   float: left;
-  padding: 0px 10px 0px 10px
 }
 
-.header-sidebar, .rewards {
+.project-content {
+  padding-top: 20px;
+}
+
+.header-content {
+  padding: 0px 10px 0px 10px;
+}
+
+.header-sidebar, .reward-sidebar {
   width: 31%;
   float: right;
   padding: 0px 10px 0px 10px
@@ -59,6 +79,7 @@ figure {
   margin-top: 40px;
   margin-bottom: 20px;
   font-family: Helvetica;
+  padding: 0px 20px;
 }
 
 .stat-type {

@@ -3,4 +3,5 @@ class Reward < ActiveRecord::Base
 
   belongs_to :project
   has_many :rewardings
+  has_many :backers, through: :rewardings
 end

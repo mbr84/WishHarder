@@ -9,7 +9,7 @@ json.pledged @project.pledged
 json.featured @project.featured
 json.city @project.city
 json.state @project.state
-json.backers @project.backers
+json.backers @project.backers.count
 json.daysLeft (((@project.duration * 86400) - (Time.now - @project.created_at)) / 86400).floor
 json.author do
   json.fname @project.author.fname
@@ -20,8 +20,10 @@ end
 json.rewards do
   json.array! @project.rewards do |reward|
     json.project_id reward.project_id
-    json.name reward.name
+    json.name reward.name.upcase
     json.id reward.id
     json.description reward.description
+    json.value reward.value
+    json.backers reward.backers.count
   end
 end

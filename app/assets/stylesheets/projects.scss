@@ -2,12 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face {
+  font-family: "Montserrat";
+  src: url(github.com/devster/cv-pdf/raw/master/resources/fonts/montserrat-ultralight.ttf);
+  font-weight: lighter;
+}
 
 .header {
   max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
+  font-family: "Montserrat";
 }
 
 .header-stats > div {
@@ -19,7 +25,7 @@
 }
 
 figure {
-  margin: 0px;
+  margin: 0px 0px 40px 0px;
 }
 
 .author {
@@ -57,7 +63,9 @@ figure {
 }
 
 .where {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  color: #aaa;
+  font-size: 14px;
 }
 
 .header-image {
@@ -78,7 +86,7 @@ figure {
 .header-stats {
   margin-top: 40px;
   margin-bottom: 20px;
-  font-family: Helvetica;
+  font-family: Montserrat;
   padding: 0px 20px;
 }
 
@@ -88,7 +96,7 @@ figure {
 
 .blurb {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .project-body {
@@ -97,7 +105,7 @@ figure {
   margin-left: auto;
   margin-right: auto;
   font-size: 20px;
-  font-family: Helvetica;
+  font-family: Montserrat;
   font-weight: lighter;
 }
 
@@ -106,7 +114,7 @@ figure {
   padding: 40px 20px;
   text-align: center;
   font-weight: lighter;
-  font-family: Helvetica;
+  font-family: Montserrat;
 }
 
 .project-body {

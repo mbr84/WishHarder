@@ -6,7 +6,7 @@ const ProjectForm = React.createClass({
     return {
       title: '',
       content: '',
-      author_id: currentUser.id,
+      author_id: parseInt(currentUser.id),
       duration: '',
       goal: '',
       pledged: 0,
@@ -120,7 +120,7 @@ const ProjectForm = React.createClass({
                     <input type="text"
                            onChange={this.update("duration")}
                            value={this.state.duration} />
-                    <p>The length of time you have to secure funding for your wish.</p>
+                    <p>The number of days you'll have to secure funding for your wish.</p>
                   </div>
                 </div>
               </li>

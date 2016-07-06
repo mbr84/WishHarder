@@ -1,4 +1,5 @@
 const React = require('react')
+const ProjectActions = require('../actions/project_actions')
 
 const ProjectRewardsForm = React.createClass({
   getInitialState() {
@@ -13,7 +14,7 @@ const ProjectRewardsForm = React.createClass({
     return (e) => this.setState({ [property]: e.target.value });
   },
 
-  _handleSubmit() {
+  _handleSubmit(e) {
     e.preventDefault();
     this.setState({ value: parseInt(this.state.value) })
     ProjectActions.createReward(this.state)

@@ -21,7 +21,8 @@
 
 .index-body {
   display: flex;
-  max-width: 1000px;
+  flex-wrap: wrap;
+  max-width: 1060px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -63,7 +64,7 @@
 }
 .index-pledged ul {
   text-align: left;
-  font-family: Helvetica;
+  font-family: Montserrat;
   font-size: 12px;
 }
 
@@ -103,7 +104,7 @@
 }
 
 .index-item-title, .index-blurb, .index-author, .stats {
-  font-family: Helvetica;
+  font-family: Montserrat;
   font-size: 12px;
 }
 

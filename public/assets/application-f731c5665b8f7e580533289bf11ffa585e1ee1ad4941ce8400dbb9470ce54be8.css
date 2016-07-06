@@ -76,7 +76,7 @@
 /* line 64, /Users/matthewbramfeld/Documents/app-academy/WishHarder/app/assets/stylesheets/api/projects-index.scss */
 .index-pledged ul {
   text-align: left;
-  font-family: Helvetica;
+  font-family: Montserrat;
   font-size: 12px;
 }
 
@@ -121,7 +121,7 @@
 
 /* line 105, /Users/matthewbramfeld/Documents/app-academy/WishHarder/app/assets/stylesheets/api/projects-index.scss */
 .index-item-title, .index-blurb, .index-author, .stats {
-  font-family: Helvetica;
+  font-family: Montserrat;
   font-size: 12px;
 }
 
@@ -257,7 +257,7 @@ input::selection {
 
 /* line 8, /Users/matthewbramfeld/Documents/app-academy/WishHarder/app/assets/stylesheets/project_form.scss */
 .project-form {
-  font-family: Helvetica;
+  font-family: Montserrat;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -301,7 +301,7 @@ input::selection {
 
 /* line 50, /Users/matthewbramfeld/Documents/app-academy/WishHarder/app/assets/stylesheets/project_form.scss */
 .form-title {
-  font-family: Helvetica;
+  font-family: Montserrat;
 }
 
 /* line 54, /Users/matthewbramfeld/Documents/app-academy/WishHarder/app/assets/stylesheets/project_form.scss */
@@ -443,7 +443,7 @@ figure {
 .header-stats {
   margin-top: 40px;
   margin-bottom: 20px;
-  font-family: Helvetica;
+  font-family: Montserrat;
   padding: 0px 20px;
 }
 
@@ -465,7 +465,7 @@ figure {
   margin-left: auto;
   margin-right: auto;
   font-size: 20px;
-  font-family: Helvetica;
+  font-family: Montserrat;
   font-weight: lighter;
 }
 
@@ -475,7 +475,7 @@ figure {
   padding: 40px 20px;
   text-align: center;
   font-weight: lighter;
-  font-family: Helvetica;
+  font-family: Montserrat;
 }
 
 /* line 112, /Users/matthewbramfeld/Documents/app-academy/WishHarder/app/assets/stylesheets/projects.scss */

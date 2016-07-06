@@ -37,7 +37,7 @@ module.exports = {
       actionType: ProjectConstants.PROJECT_RECEIVED,
       project: project
     });
-    hashHistory.push('/projects/id/rewards/new');
+    hashHistory.push(`/projects/${project.id}/rewards/new`);
   },
 
   receiveProjects(projects){

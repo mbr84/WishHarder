@@ -18,7 +18,7 @@
    height: 100%;
    width: 100%;
  }
- nav {
+ .nav-bottom {
    margin-top: -10px;
    margin-left: -10px;
    margin-right: -10px;
@@ -36,7 +36,7 @@
    width: 34px;
  }
 
-nav, .nav-left, .nav-right {
+.nav-bottom, .nav-left, .nav-right {
   display: flex;
   justify-content: space-between;
   text-decoration: none;

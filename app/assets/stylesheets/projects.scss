@@ -57,6 +57,21 @@
   margin-bottom: 10px;
 }
 
+.header-backing-button {
+  background-color: #1bf773;
+  color: white;
+  transition: all .2s;
+  font-size: 18px;
+  height: 58px;
+  border: thin solid #aaa;
+  margin: 6px;
+  width: 212px;
+}
+
+.header-backing-button:hover {
+  background-color: #2bde73;
+}
+
 .project-body {
   padding-top: 20px;
 }

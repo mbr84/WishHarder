@@ -1,6 +1,11 @@
 const React = require('react');
+const hashHistory = require('react-router').hashHistory
 
 const ProjectHeader = React.createClass({
+  _onSubmit() {
+    hashHistory.push(`/projects/${this.props.project.id}/rewards`)
+  },
+  
   render(){
     return (
       <div className="header cf">
@@ -68,6 +73,9 @@ const ProjectHeader = React.createClass({
             </div>
           </div>
           <div className="back-button-container">
+            <form onSubmit={this._onSubmit}>
+              <input className="header-backing-button" type="submit" value="Back this Wish" />
+            </form>
           </div>
           <div className="author-info"></div>
 

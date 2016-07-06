@@ -59,7 +59,7 @@ const Nav = React.createClass({
     );
 
     return (
-      <nav className="full-nav">
+      <nav className="nav-bottom">
         <div className="site-links">
           <div className="nav-left">
             <span><Link to={'/discover'} className="nav-link">Discover</Link></span>

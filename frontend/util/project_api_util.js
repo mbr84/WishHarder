@@ -46,13 +46,13 @@ module.exports = {
         cb(res);
       }
     });
-  }
+  },
 
   createRewarding(rewarding, cb) {
     $.ajax({
       url: '/api/rewardings',
       type: 'POST',
-      data: { reward: reward },
+      data: { rewarding: rewarding },
       success: function(res) {
         cb(res);
       }

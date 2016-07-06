@@ -1,3 +1,21 @@
 // Place all the styles related to the api::rewardings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.back-button {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #2bde73;
+  color: white;
+  display: block;
+}
+
+.back-button:hover {
+  cursor: pointer;
+  background-color: #16ca5e;
+}
+
+.reward-page h2 {
+  margin-top: 0px;
+  padding-top: 20px;
+}

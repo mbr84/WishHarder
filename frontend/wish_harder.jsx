@@ -11,7 +11,7 @@ const hashHistory = ReactRouter.hashHistory;
 const LoginForm = require('./components/login_form');
 const SignUpForm = require('./components/signup_form');
 const Navbar = require('./components/navbar');
-const ProjectApiUtil = require('./util/project_api_util');
+const ProjectApiUtil = window.ProjectApitUtil = require('./util/project_api_util');
 const ProjectActions = require('./actions/project_actions');
 const ProjectIndex = require('./components/project_index');
 const ProjectStore = window.ProjectStore = require('./stores/project_store');
@@ -41,8 +41,8 @@ const routes = (
     <Route path="discover" component={ProjectIndex} />
     <Route path="projects/new" component={ProjectForm} />
     <Route path="projects/:id" component={Project} />
+    <Route path="projects/:id/rewards" component={ProjectRewards} />
     <Route path="projects/:id/rewards/new" component={ProjectRewardsForm} />
-    <Route path="projects/:id/rewards/" component={ProjectRewards} />
     <Route path="projects/:id/rewards/:reward_id" component={RewardPurchase} />
   </Route>
 </Router>

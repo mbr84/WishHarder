@@ -19,16 +19,16 @@ const RewardPurchase = React.createClass({
       if (reward.reward_id === this.props.params.reward_id) {
         this.reward = reward
       }
-    })
+    });
     this.setState({ project: project, reward: this.reward})
   },
 
   componentWillUnmount(){
-    this.projectListener.remove()
+    this.projectListener.remove();
   },
 
   _handleSubmit(){
-    
+    ProjectActions.createRewarding({ reward_id: this.props.params.reward_id});
   },
 
   render(){
@@ -41,7 +41,7 @@ const RewardPurchase = React.createClass({
           </div>
           <div className="purchase-form">
             <form onSubmit={this._handleSubmit}>
-              <input type="button" className="back-button">Back this Project!</input>
+              <input type="submit" className="back-button" value="Back Project!" />
 
             </form>
           </div>

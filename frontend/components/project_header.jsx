@@ -67,7 +67,8 @@ const ProjectHeader = React.createClass({
               </span>
             </div>
           </div>
-          <div className="back-button-container"></div>
+          <div className="back-button-container">
+          </div>
           <div className="author-info"></div>
 
         </aside>

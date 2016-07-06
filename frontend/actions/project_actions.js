@@ -25,6 +25,10 @@ module.exports = {
     ProjectApiUtil.createReward(reward, this.receiveProject)
   },
 
+  createRewarding(rewarding) {
+    ProjectApiUtil.createRewarding(rewarding, this.receiveProject)
+  },
+
   receiveProject(project) {
     AppDispatcher.dispatch({
       actionType: ProjectConstants.PROJECT_RECEIVED,

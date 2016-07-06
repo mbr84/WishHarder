@@ -18,6 +18,10 @@ ProjectStore.resetProjects = function(projects) {
   });
 };
 
+ProjectStore.empty = function(){
+  return Object.keys(_projects).length < 1
+};
+
 ProjectStore.addProject = function (project) {
   _projects[project.id] = project;
 };

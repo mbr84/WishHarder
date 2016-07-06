@@ -31,6 +31,11 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+	font-family: Montserrat;	
+}
+
+.form-title p {
+	font-size: 18px;
 }
 
 .form-submit-button {
@@ -47,13 +52,6 @@
   background-color: #2853D3;
 }
 
-.form-title {
-  font-family: Montserrat;
-}
-
-.form-title p {
-  font-size: 18px;
-}
 
 .form-wrapper p {
   max-width: 350px;

@@ -4,13 +4,18 @@
   border-radius: 10px;
   margin-bottom: 20px;
   text-align: left;
-  padding: 20px
+  padding: 20px;
+  border: thin solid rgba(211, 224, 253, 0.95)
+}
+
+.reward-sidebar-item:hover {
+  cursor: pointer;
 }
 
 .pledge-amt {
   color: #586BE9;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 17px;
   margin: 0px 0px 10px 0px;
 }
 
@@ -24,11 +29,12 @@
 .reward-item-name {
   font-weight: lighter;
   margin: 0px 0px 10px 0px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .reward-item-desc {
   margin: 0px 0px 10px 0px;
   font-size: 14px;
+  line-height: 150%;
   color: #aaa;
 }

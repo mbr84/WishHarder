@@ -24,7 +24,7 @@ const Project = React.createClass({
 
   render(){
     return (
-      <div>
+      <div className="total-background">
         <div className="header-background">
           <ProjectHeader project={this.state.project} author={this.state.project.author}/>
         </div>

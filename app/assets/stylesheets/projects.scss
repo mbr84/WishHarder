@@ -4,11 +4,48 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url(github.com/devster/cv-pdf/raw/master/resources/fonts/montserrat-ultralight.ttf);
+  src: url(./Montserrat-UltraLight.ttf);
   font-weight: lighter;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url(./Montserrat-Light.otf);
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./Montserrat-SemiBold.otf);
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  border-bottom: 3px solid #2bde73;
+  padding-bottom: 22px;
+}
+
+.nav-left span, .nav-right span {
+  font-weight: bold;
+}
+
+.nav-link {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#mag:hover {
+  border-bottom: none;
+}
+
+.header-background {
+  background-color: #f7f7f9;
+  margin-top: 8px;
+}
+
 .header {
+  background-color: #f7f7f9;
+  margin-top: 8px;
   max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
@@ -42,10 +79,12 @@ figure {
 .header-content, .project-content {
   width: 65%;
   float: left;
+  line-height: 150%;
 }
 
 .project-content {
   padding-top: 20px;
+  font-size: 18px;
 }
 
 .header-content {
@@ -97,6 +136,8 @@ figure {
 .blurb {
   font-size: 20px;
   margin-bottom: 30px;
+  font-family: "Montserrat";
+  font-weight: light;
 }
 
 .project-body {
@@ -105,7 +146,7 @@ figure {
   margin-left: auto;
   margin-right: auto;
   font-size: 20px;
-  font-family: Montserrat;
+  font-family: "Montserrat";
   font-weight: lighter;
 }
 
@@ -119,8 +160,4 @@ figure {
 
 .project-body {
   background-color: white;
-}
-
-.header-background {
-  background-color: #f7f5f2;
 }

@@ -20,9 +20,11 @@ json.array! @projects do |project|
   end
   json.rewards do
     json.array! project.rewards do |reward|
+      json.project project.title
+      json.author project.author.username
       json.project_id reward.project_id
       json.name reward.name.upcase
-      json.id reward.id
+      json.reward_id reward.id
       json.description reward.description
       json.value reward.value
       json.backers reward.backers.count

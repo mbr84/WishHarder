@@ -19,6 +19,7 @@ const Project = require('./components/project');
 const ProjectForm = require('./components/project_form');
 const ProjectRewardsForm = require('./components/project_rewards_form');
 const ProjectRewards = require('./components/project_rewards');
+const RewardPurchase = require('./components/reward_purchase');
 
 const App = React.createClass({
   render () {
@@ -42,6 +43,7 @@ const routes = (
     <Route path="projects/:id" component={Project} />
     <Route path="projects/:id/rewards/new" component={ProjectRewardsForm} />
     <Route path="projects/:id/rewards/" component={ProjectRewards} />
+    <Route path="projects/:id/rewards/:reward_id" component={RewardPurchase} />
   </Route>
 </Router>
 );

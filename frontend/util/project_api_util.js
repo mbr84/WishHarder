@@ -47,4 +47,15 @@ module.exports = {
       }
     });
   }
+
+  createRewarding(rewarding, cb) {
+    $.ajax({
+      url: '/api/rewardings',
+      type: 'POST',
+      data: { reward: reward },
+      success: function(res) {
+        cb(res);
+      }
+    });
+  }
 };

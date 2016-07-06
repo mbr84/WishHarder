@@ -9,7 +9,7 @@ const RewardSidebar = React.createClass({
       <div>
         <ul>
           {this.props.rewards.map(reward => {
-            return <li key={reward.id}><RewardSidebarItem reward={reward} /></li>
+            return <li key={reward.reward_id}><RewardSidebarItem reward={reward} /></li>
           })}
         </ul>
       </div>

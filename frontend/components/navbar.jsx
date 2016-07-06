@@ -52,7 +52,7 @@ const Nav = React.createClass({
     ) :
       (<div className="nav-right">
         <div className="nav-filler-b"></div>
-        <span onClick={this._toggleSearch}><i className="material-icons">search</i></span>
+        <span id="mag" onClick={this._toggleSearch}><i className="material-icons">search</i></span>
         <span><Link to={'/login'} className="nav-link">Log In</Link></span>
         <span><Link to={'/signup'} className="nav-link">Sign Up</Link></span>
       </div>

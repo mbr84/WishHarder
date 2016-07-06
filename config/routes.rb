@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :rewards, only: [:index]
     end
     resources :rewards, except: [:edit, :update, :index]
+    resources :rewardings, only: :create
   end
 
   root "static_pages#root"

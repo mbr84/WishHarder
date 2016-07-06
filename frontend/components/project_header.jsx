@@ -52,7 +52,7 @@ const ProjectHeader = React.createClass({
             </div>
             <div className="header-pledged">
               <div className="stat">
-                ${this.props.project.pledged}
+                $ {this.props.project.pledged}
               </div>
               <span className="stat-type">
                 pledged of ${this.props.project.goal} goal

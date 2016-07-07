@@ -2,6 +2,7 @@ const ProjectStore = require('../stores/project_store');
 const React = require('react');
 const ProjectIndexItem = require('./project_index_item.jsx');
 const ProjectActions = require('../actions/project_actions')
+const carouselInstance = require('./slide_show')
 
 const ProjectIndex = React.createClass({
   getInitialState() {
@@ -23,13 +24,16 @@ const ProjectIndex = React.createClass({
 
   render(){
     return (
-      <section className="index-body">
-        {
-          Object.keys(this.state.projects).map(key => {
-            return <ProjectIndexItem project={this.state.projects[key]} key={key} />
-          })
-        }
-      </section>
+      <div>
+        {carouselInstance}
+        <section className="index-body">
+          {
+            Object.keys(this.state.projects).map(key => {
+              return <ProjectIndexItem project={this.state.projects[key]} key={key} />
+            })
+          }
+        </section>
+      </div>
     );
   }
 });

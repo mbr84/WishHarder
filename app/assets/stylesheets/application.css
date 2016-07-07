@@ -140,6 +140,12 @@ i.fa.fa-times {
 }
 h1 {
   vertical-align: middle;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.header-span {
+  color: #2bde73;
 }
 
 .drop-li {

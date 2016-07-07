@@ -149,7 +149,7 @@ const Nav = React.createClass({
               </div>
             </div>
             <div className="logo">
-              <h1>WishHarder</h1>
+              <h1>Wish<span className="header-span">Harder</span></h1>
             </div>
             <div className="user-links">
               {userLinks}

@@ -118,6 +118,7 @@ i.fa.fa-times {
   font-family: 'Montserrat', sans-serif;
 }
 
+
 .top {
   bottom: 100px;
   transition: bottom 0.5s, top 0.5s;
@@ -140,6 +141,7 @@ i.fa.fa-times {
 }
 h1 {
   vertical-align: middle;
+  font-family: "Baruta";
   font-size: 26px;
   font-weight: 700;
 }
@@ -174,6 +176,10 @@ span {
   margin-top: 20px;
 }
 
+.nav-left span {
+  margin-top: 23px;
+}
+
 .user-links {
   position:relative;
 }
@@ -186,6 +192,11 @@ span {
 .my-projects {
   float:left;
   padding-left: 10px;
+}
+
+.drop-down-button h3 {
+  font-weight: 300;
+  font-size: large;
 }
 
 .user-options {

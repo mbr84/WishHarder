@@ -2,10 +2,10 @@ const React = require('react');
 const hashHistory = require('react-router').hashHistory;
 
 
+
 // onClick={  hashHistory.push(`/projects/${project.id}`)}
-const ProjectIndexItem = React.createClass({
+const SearchItem = React.createClass({
   navigateProject() {
-    debugger
     hashHistory.push(`/projects/${this.props.project.id}`)
   },
 
@@ -15,8 +15,8 @@ const ProjectIndexItem = React.createClass({
     const greyBar = {width: (100 - percentComplete) + "%"}
 
     return(
-      <div className="index-item-container">
-        <div className="img-container"
+      <div className="search-item-container">
+        <div className="search-img-container"
              onClick={this.navigateProject}>
           <img className="index-item-img" src={this.props.project.primary_img}></img>
         </div>
@@ -51,4 +51,4 @@ const ProjectIndexItem = React.createClass({
 });
 
 
-module.exports = ProjectIndexItem;
+module.exports = SearchItem;

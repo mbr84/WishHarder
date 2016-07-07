@@ -7,7 +7,7 @@ const RewardSidebarItem = require('./reward_sidebar_item');
 const ProjectRewards = React.createClass({
   getInitialState(){
     ProjectActions.fetchProject(parseInt(this.props.params.id))
-    return {}
+    return {project: { rewards: [] }}
   },
 
   componentDidMount(){

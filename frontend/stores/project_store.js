@@ -30,6 +30,16 @@ ProjectStore.find = function (id) {
   return _projects[id] || { author: {}, rewards: [] };
 };
 
+ProjectStore.search = function(query) {
+  const projects = Object.keys(_projects).filter(project => {
+    return _projects[project].title.split(" ").concat(_projects[project].blurb.split(" "))
+      .includes(query);
+  });
+  return projects.map(project => {
+    return _projects[project];
+  });
+};
+
 ProjectStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case ProjectConstants.PROJECTS_RECEIVED:

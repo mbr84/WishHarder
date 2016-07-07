@@ -1,0 +1,29 @@
+.search-item-container {
+  width: 220px;
+  height: 400px;
+  margin: 10px;
+}
+
+.search-img-container {
+  height: 30%;
+  overflow: hidden;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.search-img-container:hover {
+  cursor: pointer;
+}
+
+.result-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+  overflow: hidden;
+}
+
+.search-item-container .stats {
+  padding: 60px 10px 10px 10px;
+  text-align: left;
+}

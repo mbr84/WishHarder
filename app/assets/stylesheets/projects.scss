@@ -11,7 +11,7 @@
 @font-face {
   font-family: "Montserrat";
   src: url(./Montserrat-Light.otf);
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 @font-face {
@@ -34,18 +34,18 @@
   margin-left: 0px;
 }
 
-#mag:hover {
+.clickable:hover {
   border-bottom: none;
+  cursor:pointer;
 }
 
 .header-background {
   background-color: #f7f7f9;
-  margin-top: 8px;
+  margin-top: -50px;
 }
 
 .header {
   background-color: #f7f7f9;
-  margin-top: 8px;
   max-width: 1040px;
   margin-left: auto;
   margin-right: auto;

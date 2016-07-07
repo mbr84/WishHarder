@@ -18,14 +18,88 @@
    height: 100%;
    width: 100%;
  }
- .nav-bottom {
+
+ .overflow {
+   position:relative;
+   top: -55px;
    margin-top: -10px;
    margin-left: -10px;
    margin-right: -10px;
-   height: 60px;
    width:101.5%;
+   height:120px;
    background-color: white;
    box-shadow: 1px 1px 3px #ccc;
+ }
+
+ .no-overflow {
+   position:relative;
+   overflow: hidden;
+   top: -55px;
+   margin-top: -10px;
+   margin-left: -10px;
+   margin-right: -10px;
+   width:101.5%;
+   height:120px;
+   background-color: white;
+   box-shadow: 1px 1px 3px #ccc;
+ }
+
+ .way-left {
+   position: absolute;
+   left: -5000px;
+   transition: left .3s;
+   transition-delay: .5s;
+ }
+
+ #fred {
+   padding-top: 15px;
+ }
+
+ .search-form {
+   display: flex;
+ }
+ .just-right {
+   position: absolute;
+   left: 80px;
+   transition: left .5s;
+ }
+
+ .search-nav, .nav-links {
+   position:absolute;
+ }
+
+ .search-field {
+   border: none;
+   font-size: 20px;
+   padding-top: 5px;
+ }
+
+ .search-field:focus {
+   outline: none;
+ }
+
+ .search-container {
+   position: relative;
+ }
+
+i.material-icons {
+    vertical-align: middle;
+}
+
+i.fa.fa-times {
+    padding-top: 20px;
+    margin-right: 60px;
+}
+
+ .nav-links {
+   height: 60px;
+   width: 100%;
+ }
+
+ .search-nav {
+   height: 60px;
+   position: absolute;
+   width: 100%;
  }
 
  .nav-filler-a {
@@ -36,12 +110,27 @@
    width: 34px;
  }
 
-.nav-bottom, .nav-left, .nav-right {
+.search-nav, .nav-links, .nav-left, .nav-right {
   display: flex;
   justify-content: space-between;
   text-decoration: none;
   color: black;
   font-family: 'Montserrat', sans-serif;
+}
+
+.top {
+  bottom: 100px;
+  transition: bottom 0.5s, top 0.5s;
+}
+
+.bottom {
+  bottom:0px;
+  transition: bottom 0.5s, top 0.5s
+}
+
+.off {
+  bottom: -100px;
+  transition: bottom 0.5s, top 0.5s
 }
 
 

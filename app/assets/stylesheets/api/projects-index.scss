@@ -1,11 +1,14 @@
-.index-item-container {
+.index-item-container, .search-item-container {
   border: solid 1px #ddd;
   border-radius: 6px;
   float:left;
-  width: 315px;
-  height: 435px;
-  margin: 15px;
   background-color: white;
+}
+
+.index-item-container {
+  margin: 15px;
+  height: 435px;
+  width: 315px;
 }
 
 .index-body {

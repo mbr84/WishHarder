@@ -45,6 +45,7 @@
 }
 
 .header {
+  display:flex;
   background-color: #f7f7f9;
   max-width: 1040px;
   margin-left: auto;
@@ -93,11 +94,11 @@ figure {
 
 .header-content, .project-content {
   width: 65%;
-  float: left;
   line-height: 150%;
 }
 
 .project-content {
+  float: left;
   padding-top: 20px;
   font-size: 18px;
 }
@@ -108,9 +109,12 @@ figure {
 
 .header-sidebar, .reward-sidebar {
   width: 31%;
-  float: right;
   padding: 0px 10px 0px 10px
 }
+.reward-sidebar {
+  float: right;
+}
+
 
 .project-image-container {
   width: 100%;

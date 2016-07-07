@@ -5,81 +5,83 @@ const ProjectHeader = React.createClass({
   _onSubmit() {
     hashHistory.push(`/projects/${this.props.project.id}/rewards`)
   },
-  
+
   render(){
     return (
-      <div className="header cf">
+      <div>
         <div className="title">
           {this.props.project.title}
           <div className="author">by {this.props.author.username}</div>
         </div>
-        <section className="header-content">
-          <figure>
-            <div className="project-image-container">
-              <img className="header-image" src={this.props.project.primary_img} />
-            </div>
-          </figure>
-          <div>
-            <div className="where">
-              {this.props.project.city}, {this.props.project.state}
-            </div>
-            <div className="blurb">
-              {this.props.project.blurb}
-            </div>
-            <div className="share-bar">
+        <div className="header">
+          <section className="header-content">
+            <figure>
+              <div className="project-image-container">
+                <img className="header-image" src={this.props.project.primary_img} />
+              </div>
+            </figure>
+            <div>
+              <div className="where">
+                {this.props.project.city}, {this.props.project.state}
+              </div>
+              <div className="blurb">
+                {this.props.project.blurb}
+              </div>
+              <div className="share-bar">
 
-              <div className="share-bar-title">
-                <div className="share-option">
-                  Tweet
-                </div>
-                <div className="share-option">
-                  Share
-                </div>
-                <div className="share-option">
-                  Post
-                </div>
-                <div className="share-option">
-                  Pin
+                <div className="share-bar-title">
+                  <div className="share-option">
+                    Tweet
+                  </div>
+                  <div className="share-option">
+                    Share
+                  </div>
+                  <div className="share-option">
+                    Post
+                  </div>
+                  <div className="share-option">
+                    Pin
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <aside className="header-sidebar">
-          <div className="header-stats">
-            <div className="header-backers">
-              <div className="stat">
-                {this.props.project.backers}
+          </section>
+          <aside className="header-sidebar">
+            <div className="header-stats">
+              <div className="header-backers">
+                <div className="stat">
+                  {this.props.project.backers}
+                </div>
+                <span className="stat-type">
+                  backers
+                </span>
               </div>
-              <span className="stat-type">
-                backers
-              </span>
-            </div>
-            <div className="header-pledged">
-              <div className="stat">
-                $ {this.props.project.pledged}
+              <div className="header-pledged">
+                <div className="stat">
+                  $ {this.props.project.pledged}
+                </div>
+                <span className="stat-type">
+                  pledged of ${this.props.project.goal} goal
+                </span>
               </div>
-              <span className="stat-type">
-                pledged of ${this.props.project.goal} goal
-              </span>
-            </div>
-            <div className="header-time-left">
-              <div className="stat">
-                {this.props.project.daysLeft}
+              <div className="header-time-left">
+                <div className="stat">
+                  {this.props.project.daysLeft}
+                </div>
+                <span className="stat-type">
+                  days to go
+                </span>
               </div>
-              <span className="stat-type">
-                days to go
-              </span>
             </div>
-          </div>
-          <div className="back-button-container">
-            <form onSubmit={this._onSubmit}>
-              <input className="header-backing-button" type="submit" value="Back this Wish" />
-            </form>
-          </div>
-          <div className="author-info"></div>
+            <div className="back-button-container">
+              <form onSubmit={this._onSubmit}>
+                <input className="header-backing-button" type="submit" value="Back this Wish" />
+              </form>
+            </div>
+            <div className="author-info"></div>
 
-        </aside>
+          </aside>
+        </div>
       </div>
     )
   }

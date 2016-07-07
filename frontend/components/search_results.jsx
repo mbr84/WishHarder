@@ -15,7 +15,6 @@ const SearchResults = React.createClass({
   },
 
   render() {
-    console.log(this.props.results)
     return (
       <div className="cf">
         <div className={this.state.searchPaneClass}>

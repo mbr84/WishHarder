@@ -5,7 +5,6 @@ const hashHistory = require('react-router').hashHistory;
 // onClick={  hashHistory.push(`/projects/${project.id}`)}
 const ProjectIndexItem = React.createClass({
   navigateProject() {
-    debugger
     hashHistory.push(`/projects/${this.props.project.id}`)
   },
 

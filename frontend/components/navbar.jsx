@@ -18,7 +18,10 @@ const Nav = React.createClass({
   },
 
   componentWillReceiveProps() {
-    this.setState({ dropDownClass: 'hide' })
+    this.setState({ dropDownClass: 'hide', results: [] });
+    if (this.state.searchNavClass.slice(0, 3) !== "top") {
+      this._toggleSearch()
+    };
   },
 
   _handleDrop(){
@@ -39,7 +42,9 @@ const Nav = React.createClass({
     } else {
       this.setState({ searchNavClass: 'top search-nav',
         searchClass: 'way-left',
-        navLinksClass: 'bottom nav-links'
+        navLinksClass: 'bottom nav-links',
+        results: [],
+        query: ""
       })
     }
   },
@@ -49,10 +54,16 @@ const Nav = React.createClass({
   },
 
   _handleChange(e){
+
+    const searchResults = ProjectStore.search(e.target.value);
+
     this.setState({ query: e.target.value,
-      results: ProjectStore.search(this.state.query),
+      results: searchResults,
       toggleSearch: 'show-search-results'
     });
+    if (e.target.value === "") {
+      this.setState({ results: [] })
+    }
   },
 
   _handleLogout() {

@@ -2,6 +2,7 @@
   width: 220px;
   height: 400px;
   margin: 10px;
+  text-align: left;
 }
 
 .search-img-container {
@@ -15,15 +16,28 @@
   cursor: pointer;
 }
 
-.result-container {
+.hide-search-results {
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 940px;
   overflow: hidden;
+  margin-bottom: 0px;
+  height: 0px;
+  transition: height .25s;
+}
+
+.show-search-results {
+  transition: height .25s;
+  height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+  overflow: hidden;
+  margin-bottom: 75px;
 }
 
 .search-item-container .stats {
   padding: 60px 10px 10px 10px;
-  text-align: left;
 }

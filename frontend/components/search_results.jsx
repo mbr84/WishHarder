@@ -3,20 +3,29 @@ const SearchItem = require('./search_item')
 
 const SearchResults = React.createClass({
   getInitialState(){
-    return { SearchPaneClass: "hide-search-results" }
+    return { searchPaneClass: "hide-search-results" }
+  },
+
+  componentWillReceiveProps(newProps){
+    if (Object.keys(newProps.results).length < 1) {
+      this.setState({ searchPaneClass: "hide-search-results" })
+    } else {
+      this.setState({ searchPaneClass: "show-search-results" })
+    }
   },
 
   render() {
+    console.log(this.props.results)
     return (
       <div className="cf">
-        <div className="result-container">
+        <div className={this.state.searchPaneClass}>
           <div className="navigate-results">
 
           </div>
           <div className="results-pane">
             <ul>
               {this.props.results.map(project => {
-                return <li><SearchItem project={project} /></li>;
+                return <li key={project.id}><SearchItem project={project} /></li>;
               })}
             </ul>
 

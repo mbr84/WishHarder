@@ -33,7 +33,8 @@ ProjectStore.find = function (id) {
 ProjectStore.search = function(query) {
   const projects = Object.keys(_projects).filter(project => {
     return _projects[project].title.split(" ").concat(_projects[project].blurb.split(" "))
-      .includes(query);
+      .map(word => word.toLowerCase())
+      .includes(query.toLowerCase());
   });
   return projects.map(project => {
     return _projects[project];

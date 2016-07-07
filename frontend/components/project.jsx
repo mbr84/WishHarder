@@ -10,6 +10,10 @@ const Project = React.createClass({
     return ({ project: ProjectStore.find(this.props.params.id) })
   },
 
+  componentWillReceiveProps(newProps) {
+    this.setState({ project: ProjectStore.find(newProps.params.id) });
+  },
+
   componentDidMount(){
     this.projectListener = ProjectStore.addListener(this._onChange)
   },

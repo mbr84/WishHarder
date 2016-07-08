@@ -1,12 +1,13 @@
 const React = require('react');
 const ProjectActions = require('../actions/project_actions')
+const SessionStore = require('../stores/session_store')
 
 const ProjectForm = React.createClass({
   getInitialState(){
     return {
       title: '',
       content: '',
-      author_id: parseInt(currentUser.id),
+      author_id: parseInt(SessionStore.currentUser().id),
       duration: '',
       goal: '',
       pledged: 0,

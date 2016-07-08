@@ -39,14 +39,25 @@ const routes = (
     <Route path="login" component={LoginForm} />
     <Route path="signup" component={SignUpForm} />
     <Route path="discover" component={ProjectIndex} />
-    <Route path="projects/new" component={ProjectForm} />
+    <Route path="projects/new"
+           component={ProjectForm}
+           onEnter={ _ensureLoggedIn }/>
     <Route path="projects/:id" component={Project} />
     <Route path="projects/:id/rewards" component={ProjectRewards} />
-    <Route path="projects/:id/rewards/new" component={ProjectRewardsForm} />
-    <Route path="projects/:id/rewards/:reward_id" component={RewardPurchase} />
+    <Route path="projects/:id/rewards/new"
+           component={ProjectRewardsForm}
+           onEnter={ _ensureLoggedIn }/>
+    <Route path="projects/:id/rewards/:reward_id"
+           component={RewardPurchase}
+           onEnter={ _ensureLoggedIn }/>
   </Route>
 </Router>
 );
+function _ensureLoggedIn(nextState, replace) {
+    if (!SessionStore.isUserLoggedIn()) {
+      replace('/login');
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function() {
   SessionActions.receiveCurrentUser(window.currentUser);

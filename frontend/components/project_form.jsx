@@ -117,8 +117,9 @@ const ProjectForm = React.createClass({
                 <div className="form-item">
                   <div className="label-wrapper"><label>Wish Duration</label></div>
                   <div className="form-wrapper">
-                    <input type="text"
+                    <input type="number"
                            onChange={this.update("duration")}
+                           className="n-input"
                            value={this.state.duration} />
                     <p>The number of days you'll have to secure funding for your wish.</p>
                   </div>
@@ -128,8 +129,9 @@ const ProjectForm = React.createClass({
                 <div className="form-item">
                   <div className="label-wrapper"><label> Wish Cost</label></div>
                   <div className="form-wrapper">
-                    $<input type="text"
+                    $<input type="number"
                            placeholder="0"
+                           className="n-input"
                            onChange={this.update("goal")}
                            value={this.state.goal} />
                   </div>

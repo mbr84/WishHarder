@@ -13,7 +13,9 @@ const Nav = React.createClass({
       mainNavClass: 'no-overflow',
       searchClass: 'way-left',
       toggleSearch: 'hide-search-results',
-      results: []
+      results: [],
+      leftArrow: 'button-off',
+      rightArrow: 'button-off',
     }
   },
 
@@ -49,20 +51,45 @@ const Nav = React.createClass({
     }
   },
 
-  _handleSubmit(){
+  _handleScroll(direction){
+    return () => {
+      this.currentScroll += (direction * 960)
+      this.inLineScrollStyle = { left: this.currentScroll + "px"};
 
+      if (this.currentScroll === this.state.maxScroll) {
+        this.setState({ rightArrow: 'button-off' });
+      } else {
+        this.setState({ rightArrow: 'button-on' });
+      }
+
+      if (this.currentScroll < 0) {
+        this.setState({ leftArrow: 'button-on' });
+      } else {
+        this.setState({ leftArrow: 'button-off' });
+      }
+    };
   },
 
   _handleChange(e){
 
     const searchResults = ProjectStore.search(e.target.value);
 
+    if (searchResults.length > 0) {
+      const extraPanes = Math.ceil(searchResults.length / 4) - 1;
+      this.currentScroll = 0;
+      this.inLineScrollStyle = { left: '0px' };
+      if (extraPanes > 0 ) {
+        this.setState({ rightArrow: 'button-on' });
+      }
+      this.setState({ maxScroll: -960 * extraPanes });
+    }
+
     this.setState({ query: e.target.value,
       results: searchResults,
       toggleSearch: 'show-search-results'
     });
     if (e.target.value === "") {
-      this.setState({ results: [] })
+      this.setState({ results: [] });
     }
   },
 
@@ -156,7 +183,20 @@ const Nav = React.createClass({
             </div>
           </div>
         </nav>
-        <SearchResults results={this.state.results} />
+
+        <div className={this.state.leftArrow}
+             id="left-arrow"
+             onClick={this._handleScroll(1)}>
+          <i className="fa fa-chevron-left" aria-hidden="true"></i>
+        </div>
+
+        <SearchResults results={this.state.results} style={this.inLineScrollStyle} />
+
+        <div className={this.state.rightArrow}
+             id="right-arrow"
+             onClick={this._handleScroll(-1)}>
+          <i className='fa fa-chevron-right' aria-hidden='true'></i>
+        </div>
       </div>
     )
   }

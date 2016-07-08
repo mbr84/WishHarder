@@ -18,18 +18,16 @@ const SearchResults = React.createClass({
     return (
       <div className="cf">
         <div className={this.state.searchPaneClass}>
-          <div className="navigate-results">
-
-          </div>
           <div className="results-pane">
-            <ul>
+            <ul className="search-list cf"
+                style={this.props.style}>
               {this.props.results.map(project => {
-                return <li key={project.id}><SearchItem project={project} /></li>;
+                return <li className="search-list-item cf"
+                           key={project.id}><SearchItem
+                           project={project} />
+                       </li>;
               })}
             </ul>
-
-          </div>
-          <div className="navigate-results">
 
           </div>
         </div>

@@ -15,6 +15,9 @@
     border-radius: 10px;
 }
 
+.form-title h2 {
+	font-weight: 300;
+}
 
 .form-item {
   display: flex;
@@ -31,7 +34,7 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-	font-family: Montserrat;	
+	font-family: Montserrat;
 }
 
 .form-title p {
@@ -39,17 +42,27 @@
 }
 
 .form-submit-button {
-  background-color: #2853ff;
+  background-color: #3463c7;
   color: white;
   width: 50%;
   height: 50px;
   font-size: 20px;
+}
 
+.form-wrapper button {
+	margin: 2px 88px 0px 0px;
+	padding: 12px 70px;
+	border-radius: 9px;
+	font-size: large;
+	background-color: #3463c7;
+	color: white;
+	border: none;
+	font-weight: 300;
 }
 
 .form-submit-button:hover {
   cursor: pointer;
-  background-color: #2853D3;
+  background-color: #2853ff;
 }
 
 
@@ -71,8 +84,10 @@ textarea {
   padding: 10px;
   font-size: 14px;
   font-weight: bold;
-  margin-top: 25px;
+}
 
+.n-input {
+	width: 340px;
 }
 
 .form-wrapper input {

@@ -21,7 +21,11 @@ const Nav = React.createClass({
   },
 
   componentWillReceiveProps() {
-    this.setState({ dropDownClass: 'hide', results: [] });
+    this.setState({ dropDownClass: 'hide',
+                    results: [],
+                    leftArrow: 'button-off',
+                    rightArrow: 'button-off'
+                  });
     if (this.state.searchNavClass.slice(0, 3) !== "top") {
       this._toggleSearch()
     };
@@ -196,19 +200,20 @@ const Nav = React.createClass({
             </div>
           </div>
         </nav>
+        <div className="s-results-outer">
+          <div className={this.state.leftArrow}
+               id="left-arrow"
+               onClick={this._handleScroll(1)}>
+            <i className="fa fa-chevron-left" aria-hidden="true"></i>
+          </div>
 
-        <div className={this.state.leftArrow}
-             id="left-arrow"
-             onClick={this._handleScroll(1)}>
-          <i className="fa fa-chevron-left" aria-hidden="true"></i>
-        </div>
+          <SearchResults results={this.state.results} style={this.inLineScrollStyle} />
 
-        <SearchResults results={this.state.results} style={this.inLineScrollStyle} />
-
-        <div className={this.state.rightArrow}
-             id="right-arrow"
-             onClick={this._handleScroll(-1)}>
-          <i className='fa fa-chevron-right' aria-hidden='true'></i>
+          <div className={this.state.rightArrow}
+               id="right-arrow"
+               onClick={this._handleScroll(-1)}>
+            <i className='fa fa-chevron-right' aria-hidden='true'></i>
+          </div>
         </div>
       </div>
     )

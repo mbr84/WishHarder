@@ -33,7 +33,7 @@ const App = React.createClass({
 });
 
 const routes = (
-<Router history={ hashHistory }>
+<Router history={ hashHistory } onUpdate={() => window.scrollTo(0, 0)}>
   <Route path="/" component={App} >
     <IndexRoute component={ProjectIndex} />
     <Route path="login" component={LoginForm} />

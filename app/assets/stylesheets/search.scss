@@ -47,10 +47,16 @@
   float: left;
 }
 
+.s-results-outer {
+  position: relative;
+  width: 960px;
+  margin: auto;
+}
+
 .search-list {
   width: 10000px;
   position: absolute;
-  transition: left .5s;
+  transition: left .3s;
 }
 
 .results-pane {

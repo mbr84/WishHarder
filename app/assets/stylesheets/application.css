@@ -219,14 +219,15 @@ span {
 
 #right-arrow {
   position: absolute;
-  top: 300px;
-  right: 150px;
+  top: 50%;
+  right: -6%;
 }
 
 #left-arrow {
   position: absolute;
-  top: 300px;
-  left: 150px;
+  top: 50%;
+  left: -6%;
+  z-index: 2;
 }
 
 .button-on {

@@ -17,7 +17,12 @@ const ProjectRewardsForm = React.createClass({
   _handleSubmit(e) {
     e.preventDefault();
     this.setState({ value: parseInt(this.state.value) })
-    ProjectActions.createReward(this.state)
+    ProjectActions.createReward(this.state);
+    this.setState({ project_id: this.props.params.id,
+                    description: '',
+                    value: '',
+                    name: ''
+    });
   },
 
   render() {

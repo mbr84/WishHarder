@@ -22,7 +22,8 @@ module.exports = {
   },
 
   createReward(reward) {
-    ProjectApiUtil.createReward(reward, this.receiveProject)
+    ProjectApiUtil.createReward(reward, this.receiveProject);
+    hashHistory.push(`/projects/${reward.project_id}/rewards/new`);
   },
 
   createRewarding(rewarding) {

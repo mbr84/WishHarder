@@ -150,6 +150,10 @@ h1 {
   color: #2bde73;
 }
 
+h1:hover {
+  cursor: pointer;
+}
+
 .drop-li {
   text-align: left;
 }

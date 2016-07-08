@@ -1,6 +1,7 @@
 const React = require('react');
 const ProjectStore = require('../stores/project_store');
 const ProjectActions = require('../actions/project_actions');
+const hashHistory = require('react-router').hashHistory;
 
 const RewardPurchase = React.createClass({
   getInitialState(){
@@ -29,6 +30,7 @@ const RewardPurchase = React.createClass({
 
   _handleSubmit(){
     ProjectActions.createRewarding({ reward_id: this.props.params.reward_id});
+    hashHistory.push(`/projects/${this.props.params.id}`);
   },
 
   render(){

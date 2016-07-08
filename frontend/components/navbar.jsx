@@ -3,6 +3,7 @@ const Link = require('react-router').Link
 const SessionStore = require('../stores/session_store');
 const SearchResults = require('./search_results');
 const SessionActions = require('../actions/session_actions');
+const hashHistory = require('react-router').hashHistory
 
 const Nav = React.createClass({
   getInitialState(){
@@ -41,6 +42,7 @@ const Nav = React.createClass({
         mainNavClass: 'no-overflow',
         searchClass: 'just-right',
       })
+      this.searchField.focus();
     } else {
       this.setState({ searchNavClass: 'top search-nav',
         searchClass: 'way-left',
@@ -93,6 +95,10 @@ const Nav = React.createClass({
     }
   },
 
+  _handleTitleClick(){
+    hashHistory.push('/discover')
+  },
+
   _handleLogout() {
     SessionActions.logout()
   },
@@ -142,7 +148,8 @@ const Nav = React.createClass({
                            className="search-field"
                            placeholder="Search"
                            value={this.state.query}
-                           onChange={this._handleChange} />
+                           onChange={this._handleChange}
+                           ref={(ref) => this.searchField = ref} />
 
                   </form>
                 </div>
@@ -176,7 +183,13 @@ const Nav = React.createClass({
               </div>
             </div>
             <div className="logo">
-              <h1>Wish<span className="header-span">Harder</span></h1>
+              <h1 className="header-h1"
+                  onClick={this._handleTitleClick}>
+                Wish
+                <span className="header-span">
+                  Harder
+                </span>
+              </h1>
             </div>
             <div className="user-links">
               {userLinks}

@@ -30,15 +30,20 @@ ProjectStore.find = function (id) {
   return _projects[id] || { author: {}, rewards: [] };
 };
 
-ProjectStore.search = function(query) {
-  const projects = Object.keys(_projects).filter(project => {
-    return _projects[project].title.split(" ").concat(_projects[project].blurb.split(" "))
-      .map(word => word.toLowerCase())
-      .includes(query.toLowerCase());
+
+ProjectStore.search = function(searchQuery) {
+  const searchResults = [];
+  const queries = searchQuery.split(" ").map(query => query.toLowerCase())
+
+  Object.keys(_projects).forEach(project => {
+    queries.forEach(query => {
+      if (_projects[project].blurb.indexOf(query) !== -1 ||
+        _projects[project].title.indexOf(query) !== -1) {
+          searchResults.push(_projects[project]);
+      }
+    });
   });
-  return projects.map(project => {
-    return _projects[project];
-  });
+  return searchResults;
 };
 
 ProjectStore.__onDispatch = function (payload) {

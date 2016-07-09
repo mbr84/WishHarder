@@ -19,5 +19,37 @@ footer {
 
 .help-links, .pr-links {
   color: rgb(241, 238, 234);
-  padding: 25px 25px 25px 0px  
+  padding: 25px 25px 25px 0px
+}
+
+.footer-right li {
+  text-align: left;
+  font-weight: 200;
+}
+
+.help-links {
+  float: left;
+}
+
+.footer-left {
+  position: relative;
+}
+
+.footer-logo {
+  position: absolute;
+  left: 25;
+  top: 45;
+
+}
+
+.section.index-body {
+  padding-bottom: 25px;
+}
+
+.pr-container {
+  float: right;
+}
+
+.list-leader {
+  font-weight:300;
 }

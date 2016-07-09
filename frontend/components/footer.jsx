@@ -11,17 +11,16 @@ module.exports = React.createClass({
           <div className="footer-right">
             <div className="help-links">
               <ul>
-                <li>HELP</li>
-                <li>FAQ</li>
+                <li className="list-leader">HELP</li>
                 <li>Support</li>
+                <li>FAQ</li>
                 <li>Terms of Use</li>
                 <li>Privacy Policy</li>
-                <li>Cookie Policy</li>
               </ul>
             </div>
-            <div className="pr-links">
-              <ul>
-                <li>About Us</li>
+            <div className="pr-container">
+              <ul className="pr-links">
+                <li className="list-leader">About Us</li>
                 <li>Our Crew</li>
                 <li>Core Values</li>
                 <li>Our Wission</li>

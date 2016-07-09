@@ -22,7 +22,7 @@ const carouselInstance = (
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img id="carousel-id"
+      <img id="carousel-3"
            height={575}
            alt="canoes on a raft"
            src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935592/raft_qhqz44.jpg"/>

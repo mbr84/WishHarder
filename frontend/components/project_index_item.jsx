@@ -10,6 +10,7 @@ const ProjectIndexItem = React.createClass({
 
   render(){
     const percentComplete = Math.floor((this.props.project.pledged/this.props.project.goal)*100)
+    
     const greenBar = { width: percentComplete + "%" }
     const greyBar = { width: (100 - percentComplete) + "%" }
 

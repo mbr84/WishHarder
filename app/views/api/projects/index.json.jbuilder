@@ -7,8 +7,8 @@ json.array! @projects do |project|
   json.city project.city
   json.state project.state
   json.backers project.backers.count
-  json.daysLeft (((project.duration * 86400) - (Time.now - project.created_at)) / 86400).floor
-  json.complete project.complete
+  json.daysLeft (@project.duration - (Time.zone.now - @project.created_at).to_i / 1.day)
+  json.complete (@project.created_at + @project.duration.days < Time.now)
   json.goal project.goal
   json.pledged project.pledged
   json.featured project.featured

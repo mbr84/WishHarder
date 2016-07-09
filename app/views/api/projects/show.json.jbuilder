@@ -3,14 +3,14 @@ json.title @project.title
 json.content @project.content
 json.blurb @project.blurb
 json.primary_img @project.primary_img
-json.complete @project.complete
+json.complete (@project.created_at + @project.duration.days < Time.now)
 json.goal @project.goal
 json.pledged @project.pledged
 json.featured @project.featured
 json.city @project.city
 json.state @project.state
 json.backers @project.backers.count
-json.daysLeft (((@project.duration * 86400) - (Time.now - @project.created_at)) / 86400).floor
+json.daysLeft (@project.duration - (Time.zone.now - @project.created_at).to_i / 1.day)
 json.author do
   json.fname @project.author.fname
   json.lname @project.author.lname

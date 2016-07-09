@@ -37,8 +37,9 @@ ProjectStore.search = function(searchQuery) {
 
   Object.keys(_projects).forEach(project => {
     queries.forEach(query => {
-      if (_projects[project].blurb.indexOf(query) !== -1 ||
-        _projects[project].title.indexOf(query) !== -1) {
+      if ((_projects[project].blurb.indexOf(query) !== -1 ||
+        _projects[project].title.indexOf(query) !== -1) &&
+        !_projects[project].complete) {
           searchResults.push(_projects[project]);
       }
     });

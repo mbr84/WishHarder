@@ -21,3 +21,9 @@ img.carousel {
 .carousel-h3 {
   padding-bottom: 15px;
 }
+
+#carousel-1, #carousel-2, #carousel-3, #carousel-4 {
+  height: 575px;
+  width: 100%;
+  object-fit: cover;
+}

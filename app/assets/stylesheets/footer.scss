@@ -1,0 +1,23 @@
+footer {
+  background-color: #020621
+}
+
+.footer-container {
+  max-width: 900px;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.help-links {
+  float: right;
+}
+
+.pr-links {
+  float: left;
+}
+
+.help-links, .pr-links {
+  color: rgb(241, 238, 234);
+  padding: 25px 25px 25px 0px  
+}

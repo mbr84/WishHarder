@@ -42,13 +42,13 @@ const ProjectForm = React.createClass({
 
   render(){
     return (
-      <div>
+      <div className="parent-div">
         <div className="form-title">
-          <h2>Make a Wish!</h2>
+          <h2 id="hh2">Make a Wish!</h2>
           <p>What's your wish? Here's your chance to tell the world about your story and your wish. You can even upload images to illustrate your wish. Give us all the details! </p>
         </div>
         <div className='project-form'>
-          <form onSubmit={this._handleSubmit}>
+          <form className="actual-form-element" onSubmit={this._handleSubmit}>
             <ul>
               <li className="project-form-li">
                 <div className="form-item">

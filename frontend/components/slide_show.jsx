@@ -4,7 +4,7 @@ const Carousel = require('react-bootstrap').Carousel
 const carouselInstance = (
   <Carousel>
     <Carousel.Item>
-      <img className="carousel"
+      <img id="carousel-1"
            height={575}
            alt="balloon"
            src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935588/balloon_tg7dqx.jpg"/>
@@ -13,7 +13,7 @@ const carouselInstance = (
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img className="carousel"
+      <img id="carousel-2"
            height={575}
            alt="guy in a fedora"
            src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935597/hat_lxvge8.jpg"/>
@@ -22,7 +22,7 @@ const carouselInstance = (
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img className="carousel"
+      <img id="carousel-id"
            height={575}
            alt="canoes on a raft"
            src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935592/raft_qhqz44.jpg"/>
@@ -31,7 +31,7 @@ const carouselInstance = (
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img className="carousel"
+      <img id="carousel-4"
            height={575}
            alt="cloudy place"
            src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935591/clouds_jetwao.jpg"/>

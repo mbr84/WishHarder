@@ -5,9 +5,8 @@
 	display:block;
 }
 
-.project-form, .reward-form {
+.project-form-container, .reward-form-container {
   font-family: Montserrat;
-    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     padding: 20px 10px;
@@ -15,8 +14,24 @@
     border-radius: 10px;
 }
 
+.project-form {
+	background-color: white;
+	padding-top: 14px;
+}
+
+.reward-form {
+	min-width:561px;
+	max-width: 60%;
+	margin: auto;
+}
+
 .form-title h2 {
 	font-weight: 300;
+}
+
+.form-title p {
+	margin-bottom: 60px;
+	font-size: 18px;
 }
 
 .form-item {
@@ -24,8 +39,8 @@
   justify-content: space-between;
   border-radius: 10px;
   background-color: #f8f9fd;
-  margin-bottom: 20px;
-  padding: 5px;
+  margin-bottom: 5px;
+  padding: 32px 5px;
 
 }
 
@@ -37,20 +52,24 @@
 	font-family: Montserrat;
 }
 
-.form-title p {
-	font-size: 18px;
+.button-holder {
+	display: flex;
+	justify-content: space-between;;
+	margin-top: 15px;
 }
 
 .form-submit-button {
   background-color: #3463c7;
   color: #f7f5f2;
-  width: 50%;
-  height: 50px;
+	width:49%;
+  height: 65px;
   font-size: 20px;
 	font-weight: 300;
+	border-radius: 6px;
+	margin: 6px 0px;
 }
 
-.form-wrapper button {
+button {
 	margin: 6px 6px 6px 0px;
 	padding: 12px 70px;
 	border-radius: 9px;
@@ -67,6 +86,11 @@
   background-color: #2853ff;
 }
 
+.actual-form-element {
+	max-width: 800px;
+	margin:auto;
+}
+
 
 .form-wrapper p {
   max-width: 350px;
@@ -80,6 +104,7 @@ textarea {
   border: thin solid #aaa;
   font-size: 14px;
   padding: 5px;
+	margin-right:5px;
 }
 
 .label-wrapper label {
@@ -100,8 +125,17 @@ textarea {
   width: 360px;
 }
 
+#hh2 {
+	padding-top: 40px;
+}
+
 #project-state {
-  width: 40px
+  width: 40px;
+}
+
+.parent-div {
+	background-color: #f7f7f9;
+	margin-top: -70px;
 }
 
 .form-title h2 {

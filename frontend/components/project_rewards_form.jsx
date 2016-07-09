@@ -1,5 +1,6 @@
 const React = require('react')
 const ProjectActions = require('../actions/project_actions')
+const hashHistory = require ('react-router').hashHistory
 
 const ProjectRewardsForm = React.createClass({
   getInitialState() {
@@ -12,6 +13,10 @@ const ProjectRewardsForm = React.createClass({
 
   update(property) {
     return (e) => this.setState({ [property]: e.target.value });
+  },
+
+  _returnToProject(e) {
+    hashHistory.push(`/projects/${this.props.params.id}`)
   },
 
   _handleSubmit(e) {
@@ -32,8 +37,8 @@ const ProjectRewardsForm = React.createClass({
           <h2>Yeah, but what's in it for me?</h2>
           <p>Create and offer rewards, so other people will care about your dreams!</p>
         </div>
-        <div className='reward-form'>
-          <form onSubmit={this._handleSubmit}>
+        <div className='reward-form-container'>
+          <form className="reward-form" onSubmit={this._handleSubmit}>
             <ul>
               <li className="reward-form-li">
                 <div className="form-item">
@@ -70,7 +75,15 @@ const ProjectRewardsForm = React.createClass({
                  </div>
               </li>
               <li className="project-form-li">
-                <input type="submit" value="Create Reward" className="form-submit-button"/>
+                <div className="button-holder">
+                  <input type="submit"
+                         value="Add Reward"
+                         className="form-submit-button"/>
+                  <button className='reward-complete'
+                          onClick={this._returnToProject}>
+                          Done
+                  </button>
+                </div>
               </li>
             </ul>
           </form>

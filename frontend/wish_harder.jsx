@@ -20,6 +20,7 @@ const ProjectForm = require('./components/project_form');
 const ProjectRewardsForm = require('./components/project_rewards_form');
 const ProjectRewards = require('./components/project_rewards');
 const RewardPurchase = require('./components/reward_purchase');
+const Footer = require('./components/footer')
 
 const App = React.createClass({
   render () {

@@ -139,14 +139,18 @@ i.fa.fa-times {
 
   font-size:13px;
 }
-h1 {
+h1, .footer-logo {
   vertical-align: middle;
   font-family: "Baruta";
   font-size: 26px;
   font-weight: 700;
 }
 
-.header-span {
+.footer-logo {
+  color: white;
+}
+
+.header-span, .footer-span {
   color: #2bde73;
 }
 

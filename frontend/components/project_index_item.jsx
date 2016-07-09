@@ -10,9 +10,8 @@ const ProjectIndexItem = React.createClass({
 
   render(){
     const percentComplete = Math.floor((this.props.project.pledged/this.props.project.goal)*100)
-    
+
     const greenBar = { width: percentComplete + "%" }
-    const greyBar = { width: (100 - percentComplete) + "%" }
 
     return(
       <div className="index-item-container">
@@ -29,10 +28,9 @@ const ProjectIndexItem = React.createClass({
           <div className="location">{this.props.project.city}, {this.props.project.state}</div>
           <div className="index-duration">{this.props.project.duration}</div>
           <div className="completion-percent">
-            <div className="percent-complete"
+            <div className="percent-complete cf"
                  style={greenBar}></div>
-            <div className="percent-left"
-                 style={greyBar}></div>
+
           </div>
           <div className="index-pledged">
             <ul id="stats-list">

@@ -44,21 +44,12 @@
   background-color: #2bde73;
   height: .6em;
   float:left;
-  margin-bottom: 5px;
   border-radius: 5px;
 }
 .completion-percent {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   background-color: #f1eeea;
-}
-
-.percent-left {
-  float:right;
-  background-color: #f1eeea;
-  height: .6em;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  overflow: hidden;
   margin-bottom: 5px;
 }
 

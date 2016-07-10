@@ -39,7 +39,7 @@ ProjectStore.search = function(searchQuery) {
     queries.forEach(query => {
       if ((_projects[project].blurb.indexOf(query) !== -1 ||
         _projects[project].title.indexOf(query) !== -1) &&
-        !_projects[project].complete) {
+        !_projects[project].complete && query !== "") {
           searchResults.push(_projects[project]);
       }
     });

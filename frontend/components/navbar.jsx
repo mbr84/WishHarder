@@ -62,7 +62,7 @@ const Nav = React.createClass({
       this.currentScroll += (direction * 960)
       this.inLineScrollStyle = { left: this.currentScroll + "px"};
 
-      if (this.currentScroll === this.state.maxScroll) {
+      if (this.currentScroll <= this.state.maxScroll) {
         this.setState({ rightArrow: 'button-off' });
       } else {
         this.setState({ rightArrow: 'button-on' });
@@ -77,11 +77,10 @@ const Nav = React.createClass({
   },
 
   _handleChange(e){
-
     const searchResults = ProjectStore.search(e.target.value);
 
     if (searchResults.length > 0) {
-      const extraPanes = Math.ceil(searchResults.length / 4) - 1;
+      let extraPanes = Math.ceil(searchResults.length / 4) - 1;
       this.currentScroll = 0;
       this.inLineScrollStyle = { left: '0px' };
       if (extraPanes > 0 ) {
@@ -92,10 +91,11 @@ const Nav = React.createClass({
 
     this.setState({ query: e.target.value,
       results: searchResults,
-      toggleSearch: 'show-search-results'
+      toggleSearch: 'show-search-results',
+      leftArrow: 'button-off'
     });
     if (e.target.value === "") {
-      this.setState({ results: [] });
+      this.setState({ results: [], maxScroll: 0 });
     }
   },
 
@@ -207,8 +207,7 @@ const Nav = React.createClass({
             <i className="fa fa-chevron-left" aria-hidden="true"></i>
           </div>
 
-          <SearchResults results={this.state.results}
-                         style={this.inLineScrollStyle} />
+          <SearchResults results={this.state.results} style={this.inLineScrollStyle} />
 
           <div className={this.state.rightArrow}
                id="right-arrow"

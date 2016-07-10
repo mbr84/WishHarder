@@ -52,7 +52,8 @@ const Nav = React.createClass({
         searchClass: 'way-left',
         navLinksClass: 'bottom nav-links',
         results: [],
-        query: ""
+        query: "",
+        leftArrow: "button-off"
       })
     }
   },

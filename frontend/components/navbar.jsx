@@ -207,7 +207,8 @@ const Nav = React.createClass({
             <i className="fa fa-chevron-left" aria-hidden="true"></i>
           </div>
 
-          <SearchResults results={this.state.results} style={this.inLineScrollStyle} />
+          <SearchResults results={this.state.results}
+                         style={this.inLineScrollStyle} />
 
           <div className={this.state.rightArrow}
                id="right-arrow"

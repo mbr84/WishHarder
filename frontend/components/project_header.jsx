@@ -7,7 +7,13 @@ const ProjectHeader = React.createClass({
   },
 
   render(){
-    const projectStatus = (this.props.project.daysLeft > 0) ? (
+    const projectStatus = (this.props.project.daysLeft < 0) ? (
+      <div className="header-time-left">
+        <div className="stat project-is-complete">
+          Project Funding Concluded
+        </div>
+      </div>
+      ) : (
         <div className="header-time-left">
           <div className="stat">
             {this.props.project.daysLeft}
@@ -16,13 +22,8 @@ const ProjectHeader = React.createClass({
             days to go
           </span>
         </div>
-      ) : (
-        <div className="header-time-left">
-          <div className="stat project-is-complete">
-            Project Funding Concluded
-          </div>
-        </div>
-      )
+      );
+      
     return (
       <div>
         <div className="title">

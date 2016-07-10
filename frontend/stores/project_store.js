@@ -6,6 +6,7 @@ const ProjectConstants = require('../constants/project_constants');
 const ProjectStore = new Store(AppDispatcher);
 
 let _projects = {};
+let _defunctProjects = {};
 
 ProjectStore.all = function() {
   return Object.assign({}, _projects);
@@ -13,9 +14,13 @@ ProjectStore.all = function() {
 
 ProjectStore.resetProjects = function(projects) {
   _projects = {};
-  projects.forEach(project => {
-    _projects[project.id] = project;
-  });
+  for (let i = 0; i < projects.length; i++) {
+    if (projects[i].complete) {
+      _defunctProjects[projects[i].id] = projects[i]
+    } else {
+      _projects[projects[i].id] = projects[i];
+    }
+  }
 };
 
 ProjectStore.empty = function(){
@@ -27,7 +32,7 @@ ProjectStore.addProject = function (project) {
 };
 
 ProjectStore.find = function (id) {
-  return _projects[id] || { author: {}, rewards: [] };
+  return _projects[id] || _defunctProjects[id] || { author: {}, rewards: [] };
 };
 
 
@@ -37,7 +42,6 @@ ProjectStore.search = function(searchQuery) {
 
   Object.keys(_projects).forEach(project => {
     for (let i = 0; i < queries.length; i++) {
-      debugger
       if ((_projects[project].blurb.toLowerCase().indexOf(queries[i]) !== -1 ||
         _projects[project].title.toLowerCase().indexOf(queries[i]) !== -1) &&
         !_projects[project].complete && queries[i] !== "") {

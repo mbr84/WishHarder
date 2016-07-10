@@ -25,7 +25,7 @@ json.rewards do
     json.name reward.name.upcase
     json.reward_id reward.id
     json.description reward.description
-    json.value reward.value
+    json.cost reward.cost
     json.backers reward.backers.count
   end
 end

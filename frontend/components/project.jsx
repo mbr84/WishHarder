@@ -6,6 +6,7 @@ const ProjectActions = require('../actions/project_actions');
 
 const Project = React.createClass({
   getInitialState(){
+    ProjectActions.fetchProject(this.props.params.id);
     ProjectActions.fetchProjects();
     return ({ project: ProjectStore.find(this.props.params.id) })
   },

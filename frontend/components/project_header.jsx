@@ -7,6 +7,22 @@ const ProjectHeader = React.createClass({
   },
 
   render(){
+    const projectStatus = (this.props.project.daysLeft > 0) ? (
+        <div className="header-time-left">
+          <div className="stat">
+            {this.props.project.daysLeft}
+          </div>
+          <span className="stat-type">
+            days to go
+          </span>
+        </div>
+      ) : (
+        <div className="header-time-left">
+          <div className="stat project-is-complete">
+            Project Funding Concluded
+          </div>
+        </div>
+      )
     return (
       <div>
         <div className="title">
@@ -64,14 +80,7 @@ const ProjectHeader = React.createClass({
                   pledged of ${this.props.project.goal} goal
                 </span>
               </div>
-              <div className="header-time-left">
-                <div className="stat">
-                  {this.props.project.daysLeft}
-                </div>
-                <span className="stat-type">
-                  days to go
-                </span>
-              </div>
+              {projectStatus}
             </div>
             <div className="back-button-container">
               <form onSubmit={this._onSubmit}>

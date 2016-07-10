@@ -5,7 +5,7 @@ class Api::RewardingsController < ApplicationController
     @rewarding.backer_id = current_user.id
     if @rewarding.save
       @project = @rewarding.reward.project
-      @project.pledged += @rewarding.reward.value
+      @project.pledged += @rewarding.reward.cost
       @project.save
       render "api/projects/show"
     else

@@ -77,7 +77,7 @@ const Nav = React.createClass({
   },
 
   _handleChange(e){
-    const searchResults = ProjectStore.search(e.target.value);
+    let searchResults = ProjectStore.search(e.target.value);
 
     if (searchResults.length > 0) {
       let extraPanes = Math.ceil(searchResults.length / 4) - 1;

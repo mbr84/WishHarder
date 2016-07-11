@@ -6,7 +6,7 @@ const ProjectRewardsForm = React.createClass({
   getInitialState() {
     return { project_id: this.props.params.id,
              description: '',
-             value: '',
+             cost: '',
              name: ''
            };
   },

@@ -13,21 +13,21 @@ const carouselInstance = (
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img id="carousel-2"
-           height={575}
-           alt="guy in a fedora"
-           src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935597/hat_lxvge8.jpg"/>
-      <Carousel.Caption>
-        <h3 className="carousel-h3">Rock a Fedora</h3>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
       <img id="carousel-3"
            height={575}
            alt="canoes on a raft"
            src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935592/raft_qhqz44.jpg"/>
       <Carousel.Caption>
         <h3 className="carousel-h3">Take an Adventure</h3>
+      </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+      <img id="carousel-2"
+        height={575}
+        alt="guy in a fedora"
+        src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935597/hat_lxvge8.jpg"/>
+      <Carousel.Caption>
+        <h3 className="carousel-h3">Rock a Fedora</h3>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>

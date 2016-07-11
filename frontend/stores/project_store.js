@@ -42,6 +42,7 @@ ProjectStore.search = function(searchQuery) {
   Object.keys(_projects).forEach(project => {
     for (let i = 0; i < queries.length; i++) {
       if ((_projects[project].blurb.toLowerCase().indexOf(queries[i]) !== -1 ||
+        _projects[project].author.username.toLowerCase().indexOf(queries[i]) !== -1 ||
         _projects[project].title.toLowerCase().indexOf(queries[i]) !== -1) &&
         !_projects[project].complete && queries[i] !== "") {
           searchResults.push(_projects[project]);

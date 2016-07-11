@@ -18,7 +18,7 @@ const carouselInstance = (
            alt="guy in a fedora"
            src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935597/hat_lxvge8.jpg"/>
       <Carousel.Caption>
-        <h3 className="carousel-h3">Look Good in a Fedora</h3>
+        <h3 className="carousel-h3">Rock a Fedora</h3>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>

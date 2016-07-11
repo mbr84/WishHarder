@@ -45,7 +45,9 @@ const routes = (
            component={ProjectForm}
            onEnter={ _ensureLoggedIn }/>
     <Route path="projects/:id" component={Project} />
-    <Route path="projects/:id/rewards" component={ProjectRewards} />
+    <Route path="projects/:id/rewards"
+           component={ProjectRewards}
+           onEnter={ _ensureLoggedIn } />
     <Route path="projects/:id/rewards/new"
            component={ProjectRewardsForm}
            onEnter={ _ensureLoggedIn }/>

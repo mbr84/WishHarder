@@ -86,6 +86,8 @@ const Nav = React.createClass({
       this.inLineScrollStyle = { left: '0px' };
       if (extraPanes > 0 ) {
         this.setState({ rightArrow: 'button-on' });
+      } else {
+        this.setState({ rightArrow: 'button-off' })
       }
       this.setState({ maxScroll: -960 * extraPanes });
     }

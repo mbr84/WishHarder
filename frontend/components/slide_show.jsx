@@ -27,7 +27,7 @@ const carouselInstance = (
            alt="canoes on a raft"
            src="https://res.cloudinary.com/dxbwq1eyw/image/upload/v1467935592/raft_qhqz44.jpg"/>
       <Carousel.Caption>
-        <h3 className="carousel-h3">Set out on an Adventure</h3>
+        <h3 className="carousel-h3">Take an Adventure</h3>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>

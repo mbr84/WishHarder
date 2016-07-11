@@ -69,8 +69,8 @@ const ProjectRewardsForm = React.createClass({
                   <div className="form-wrapper">
                     $<input type="text"
                            placeholder="0"
-                           onChange={this.update("value")}
-                           value={this.state.value} />
+                           onChange={this.update("cost")}
+                           value={this.state.cost} />
                    </div>
                  </div>
               </li>

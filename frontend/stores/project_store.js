@@ -39,7 +39,6 @@ ProjectStore.find = function (id) {
 ProjectStore.search = function(searchQuery) {
   const searchResults = [];
   const queries = searchQuery.split(" ").map(query => query.toLowerCase())
-  debugger
   Object.keys(_projects).forEach(project => {
     for (let i = 0; i < queries.length; i++) {
       if ((_projects[project].blurb.toLowerCase().indexOf(queries[i]) !== -1 ||

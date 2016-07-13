@@ -16,6 +16,7 @@ const Project = React.createClass({
 
   componentDidMount(){
     this.projectListener = ProjectStore.addListener(this._onChange)
+    this.props.toggleFooter()
   },
 
   componentWillUnmount() {

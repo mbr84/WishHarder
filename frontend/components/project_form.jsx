@@ -24,6 +24,10 @@ const ProjectForm = React.createClass({
     return (e) => this.setState({ [property]: e.target.value} );
   },
 
+  componentDidMount() {
+    this.props.toggleFooter()
+  },
+
   _handleSubmit(e) {
     e.preventDefault();
     this.setState({goal: parseInt(this.state.goal), duration: parseInt(this.state.duration)})

@@ -1,5 +1,5 @@
 const SessionApiUtil = require('./util/session_api_util');
-const SessionStore = window.SessionStore = require('./stores/session_store');
+const SessionStore = require('./stores/session_store');
 const SessionActions = require('./actions/session_actions');
 const React = require('react');
 const ReactDOM = require('react-dom');
@@ -12,9 +12,9 @@ const LoginForm = require('./components/login_form');
 const SignUpForm = require('./components/signup_form');
 const Navbar = require('./components/navbar');
 const ProjectApiUtil = window.ProjectApitUtil = require('./util/project_api_util');
-const ProjectActions = window.ProjectActions =require('./actions/project_actions');
+const ProjectActions = require('./actions/project_actions');
 const ProjectIndex = require('./components/project_index');
-const ProjectStore = window.ProjectStore = require('./stores/project_store');
+const ProjectStore = require('./stores/project_store');
 const Project = require('./components/project');
 const ProjectForm = require('./components/project_form');
 const ProjectRewardsForm = require('./components/project_rewards_form');
@@ -23,12 +23,26 @@ const RewardPurchase = require('./components/reward_purchase');
 const Footer = require('./components/footer')
 
 const App = React.createClass({
+  getInitialState(){
+    return {showFooter: false};
+  },
+  _toggleFooter(){
+    if (!this.state.showFooter) {
+      this.setState({showFooter: true});
+    }
+  },
+
   render () {
+    const children = React.Children.map(this.props.children, (child) => {
+      return React.cloneElement(child, {
+        toggleFooter: this._toggleFooter
+      });
+    });
     return (
       <div>
         <Navbar />
-        {this.props.children}
-        <Footer />
+        {children}
+        <Footer show={this.state.showFooter} />
       </div>
     );
   }
@@ -53,6 +67,9 @@ const routes = (
            onEnter={ _ensureLoggedIn }/>
     <Route path="projects/:id/rewards/:reward_id"
            component={RewardPurchase}
+           onEnter={ _ensureLoggedIn }/>
+    <Route path="checkouts/:id"
+           component={Chekcout}
            onEnter={ _ensureLoggedIn }/>
   </Route>
 </Router>

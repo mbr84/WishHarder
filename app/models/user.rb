@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
     foreign_key: :backer_id,
     class_name: "Rewarding"
 
+  has_many :checkouts
   has_many :rewards, through: :rewardings
   has_many :projects_backed, through: :rewards, source: :projects
 

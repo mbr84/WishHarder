@@ -1,3 +1,5 @@
+const CheckoutActions = require('../actions/checkout_actions');
+
 module.exports = {
   fetchProjects(cb) {
     $.ajax({
@@ -57,5 +59,52 @@ module.exports = {
         cb(res);
       }
     });
-  }
+  },
+
+  createCheckout: function (id, cost, successCallback, errorCallback) {
+    $.ajax({
+      type: 'POST',
+      url: '/api/checkouts',
+      dataType: 'json',
+      data: { checkout: {reward_id: id, cost: cost * 100 } },
+      success: function (checkout) {
+        CheckoutActions.receiveCheckout(checkout);
+        successCallback(checkout);
+      },
+      error: function () {
+        errorCallback();
+      }
+    });
+  },
+
+  getCheckout: function (checkoutId, successCallback, errorCallback) {
+    $.ajax({
+      type: 'GET',
+      url: '/api/checkouts/' + checkoutId,
+      dataType: 'json',
+      success: function (checkout) {
+        CheckoutActions.receiveCheckout(checkout);
+        if (successCallback) { successCallback(); }
+      },
+      error: function () {
+        if (errorCallback) { errorCallback(); }
+      }
+    });
+  },
+
+  createRewardingFromCheckout: function (checkoutId, stripeToken,
+    successCallback, errorCallback) {
+    $.ajax({
+      type: 'POST',
+      url: '/api/rewardings',
+      dataType: 'json',
+      data: { pledge: { checkoutId: checkoutId, stripeToken: stripeToken } },
+      success: function () {
+        if (successCallback) { successCallback(); }
+      },
+      error: function () {
+        if (errorCallback) { errorCallback(); }
+      }
+    });
+  },
 };

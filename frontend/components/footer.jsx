@@ -2,8 +2,10 @@ const React = require('react')
 
 module.exports = React.createClass({
   render(){
+    const footerClass = (this.props.show ? "show-footer" : "hide-footer");
+
     return  (
-      <footer>
+      <footer className={footerClass}>
         <div className="footer-container">
           <div className="footer-top">
             <div className="footer-top-left">

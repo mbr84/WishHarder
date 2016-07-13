@@ -20,6 +20,7 @@ const LoginForm = React.createClass({
   componentDidMount(){
     this.loginListener = SessionStore.addListener(this.loginRedirect);
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
+    this.props.toggleFooter()
   },
 
   componentWillUnmount() {

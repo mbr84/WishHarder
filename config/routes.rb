@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     end
     resources :rewards, except: [:edit, :update, :index]
     resources :rewardings, only: :create
+    resources :checkouts, only: [:create, :show]
   end
-
   root "static_pages#root"
 
 end

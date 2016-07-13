@@ -2,6 +2,7 @@ const React = require('react');
 const ProjectStore = require('../stores/project_store');
 const ProjectActions = require('../actions/project_actions');
 const RewardSidebarItem = require('./reward_sidebar_item');
+const ProjectApiUtil = require('../util/project_api_util');
 
 
 const ProjectRewards = React.createClass({
@@ -11,7 +12,11 @@ const ProjectRewards = React.createClass({
   },
 
   componentDidMount(){
-    this.projectListener = ProjectStore.addListener(this._onChange)
+    this.projectListener = ProjectStore.addListener(this._onChange);
+  },
+
+  componentWillUpdate() {
+    this.props.toggleFooter();
   },
 
   _onChange(){
@@ -22,10 +27,13 @@ const ProjectRewards = React.createClass({
     this.projectListener.remove();
   },
 
+
   render() {
     if (!ProjectStore.empty()) {
       const rewards = this.state.project.rewards.map(reward => {
-        return <li key={reward.reward_id}><RewardSidebarItem reward={reward} /></li>;
+        return <li key={reward.reward_id}>
+            <RewardSidebarItem reward={reward} />
+          </li>;
       });
       return (
         <div>

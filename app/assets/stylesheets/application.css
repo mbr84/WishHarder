@@ -13,6 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ @-webkit-keyframes fade {
+   0%   { opacity: 0; }
+   100% { opacity: 1; }
+ }
+ @-moz-keyframes fade {
+   0%   { opacity: 0; }
+   100% { opacity: 1; }
+ }
+ @-o-keyframes fade {
+   0%   { opacity: 0; }
+   100% { opacity: 1; }
+ }
+ @keyframes fade {
+   0%   { opacity: 0; }
+   100% { opacity: 1; }
+ }
 
  .total-background {
    height: 100%;
@@ -246,4 +262,17 @@ span {
   top: 65px;
   background: white;
   box-shadow: -1px 1px 3px #ccc;
+
+  opacity:0;
+  -webkit-animation:fade ease-in 1;
+  -moz-animation:fade ease-in 1;
+  animation:fade ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:.2s;
+  -moz-animation-duration:.2s;
+  animation-duration:.2s;
 }

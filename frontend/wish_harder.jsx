@@ -21,6 +21,7 @@ const ProjectRewardsForm = require('./components/project_rewards_form');
 const ProjectRewards = require('./components/project_rewards');
 const RewardPurchase = require('./components/reward_purchase');
 const Footer = require('./components/footer')
+const Checkout = require('./components/checkout')
 
 const App = React.createClass({
   getInitialState(){
@@ -69,7 +70,7 @@ const routes = (
            component={RewardPurchase}
            onEnter={ _ensureLoggedIn }/>
     <Route path="checkouts/:id"
-           component={Chekcout}
+           component={Checkout}
            onEnter={ _ensureLoggedIn }/>
   </Route>
 </Router>

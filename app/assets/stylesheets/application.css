@@ -68,7 +68,7 @@
  }
 
  #fred {
-   padding-top: 15px;
+   padding-top: 19px;
  }
 
  .search-form {
@@ -87,7 +87,7 @@
  .search-field {
    border: none;
    font-size: 20px;
-   padding-top: 5px;
+   padding-top: 13px;
  }
 
  .search-field:focus {
@@ -103,7 +103,7 @@ i.material-icons {
 }
 
 i.fa.fa-times {
-    padding-top: 20px;
+    padding-top: 28px;
     margin-right: 60px;
 }
 
@@ -272,7 +272,7 @@ span {
   -moz-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
 
-  -webkit-animation-duration:.2s;
-  -moz-animation-duration:.2s;
-  animation-duration:.2s;
+  -webkit-animation-duration:.1s;
+  -moz-animation-duration:.1s;
+  animation-duration:.1s;
 }

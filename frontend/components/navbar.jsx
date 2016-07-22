@@ -54,7 +54,8 @@ const Nav = React.createClass({
         navLinksClass: 'bottom nav-links',
         results: [],
         query: "",
-        leftArrow: "button-off"
+        leftArrow: "button-off",
+        rightArrow: "button-off"
       })
     }
   },

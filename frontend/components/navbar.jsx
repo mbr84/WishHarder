@@ -124,6 +124,11 @@ const Nav = React.createClass({
             <div className={this.state.dropDownClass} onMouseLeave={this._handleDrop}>
               <div className="my-projects">
                 <h3>My Projects</h3>
+                <ul>
+                  {ProjectStore.userProjects().map((project) => {
+                    return <li key={project.key}>{project.title}</li>
+                  })}
+                </ul>
               </div>
               <div className="user-options">
                 <h3>Settings</h3>

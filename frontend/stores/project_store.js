@@ -36,7 +36,6 @@ ProjectStore.find = function (id) {
 };
 
 ProjectStore.userProjects = function (user_id) {
-  debugger
   const projects = [];
   Object.keys(_projects).forEach((project) => {
     if (_projects[project].author.username === currentUser.username) {

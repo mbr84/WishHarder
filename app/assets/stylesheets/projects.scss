@@ -38,6 +38,38 @@
   font-family: "Montserrat";
 }
 
+.share-option {
+    border-radius: 1px;
+    border: 1px solid #f3f0f0;
+    font-size: 11px;
+    width: 85px;
+    height: 17px;
+    position: relative;
+
+}
+
+svg {
+  margin-right: 6px;
+}
+
+.share-text {
+  position: absolute;
+  margin: 0px;
+  top: -2px;
+  color: #100e5f;
+  font-weight: bolder;
+}
+
+.share-bar {
+  margin-left: -20px;
+  width: 75%;
+}
+
+.share-bar-title {
+    display: flex;
+    justify-content: space-around;
+}
+
 .header-stats > div {
   margin-bottom: 10px;
 }

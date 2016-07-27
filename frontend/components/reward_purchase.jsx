@@ -2,6 +2,7 @@ const React = require('react');
 const ProjectStore = require('../stores/project_store');
 const ProjectActions = require('../actions/project_actions');
 const hashHistory = require('react-router').hashHistory;
+const CheckoutForm = require('./checkout_form');
 
 const RewardPurchase = React.createClass({
   getInitialState(){
@@ -41,12 +42,7 @@ const RewardPurchase = React.createClass({
             <h2>support {this.state.project.author.username}s wish</h2>
             <p></p>
           </div>
-          <div className="purchase-form">
-            <form onSubmit={this._handleSubmit}>
-              <input type="submit" className="back-button" value="Back Project!" />
-
-            </form>
-          </div>
+          <CheckoutForm />
         </div>
       )
     } else {

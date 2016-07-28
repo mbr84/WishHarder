@@ -10,14 +10,13 @@ const ProjectIndexItem = React.createClass({
 
   render(){
     const percentComplete = Math.floor((this.props.project.pledged/this.props.project.goal)*100)
-
     const greenBar = { width: percentComplete + "%" }
 
     return(
       <div className="index-item-container">
         <div className="img-container"
              onClick={this.navigateProject}>
-          <img className="index-item-img" src={this.props.project.primary_img}></img>
+          <img className="index-item-img" src={this.props.project.thumbNail}></img>
         </div>
         <div className="description-element">
           <div className="index-item-title" >{this.props.project.title}</div>

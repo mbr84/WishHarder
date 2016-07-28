@@ -11,7 +11,7 @@ const hashHistory = ReactRouter.hashHistory;
 const LoginForm = require('./components/login_form');
 const SignUpForm = require('./components/signup_form');
 const Navbar = require('./components/navbar');
-const ProjectApiUtil = window.ProjectApitUtil = require('./util/project_api_util');
+const ProjectApiUtil = require('./util/project_api_util');
 const ProjectActions = require('./actions/project_actions');
 const ProjectIndex = require('./components/project_index');
 const ProjectStore = require('./stores/project_store');
@@ -22,6 +22,7 @@ const ProjectRewards = require('./components/project_rewards');
 const RewardPurchase = require('./components/reward_purchase');
 const Footer = require('./components/footer')
 const Checkout = require('./components/checkout')
+const CheckoutStore = require('./stores/checkout_store')
 
 const App = React.createClass({
   getInitialState(){

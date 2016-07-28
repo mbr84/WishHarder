@@ -7,9 +7,9 @@ const CheckoutStore = new Store(AppDispatcher);
 let _currentCheckout = null;
 
 CheckoutStore.currentCheckout = function () {
-  const checkoutCopy = {};
+  let checkoutCopy = {};
   if (_currentCheckout) {
-    for (const id in _currentCheckout) {
+    for (let id in _currentCheckout) {
       if (_currentCheckout.hasOwnProperty(id)) {
         checkoutCopy[id] = _currentCheckout[id];
       }

@@ -61,7 +61,7 @@ module.exports = {
     });
   },
 
-  createCheckout: function (id, cost, successCallback, errorCallback) {
+  createCheckout(id, cost, successCallback, errorCallback) {
     $.ajax({
       type: 'POST',
       url: '/api/checkouts',
@@ -77,10 +77,10 @@ module.exports = {
     });
   },
 
-  getCheckout: function (checkoutId, successCallback, errorCallback) {
+  getCheckout(id, successCallback, errorCallback) {
     $.ajax({
       type: 'GET',
-      url: '/api/checkouts/' + checkoutId,
+      url: '/api/checkouts/' + id,
       dataType: 'json',
       success: function (checkout) {
         CheckoutActions.receiveCheckout(checkout);
@@ -92,13 +92,13 @@ module.exports = {
     });
   },
 
-  createRewardingFromCheckout: function (checkoutId, stripeToken,
+  createRewardingFromCheckout: function (id, stripeToken,
     successCallback, errorCallback) {
     $.ajax({
       type: 'POST',
       url: '/api/rewardings',
       dataType: 'json',
-      data: { pledge: { checkoutId: checkoutId, stripeToken: stripeToken } },
+      data: { rewarding: { id: id, stripeToken: stripeToken } },
       success: function () {
         if (successCallback) { successCallback(); }
       },

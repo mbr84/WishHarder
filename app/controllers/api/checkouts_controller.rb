@@ -1,10 +1,9 @@
 class Api::CheckoutsController < ApplicationController
 
   def create
-    user = current_user
     checkout_params = params[:checkout]
-    if user && checkout_params
-      checkout = user.checkouts.create(
+    if current_user && checkout_params
+      checkout = current_user.checkouts.create(
         reward_id: checkout_params[:reward_id],
         cost: checkout_params[:cost]
       )
@@ -26,7 +25,7 @@ class Api::CheckoutsController < ApplicationController
     if user && checkout
       if checkout.user_id == user.id
         @checkout = Checkout.includes(:reward, :project,
-          :project_creator).find(checkout.id)
+          :author).find(checkout.id)
         render :show
       else
         render json: {}, status: 403
@@ -34,6 +33,12 @@ class Api::CheckoutsController < ApplicationController
     else
       render json: {}, status: 401
     end
+  end
+
+  private
+
+  def checkout_params
+    params.require(:checkout).allow(:reward_id, :cost)
   end
 
 end

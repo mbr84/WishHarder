@@ -7,7 +7,7 @@ const CheckoutForm = React.createClass({
     return {
       name: "",
       cardNumber: "",
-      cvn: "",
+      cvc: "",
       expirationMonth: "",
       expirationYear: "",
       country: "United States",
@@ -18,9 +18,9 @@ const CheckoutForm = React.createClass({
   submitStripeRequest() {
     const card = {
       number: this.state.cardNumber,
-      cvn: this.state.cvn,
-      expiration_month: this.state.expirationMonth,
-      expiration_year: this.state.expirationYear
+      cvc: this.state.cvc,
+      exp_month: this.state.expirationMonth,
+      exp_year: this.state.expirationYear
     };
 
     Stripe.card.createToken(card, function (status, response) {
@@ -38,8 +38,10 @@ const CheckoutForm = React.createClass({
 
   handleSubmit(){
     if (this.state.name === "" ||
-    this.state.cardNumber.length !== 16 || this.state.expirationMonth === "" ||
-    this.state.expirationYear === ""){
+    !Stripe.card.validateCardNumber(this.state.cardNumber) ||
+    !Stripe.card.validateExpiry(this.state.expirationMonth,
+      this.state.expirationYear) ||
+    !Stripe.card.validateCVC(this.state.cvc)) {
       this.setState({errorMessage: "Make sure all field are filled correctly"})
     } else {
       this.submitStripeRequest()
@@ -88,7 +90,7 @@ const CheckoutForm = React.createClass({
             <input type="text"
                    id="cardNumber"
                    value={this.state.cardNumber}
-                   placeholder={"eg. 1212123412341234"}
+                   placeholder={"Card number"}
                    onChange={this.update("cardNumber")} />
           </div>
           <div className="credit-info-item">
@@ -113,9 +115,9 @@ const CheckoutForm = React.createClass({
           <div className="credit-info-item">
             <label className="checkout-label">CVN</label>
             <input type="text"
-                   id="cvn"
-                   value={this.state.cvn}
-                   onChange={this.update("cvn")} />
+                   id="cvc"
+                   value={this.state.cvc}
+                   onChange={this.update("cvc")} />
           </div>
           <div className="credit-info-item">
             <label className="checkout-label">Zip Code</label>

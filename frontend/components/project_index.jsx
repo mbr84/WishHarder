@@ -7,7 +7,7 @@ const carouselInstance = require('./slide_show')
 const ProjectIndex = React.createClass({
   getInitialState() {
     ProjectActions.fetchProjects();
-    return ({ projects: ProjectStore.all() })
+    return ({ projects: {} })
   },
 
   componentDidMount(){

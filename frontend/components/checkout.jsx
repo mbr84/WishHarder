@@ -35,7 +35,7 @@ const Checkout = React.createClass({
       return (
         <div>
           <div className="form-title">
-            <h2>support {this.state.checkout.author.username}s wish</h2>
+            <h2 className="purchase-title">support {this.state.checkout.author.username}s wish</h2>
           </div>
           <div className="checkout-wrapper">
             <CheckoutForm checkout={this.state.checkout} />

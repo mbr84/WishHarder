@@ -3,6 +3,7 @@
   padding: 22px 0px 75px 0px;
   margin-top: 35px;
   display: flex;
+  padding-right: 20%;
 }
 
 .checkout-form {
@@ -11,6 +12,10 @@
   font-family: "Montserrat";
   position: relative;
   max-width: 530px;
+}
+
+.purchase-title {
+  font-family: "Montserrat";
 }
 
 .credit-info-item {
@@ -31,4 +36,11 @@
   position: absolute;
   top: 36px;
   right:26%;
+}
+
+.purchase-info-pane {
+
+
+  max-height: 220px;
+  width: 250px;
 }

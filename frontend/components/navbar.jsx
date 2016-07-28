@@ -178,19 +178,19 @@ const Nav = React.createClass({
           <div className={this.state.navLinksClass}>
             <div className="site-links">
               <div className="nav-left">
-                <span>
+                <span className="nav-span">
                   <Link to={'/discover'}
                             className="nav-link">
                           Discover
                   </Link>
                 </span>
-                <span>
+                <span className="nav-span">
                   <Link to={'/projects/new'}
                         className="nav-link">
                       Wish
                   </Link>
                 </span>
-                <span>
+                <span className="nav-span">
                   <a href='https://www.linkedin.com/in/matthew-bramfeld-275473b3'
                         className="nav-link">
                       About Us

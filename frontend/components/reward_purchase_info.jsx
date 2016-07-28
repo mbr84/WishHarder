@@ -9,11 +9,16 @@ const InfoPane = React.createClass({
   render() {
 
     return (
-      <div className="reward-sidebar-item purchase-info-pane">
-        <h2 className="pledge-amt">Pledge ${this.props.reward.cost} or more</h2>
-        <h3 className="reward-item-name">{this.props.reward.name}</h3>
-        <div className="reward-item-desc"><p>{this.props.reward.description}</p></div>
-        <div className="reward-item-backers">{this.props.reward.backers} backers</div>
+      <div id="purchase-info-pane"
+           className="reward-sidebar-item">
+        <h2 id="purchase-info-part1"
+            className="pledge-amt">Pledge ${this.props.reward.cost} or more</h2>
+        <h3 id="purchase-info-part2"
+            className="reward-item-name">{this.props.reward.name}</h3>
+        <div id="purchase-info-part3"
+             className="reward-item-desc"><p>{this.props.reward.description}</p></div>
+        <div id="purchase-info-part4"
+             className="reward-item-backers">{this.props.backers} backers</div>
       </div>
     );
   }

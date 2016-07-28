@@ -1,8 +1,8 @@
 .checkout-wrapper {
   background-color: white;
   padding: 22px 0px 75px 0px;
-  margin-top: 35px;
-  display: flex;
+  margin-top: 53px;
+  padding-left: 50px;
   padding-right: 20%;
 }
 
@@ -12,6 +12,7 @@
   font-family: "Montserrat";
   position: relative;
   max-width: 530px;
+  float:left;
 }
 
 .purchase-title {
@@ -34,13 +35,27 @@
   color: rgb(230, 27, 27);
   font-weight:bolder;
   position: absolute;
-  top: 36px;
-  right:26%;
+  top: 54;
+  right:12%;
 }
 
-.purchase-info-pane {
+#purchase-info-pane {
+  float: right;
+}
 
+#purchase-info-pane:hover {
+  cursor: default;
+}
 
-  max-height: 220px;
-  width: 250px;
+#purchase-info-part1 {
+  font-size: 18px;
+}
+#purchase-info-part2 {
+  font-size: 18px;
+}
+#purchase-info-part3 {
+  font-size: 16px;
+}
+#purchase-info-part4 {
+  font-size: 14px;
 }

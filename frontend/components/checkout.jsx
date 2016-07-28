@@ -38,6 +38,9 @@ const Checkout = React.createClass({
             <h2 className="purchase-title">support {this.state.checkout.author.username}s wish</h2>
           </div>
           <div className="checkout-wrapper cf">
+            <div className="stripe-blurb">
+              Stipe payment api is currently running in test mode. but if you'd like to pretend to make a wish come true, you can use Stripe's test credit card, 4242424242424242, any future expiration date, and any 3 digit CVC/CVN. 
+            </div>
             <CheckoutForm checkout={this.state.checkout} />
             <InfoPane reward={this.state.checkout.reward} backers={this.state.checkout.backers}/>
           </div>

@@ -32,11 +32,18 @@ const Nav = React.createClass({
     };
   },
 
-  _handleDrop(){
+  _handleDrop(e){
+    e.stopPropagation();
     if (this.state.dropDownClass === 'show') {
       this.setState({ dropDownClass: 'hide', mainNavClass: 'no-overflow' })
     } else {
       this.setState({ dropDownClass: 'show', mainNavClass: 'overflow' })
+    }
+  },
+
+  _mouseDrop(){
+    if (this.state.dropDownClass === 'show') {
+      this.setState({ dropDownClass: 'hide', mainNavClass: 'no-overflow '})
     }
   },
 
@@ -121,7 +128,7 @@ const Nav = React.createClass({
         </span>
         <div className="drop-down-button">
           <i onClick={this._handleDrop} id="dd" className="clickable material-icons">arrow_drop_down</i>
-            <div className={this.state.dropDownClass} onMouseLeave={this._handleDrop}>
+            <div className={this.state.dropDownClass} onMouseLeave={this._mouseDrop}>
               <div className="my-projects">
                 <h3>My Projects</h3>
                 <ul>
@@ -135,7 +142,6 @@ const Nav = React.createClass({
               <div className="user-options">
                 <h3>Settings</h3>
                 <ul>
-                  <li className="drop-li"><Link to={`/users/${SessionStore.currentUser().id}`}>Edit Profile</Link></li>
                   <li className="logout drop-li" onClick={this._handleLogout}>Logout</li>
                 </ul>
               </div>
@@ -178,19 +184,19 @@ const Nav = React.createClass({
           <div className={this.state.navLinksClass}>
             <div className="site-links">
               <div className="nav-left">
-                <span className="nav-span">
+                <span >
                   <Link to={'/discover'}
                             className="nav-link">
                           Discover
                   </Link>
                 </span>
-                <span className="nav-span">
+                <span >
                   <Link to={'/projects/new'}
                         className="nav-link">
                       Wish
                   </Link>
                 </span>
-                <span className="nav-span">
+                <span >
                   <a href='https://www.linkedin.com/in/matthew-bramfeld-275473b3'
                         className="nav-link">
                       About Us

@@ -1,6 +1,6 @@
 .checkout-wrapper {
   background-color: white;
-  padding: 22px 15% 75px 50px;
+  padding: 22px 15% 75px 10%;
   margin-top: 53px;
 }
 
@@ -59,4 +59,15 @@
 }
 #purchase-info-part4 {
   font-size: 14px;
+}
+
+.stripe-blurb {
+  max-width: 530px;
+  font-family: "Montserrat";
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.top-button {
+  margin-left: 0%
 }

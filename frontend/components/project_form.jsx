@@ -20,6 +20,10 @@ const ProjectForm = React.createClass({
     };
   },
 
+  errorMessages(){
+    
+  },
+
   update(property) {
     return (e) => this.setState({ [property]: e.target.value} );
   },

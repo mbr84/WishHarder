@@ -7,13 +7,14 @@
   text-decoration: none;
 }
 
-.nav-span {
-
-}
-
 .nav-link:hover {
   border-bottom: 3px solid #2bde73;
   padding-bottom: 17px;
+}
+
+.nav-link:focus {
+  text-decoration: none;
+  color: black;
 }
 
 .nav-left span, .nav-right span {

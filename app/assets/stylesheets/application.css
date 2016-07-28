@@ -258,9 +258,9 @@ span {
 .show {
   position: absolute;
   z-index: 100;
-  width: 250px;
-  left: 40px;
-  top: 65px;
+  width: 275px;
+  left: 11px;
+  top: 63px;
   background: white;
   box-shadow: -1px 1px 3px #ccc;
 

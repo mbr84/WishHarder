@@ -37,9 +37,9 @@ ProjectStore.find = function (id) {
 
 ProjectStore.userProjects = function (user_id) {
   const projects = [];
-  Object.keys(_projects).forEach((project) => {
-    if (_projects[project].author.username === currentUser.username) {
-      projects.push(project)
+  Object.keys(_projects).forEach((key) => {
+    if (_projects[key].author.username === currentUser.username) {
+      projects.push(_projects[key])
     }
   })
   return projects

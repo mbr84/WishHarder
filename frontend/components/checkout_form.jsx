@@ -69,11 +69,11 @@ const CheckoutForm = React.createClass({
     return (
       <form className="checkout-form"
             onSubmit={this.handleSubmit}>
+            <h5 className="error-message">{this.state.errorMessage}</h5>
         <h3 className="checkout-form-header">
           Card Information
         </h3>
 
-        {this.state.errorMessage}
 
         <div className="credit-info-container">
           <div className="credit-info-item">

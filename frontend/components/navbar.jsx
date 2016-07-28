@@ -126,7 +126,8 @@ const Nav = React.createClass({
                 <h3>My Projects</h3>
                 <ul>
                   {ProjectStore.userProjects().map((project) => {
-                    return <li key={project.key}>{project.title}</li>
+                    return <li key={project.key}>
+                      <Link to={`/projects/${project.id}`}>{project.title}</Link></li>
                   })}
                 </ul>
               </div>

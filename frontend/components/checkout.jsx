@@ -2,7 +2,8 @@ const React = require('react');
 const CheckoutStore = require('../stores/checkout_store');
 const hashHistory = require('react-router').hashHistory;
 const CheckoutForm = require('./checkout_form');
-const ProjectApiUtil = require('../util/project_api_util')
+const ProjectApiUtil = require('../util/project_api_util');
+const InfoPane = require('./reward_purchase_info');
 
 const Checkout = React.createClass({
   getInitialState(){
@@ -25,7 +26,7 @@ const Checkout = React.createClass({
   },
 
   _handleSubmit(){
-    ProjectActions.createRewarding({ reward_id: this.props.params.reward_id});
+    ProjectActions.createRewarding({ reward_id: this.checkout.reward.id});
     hashHistory.push(`/projects/${this.props.params.id}`);
   },
 
@@ -35,9 +36,11 @@ const Checkout = React.createClass({
         <div>
           <div className="form-title">
             <h2>support {this.state.checkout.author.username}s wish</h2>
-            <p></p>
           </div>
-          <CheckoutForm checkout={this.state.checkout}/>
+          <div className="checkout-wrapper">
+            <CheckoutForm checkout={this.state.checkout} />
+            <InfoPane reward={this.state.checkout.reward} />
+          </div>
         </div>
       )
     } else {

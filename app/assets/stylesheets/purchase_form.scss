@@ -1,9 +1,7 @@
 .checkout-wrapper {
   background-color: white;
-  padding: 22px 0px 75px 0px;
+  padding: 22px 15% 75px 50px;
   margin-top: 53px;
-  padding-left: 50px;
-  padding-right: 20%;
 }
 
 .checkout-form {
@@ -42,6 +40,7 @@
 #purchase-info-pane {
   float: right;
   min-width: 240px;
+  max-width: 275px;
 }
 
 #purchase-info-pane:hover {

@@ -127,7 +127,8 @@ const Nav = React.createClass({
                 <ul>
                   {ProjectStore.userProjects().map((project) => {
                     return <li key={project.id}>
-                      <Link to={`/projects/${project.id}`}>{project.title}</Link></li>
+                      <Link to={`/projects/${project.id}`}
+                            onClick={this._handleDrop}>{project.title}</Link></li>
                   })}
                 </ul>
               </div>

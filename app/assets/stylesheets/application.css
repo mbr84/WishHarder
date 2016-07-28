@@ -198,6 +198,9 @@ i {
 .logout:hover, i:hover {
   cursor: pointer;
 }
+.logout {
+  color: #337ab7
+}
 
 span {
   margin-top: 20px;

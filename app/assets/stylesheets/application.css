@@ -177,6 +177,7 @@ h1:hover {
 
 .drop-li {
   text-align: left;
+  line-height: 150%;
 }
 .drop-li a {
   color: black;
@@ -217,6 +218,16 @@ span {
 .my-projects {
   float:left;
   padding-left: 10px;
+}
+
+.my-projects li {
+  padding-left: 3px;
+  text-align: left;
+  line-height: 150%;
+}
+
+.my-projects a:hover {
+  text-decoration: none;
 }
 
 .drop-down-button h3 {

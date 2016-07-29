@@ -47,8 +47,14 @@ const CheckoutForm = React.createClass({
           response.id,
           function() {
             hashHistory.push('/discover');
-          }
+          },
+          function() {
+            this.setState({ errorMessage: "There was an error processing your request. Please try again"})
+          }.bind(this)
         );
+      } else {
+        this.setState({ errorMessage: "Card invalid. Please ensure the" +
+        " card number, CVN, and expiration you entered match data on card." });
       }
     }.bind(this));
   },

@@ -37,7 +37,7 @@ const ProjectRewards = React.createClass({
       });
       return (
         <div>
-          <div className="header-background">
+          <div className="reward-select-background">
             <div className="form-title reward-page"><h2>choose your reward</h2></div>
           </div>
             <div className='reward-index-form'>

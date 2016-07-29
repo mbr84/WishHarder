@@ -16,7 +16,6 @@
 }
 
 .reward-page {
-  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,4 +45,9 @@
   font-size: 36px;
   font-weight: 300;
   margin:auto;
+}
+
+.reward-select-background {
+  height: 140px;
+  background-color: #f7f5f2;
 }

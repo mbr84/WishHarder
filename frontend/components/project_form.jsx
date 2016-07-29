@@ -16,12 +16,9 @@ const ProjectForm = React.createClass({
       primary_img: '',
       city: '',
       state: '',
-      complete: false
+      complete: false,
+      errorMessage: ""
     };
-  },
-
-  errorMessages(){
-    
   },
 
   update(property) {
@@ -34,8 +31,12 @@ const ProjectForm = React.createClass({
 
   _handleSubmit(e) {
     e.preventDefault();
-    this.setState({goal: parseInt(this.state.goal), duration: parseInt(this.state.duration)})
-    ProjectActions.createProject(this.state)
+    if (this.state.primary_img === "") {
+      this.setState({ errorMessage: "You must upload a primary image for you wish." })
+    } else {
+      this.setState({ goal: parseInt(this.state.goal), duration: parseInt(this.state.duration) })
+      ProjectActions.createProject(this.state);
+    }
   },
 
   updateImage(e) {
@@ -146,6 +147,7 @@ const ProjectForm = React.createClass({
                   </div>
                 </div>
               </li>
+              <h5 className="project-error-message">{this.state.errorMessage}</h5>
               <li className="project-form-li">
                 <input type="submit" value="Make Wish" className="form-submit-button"/>
               </li>

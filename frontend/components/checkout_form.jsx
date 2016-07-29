@@ -46,7 +46,7 @@ const CheckoutForm = React.createClass({
           this.props.checkout.id,
           response.id,
           function() {
-            hashHistory.push('/discover');
+            hashHistory.push('/thankyou');
           },
           function() {
             this.setState({ errorMessage: "There was an error processing your request. Please try again"})

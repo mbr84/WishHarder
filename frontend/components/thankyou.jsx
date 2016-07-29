@@ -2,13 +2,6 @@ const React = require("react");
 const hashHistory = require("react-router").hashHistory
 
 const Thankyou = React.createClass({
-  getInitialState(){
-    return null
-  },
-
-  // componentDidMount() {
-  //   this.props.toggleFooter();
-  // },
   _handleClick(){
     hashHistory.push('/discover');
   },

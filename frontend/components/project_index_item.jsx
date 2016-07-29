@@ -16,7 +16,7 @@ const ProjectIndexItem = React.createClass({
       <div className="index-item-container">
         <div className="img-container"
              onClick={this.navigateProject}>
-          <img className="index-item-img" src={this.props.project.thumbNail}></img>
+          <img className="index-item-img" src={this.props.project.primary_img}></img>
         </div>
         <div className="description-element">
           <div className="index-item-title" >{this.props.project.title}</div>

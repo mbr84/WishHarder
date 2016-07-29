@@ -7,9 +7,11 @@ const InfoPane = require('./info_pane');
 
 const Checkout = React.createClass({
   getInitialState(){
-    ProjectApiUtil.getCheckout(parseInt(this.props.params.id))
+    ProjectApiUtil.getCheckout(parseInt(this.props.params.id), function() {
+      this.setState({ errorMessage: "Session has timed out. Return to the rewards page and try again." })
+    }.bind(this))
     let checkout = CheckoutStore.currentCheckout()
-    return { checkout: checkout }
+    return { checkout: checkout, errorMessage: "" }
   },
 
   componentDidMount(){
@@ -41,7 +43,8 @@ const Checkout = React.createClass({
             <div className="stripe-blurb">
               Stipe payment api is currently running in test mode. but if you'd like to pretend to make a wish come true, you can use Stripe's test credit card, 4242424242424242, any future expiration date, and any 3 digit CVC/CVN.
             </div>
-            <CheckoutForm checkout={this.state.checkout} />
+            <CheckoutForm checkout={this.state.checkout}
+                          errorMessage={this.state.errorMessage} />
             <InfoPane reward={this.state.checkout.reward}
                       backers={this.state.checkout.backers} />
           </div>

@@ -14,7 +14,7 @@ const Navbar = require('./components/navbar');
 const ProjectApiUtil = require('./util/project_api_util');
 const ProjectActions = require('./actions/project_actions');
 const ProjectIndex = require('./components/project_index');
-const ProjectStore = window.ProjectStore = require('./stores/project_store');
+const ProjectStore = require('./stores/project_store');
 const Project = require('./components/project');
 const ProjectForm = require('./components/project_form');
 const ProjectRewardsForm = require('./components/project_rewards_form');
@@ -22,7 +22,7 @@ const ProjectRewards = require('./components/project_rewards');
 const RewardPurchase = require('./components/reward_purchase');
 const Footer = require('./components/footer')
 const Checkout = require('./components/checkout')
-const CheckoutStore = require('./stores/checkout_store')
+const CheckoutStore = window.CheckoutStore = require('./stores/checkout_store')
 
 const App = React.createClass({
   getInitialState(){

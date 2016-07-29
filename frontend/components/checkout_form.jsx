@@ -85,7 +85,7 @@ const CheckoutForm = React.createClass({
         </div>
         <form className="checkout-form"
               onSubmit={this.handleSubmit}>
-              <h5 className="error-message">{this.state.errorMessage}</h5>
+              <h5 className="error-message">{this.props.errorMessage}{this.state.errorMessage}</h5>
           <h3 className="checkout-form-header">
             Card Information
           </h3>

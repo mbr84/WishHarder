@@ -77,14 +77,13 @@ module.exports = {
     });
   },
 
-  getCheckout(id, successCallback, errorCallback) {
+  getCheckout(id, errorCallback) {
     $.ajax({
       type: 'GET',
       url: '/api/checkouts/' + id,
       dataType: 'json',
       success: function (checkout) {
         CheckoutActions.receiveCheckout(checkout);
-        if (successCallback) { successCallback(); }
       },
       error: function () {
         if (errorCallback) { errorCallback(); }

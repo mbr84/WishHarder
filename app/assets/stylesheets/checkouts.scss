@@ -1,3 +1,83 @@
-// Place all the styles related to the checkouts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.checkout-wrapper {
+  background-color: white;
+  padding: 22px 15% 75px 10%;
+  margin-top: 53px;
+}
+
+.checkout-form {
+  width: 60%;
+  margin: auto;
+  font-family: "Montserrat";
+  position: relative;
+  max-width: 530px;
+  float:left;
+}
+
+.purchase-title {
+  font-family: "Montserrat";
+}
+
+.credit-info-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-form-header {
+  font-weight: 300;
+  padding-bottom: 15px;
+  padding-top:15px;
+}
+
+.error-message {
+  margin: 0px;
+  text-align: center;
+  color: rgb(230, 27, 27);
+  font-weight:bolder;
+  position: absolute;
+  top: 54;
+  right:12%;
+}
+
+.purchase-info-pane {
+  float: right;
+  margin-top: 17px;
+  min-width: 250px;
+  max-width: 275px;
+}
+
+.purchase-info-pane:hover {
+  cursor: default;
+}
+
+#purchase-info-part1 {
+  font-size: 18px;
+}
+#purchase-info-part2 {
+  font-size: 18px;
+}
+#purchase-info-part3 {
+  font-size: 16px;
+}
+#purchase-info-part4 {
+  font-size: 14px;
+}
+
+.stripe-blurb {
+  max-width: 530px;
+  font-family: "Montserrat";
+  font-weight: 300;
+  line-height: 150%;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.top-button {
+  margin-left: 0%;
+  margin-top: 20px;
+  width: 205px;
+  padding-bottom: 33px
+}
+
+.top-button:focus {
+  outline: none;
+}

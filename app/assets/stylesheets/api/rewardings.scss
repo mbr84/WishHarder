@@ -15,7 +15,35 @@
   background-color: #16ca5e;
 }
 
+.reward-page {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: inherit;
+}
+
 .reward-page h2 {
   margin-top: 0px;
   padding-top: 20px;
+}
+
+.reward-index-form {
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px 100px 0px;
+  background-color: white;
+}
+
+.reward-list-container {
+  width: 50%;
+}
+
+.reward-select {
+  color:white;
+  font-family: "Montserrat";
+  font-size: 36px;
+  font-weight: 300;
+  margin:auto;
 }

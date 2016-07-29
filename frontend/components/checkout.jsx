@@ -3,7 +3,7 @@ const CheckoutStore = require('../stores/checkout_store');
 const hashHistory = require('react-router').hashHistory;
 const CheckoutForm = require('./checkout_form');
 const ProjectApiUtil = require('../util/project_api_util');
-const InfoPane = require('./reward_purchase_info');
+const InfoPane = require('./info_pane');
 
 const Checkout = React.createClass({
   getInitialState(){
@@ -39,10 +39,11 @@ const Checkout = React.createClass({
           </div>
           <div className="checkout-wrapper cf">
             <div className="stripe-blurb">
-              Stipe payment api is currently running in test mode. but if you'd like to pretend to make a wish come true, you can use Stripe's test credit card, 4242424242424242, any future expiration date, and any 3 digit CVC/CVN. 
+              Stipe payment api is currently running in test mode. but if you'd like to pretend to make a wish come true, you can use Stripe's test credit card, 4242424242424242, any future expiration date, and any 3 digit CVC/CVN.
             </div>
             <CheckoutForm checkout={this.state.checkout} />
-            <InfoPane reward={this.state.checkout.reward} backers={this.state.checkout.backers}/>
+            <InfoPane reward={this.state.checkout.reward}
+                      backers={this.state.checkout.backers} />
           </div>
         </div>
       )

@@ -39,12 +39,14 @@ const ProjectRewards = React.createClass({
         <div>
           <div className="header-background">
             <div className="form-title reward-page"><h2>choose your reward</h2></div>
-            <div className='reward-form'>
-              <ul>
-                {rewards}
-              </ul>
-            </div>
           </div>
+            <div className='reward-index-form'>
+              <div className="reward-list-container">
+                <ul>
+                  {rewards}
+                </ul>
+              </div>
+            </div>
         </div>
       );
     } else {

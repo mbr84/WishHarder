@@ -9,8 +9,7 @@ const InfoPane = React.createClass({
   render() {
 
     return (
-      <div id="purchase-info-pane"
-           className="reward-sidebar-item">
+      <div className="reward-sidebar-item purchase-info-pane">
         <h2 id="purchase-info-part1"
             className="pledge-amt">Pledge ${this.props.reward.cost} or more</h2>
         <h3 id="purchase-info-part2"

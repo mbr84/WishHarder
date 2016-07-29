@@ -39,6 +39,9 @@ const RewardSidebarItem = React.createClass({
         <div className="reward-item-desc">{this.props.reward.description}</div>
         <div className="reward-item-backers">{this.props.reward.backers} backers</div>
         {errorMessage}
+        <div className="reward-hover">
+          <div className="reward-select">Select Reward</div>
+        </div>
       </div>
     );
   }

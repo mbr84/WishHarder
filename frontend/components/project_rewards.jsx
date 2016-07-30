@@ -8,7 +8,7 @@ const ProjectApiUtil = require('../util/project_api_util');
 const ProjectRewards = React.createClass({
   getInitialState(){
     ProjectActions.fetchProject(parseInt(this.props.params.id))
-    return {project: { rewards: [] }}
+    return ({ project: null })
   },
 
   componentDidMount(){
@@ -29,7 +29,7 @@ const ProjectRewards = React.createClass({
 
 
   render() {
-    if (!ProjectStore.empty()) {
+    if (!ProjectStore.empty() && this.state.project) {
       const rewards = this.state.project.rewards.map(reward => {
         return <li key={reward.reward_id}>
             <RewardSidebarItem reward={reward} />
@@ -50,7 +50,13 @@ const ProjectRewards = React.createClass({
         </div>
       );
     } else {
-      return <div></div>;
+      return (
+        <div>
+          <div className="reward-select-background"></div>
+          <div className="reward-index-form"></div>
+
+        </div>
+      );
     }
   }
 })

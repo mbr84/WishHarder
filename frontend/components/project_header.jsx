@@ -2,7 +2,8 @@ const React = require('react');
 const hashHistory = require('react-router').hashHistory
 
 const ProjectHeader = React.createClass({
-  _onSubmit() {
+  _onSubmit(e) {
+    e.preventDefault();
     hashHistory.push(`/projects/${this.props.project.id}/rewards`)
   },
 

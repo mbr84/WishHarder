@@ -1,5 +1,5 @@
 const SessionApiUtil = require('./util/session_api_util');
-const SessionStore = require('./stores/session_store');
+const SessionStore = window.SessionStore = require('./stores/session_store');
 const SessionActions = require('./actions/session_actions');
 const React = require('react');
 const ReactDOM = require('react-dom');
@@ -14,7 +14,7 @@ const Navbar = require('./components/navbar');
 const ProjectApiUtil = require('./util/project_api_util');
 const ProjectActions = require('./actions/project_actions');
 const ProjectIndex = require('./components/project_index');
-const ProjectStore = require('./stores/project_store');
+const ProjectStore = window.ProjectStore = require('./stores/project_store');
 const Project = require('./components/project');
 const ProjectForm = require('./components/project_form');
 const ProjectRewardsForm = require('./components/project_rewards_form');

@@ -59,7 +59,8 @@ const CheckoutForm = React.createClass({
     }.bind(this));
   },
 
-  handleSubmit(){
+  handleSubmit(e){
+    e.preventDefault()
     if (this.state.name === "" ||
       !Stripe.card.validateCardNumber(this.state.cardNumber) ||
         !Stripe.card.validateExpiry(this.state.expiration) ||

@@ -35,10 +35,10 @@ ProjectStore.find = function (id) {
   return _projects[id] || _defunctProjects[id] || { author: {}, rewards: [] };
 };
 
-ProjectStore.userProjects = function (user) {
+ProjectStore.userProjects = function (user_id) {
   const projects = [];
   Object.keys(_projects).forEach((key) => {
-    if (_projects[key].author.username === user.username) {
+    if (_projects[key].author.id === user_id) {
       projects.push(_projects[key])
     }
   })

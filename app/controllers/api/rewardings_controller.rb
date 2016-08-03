@@ -7,11 +7,13 @@ class Api::RewardingsController < ApplicationController
       token = rewarding_params[:stripeToken]
       checkout = Checkout.find(checkout_id)
       begin
-        charge = Stripe::Charge.create(
+        customer = Stripe::Customer.create(
           source: token,
-          amount: checkout.cost,
-          currency: "usd",
-          description: "SEE ME CHARGE"
+          metadata: {
+            amount: checkout.cost,
+            reward_id: checkout.reward_id,
+            backer_id: checkout.user_id
+          }
         )
       rescue Stripe::StripeError => e
         render json: {}, status: 418
@@ -20,7 +22,7 @@ class Api::RewardingsController < ApplicationController
       rewarding = Rewarding.new(
         backer_id: checkout.user_id,
         reward_id: checkout.reward_id,
-        stripe_charge_id: charge.id
+        stripe_customer_id: customer.id
       )
       if rewarding.save
         checkout.destroy

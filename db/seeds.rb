@@ -29,7 +29,7 @@ images = ['http://res.cloudinary.com/dxbwq1eyw/image/upload/ar_1.77,c_crop/v1468
 "http://res.cloudinary.com/dxbwq1eyw/image/upload/ar_1.77,c_crop/v1468020326/petra-jordan_vhbzkm.jpgjpg",]
 
 projects = images.map do |img|
-  Project.new({
+  Project.create!({
     title: Faker::Hipster.sentence(3),
     content: Faker::Hipster.paragraph,
     complete: false,
@@ -46,4 +46,3 @@ projects = images.map do |img|
 end
 
 User.create(users)
-Project.create(projects)

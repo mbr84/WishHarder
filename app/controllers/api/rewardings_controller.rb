@@ -22,7 +22,7 @@ class Api::RewardingsController < ApplicationController
       rewarding = Rewarding.new(
         backer_id: checkout.user_id,
         reward_id: checkout.reward_id,
-        stripe_customer_id: customer.id
+        customer_id: customer.id
       )
       if rewarding.save
         checkout.destroy

@@ -199,7 +199,7 @@ const Nav = React.createClass({
                 <span >
                   <a href='https://www.linkedin.com/in/matthew-bramfeld-275473b3'
                         className="nav-link">
-                      About Us
+                      Learn
                   </a>
                 </span>
               </div>

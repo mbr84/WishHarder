@@ -130,8 +130,8 @@ const ProjectForm = React.createClass({
                     <input type="number"
                            onChange={this.update("duration")}
                            className="n-input"
+                           placeholder="In days"
                            value={this.state.duration} />
-                    <p>The number of days you'll have to secure funding for your wish.</p>
                   </div>
                 </div>
               </li>

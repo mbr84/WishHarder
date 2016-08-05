@@ -25,6 +25,9 @@ WishHarder is a crowdfunding app with all the familiar features of Kickstarter. 
 - Executes search on the front-end, drawing results from the same React store that populates the index
   - Excludes inactive projects from search pool on the backend, allowing front-end search to run at blazing speed
 
+![Search pane](/search-pane.png)
+
+
 
 
 - [ ] Hosting on Heroku

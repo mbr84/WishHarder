@@ -23,8 +23,8 @@ const SearchResults = React.createClass({
                 style={this.props.style}>
               {this.props.results.map(project => {
                 return <li className="search-list-item cf"
-                           key={project.id}><SearchItem
-                           project={project} />
+                           key={project.id}>
+                           <SearchItem project={project} />
                        </li>;
               })}
             </ul>

@@ -1,6 +1,6 @@
 # WishHarder
 
-Welcome to my full-stack web app, inspired by Kickstarter.
+Welcome to my full-stack web app, inspired by Kickstarter. It was built end to end in 2 weeks.
 
 ![Cover photo](/cover-shot.png)
 

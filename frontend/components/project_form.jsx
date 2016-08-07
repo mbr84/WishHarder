@@ -29,10 +29,23 @@ const ProjectForm = React.createClass({
     this.props.toggleFooter()
   },
 
+  _invalidSubmission(){
+    if (this.state.primary_img === "") {
+      this.setState({ errorMessage: "You must upload a primary image for your wish." })
+      return true
+    } else if (this.state.blurb.length > 135) {
+      this.setState({ errorMessage: "Blurb must be under 135 characters" })
+      return true
+    } else if (this.state.title.length > 60) {
+      this.setState({ errorMessage: "Title must be under 60 characters" })
+      return true
+    }
+    return false
+  },
+
   _handleSubmit(e) {
     e.preventDefault();
-    if (this.state.primary_img === "") {
-      this.setState({ errorMessage: "You must upload a primary image for you wish." })
+    if (this._invalidSubmission()) {
     } else {
       this.setState({ goal: parseInt(this.state.goal), duration: parseInt(this.state.duration) })
       ProjectActions.createProject(this.state);

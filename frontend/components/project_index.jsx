@@ -4,6 +4,19 @@ const ProjectIndexItem = require('./project_index_item.jsx');
 const ProjectActions = require('../actions/project_actions')
 const carouselInstance = require('./slide_show')
 
+Array.prototype.shuffle = function()
+{
+	var i = this.length;
+	while (i)
+	{
+		var j = Math.floor(Math.random() * i);
+		var t = this[--i];
+		this[i] = this[j];
+		this[j] = t;
+	}
+	return this;
+}
+
 const ProjectIndex = React.createClass({
   getInitialState() {
     ProjectActions.fetchProjects();
@@ -29,7 +42,7 @@ const ProjectIndex = React.createClass({
         {carouselInstance}
         <section className="index-body">
           {
-            Object.keys(this.state.projects).map(key => {
+            Object.keys(this.state.projects).shuffle().map(key => {
               return <ProjectIndexItem project={this.state.projects[key]} key={key} />
             })
           }

@@ -12,11 +12,6 @@
   width: 315px;
 }
 
-.index-body {
-  margin-top: 20px;
-  padding-bottom: 40px;
-}
-
 .img-container {
   height: 40%;
   border-top-right-radius: 6px;
@@ -25,9 +20,11 @@
 }
 
 .index-body {
+  margin-top: 20px;
+  padding-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
 }

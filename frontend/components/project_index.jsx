@@ -20,7 +20,7 @@ Array.prototype.shuffle = function()
 const ProjectIndex = React.createClass({
   getInitialState() {
     ProjectActions.fetchProjects();
-    return ({ projects: {} })
+    return ({ projects: ProjectStore.all() }) || ({ projects: {} })
   },
 
   componentDidMount(){

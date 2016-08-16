@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
-  validates :title, :content, :duration, :goal, presence: true
+  validates :duration, :goal, presence: true
+  validates :title, length: { maximum: 60 }, presence: true
+  validates :blurb, length: { maximum: 135 }, presence: true
 
   belongs_to :author,
     primary_key: :id,

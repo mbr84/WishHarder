@@ -8,19 +8,19 @@ const ProjectStore = new Store(AppDispatcher);
 let _projects = {};
 
 
-ProjectStore.all = function() {
+ProjectStore.all = function () {
   return Object.assign({}, _projects);
 };
 
-ProjectStore.resetProjects = function(projects) {
+ProjectStore.resetProjects = function (projects) {
   _projects = {};
   for (let i = 0; i < projects.length; i++) {
     _projects[projects[i].id] = projects[i];
   }
 };
 
-ProjectStore.empty = function(){
-  return Object.keys(_projects).length < 1
+ProjectStore.empty = function () {
+  return Object.keys(_projects).length < 1;
 };
 
 ProjectStore.addProject = function (project) {
@@ -35,26 +35,26 @@ ProjectStore.userProjects = function (username) {
   const projects = [];
   Object.keys(_projects).forEach((key) => {
     if (_projects[key].author.username === username) {
-      projects.push(_projects[key])
+      projects.push(_projects[key]);
     }
-  })
-  return projects
-}
+  });
+  return projects;
+};
 
-ProjectStore.search = function(searchQuery) {
+ProjectStore.search = function (searchQuery) {
   const searchResults = [];
-  const queries = searchQuery.split(" ").map(query => query.toLowerCase())
+  const queries = searchQuery.split(' ').map(query => query.toLowerCase());
   Object.keys(_projects).forEach(project => {
     for (let i = 0; i < queries.length; i++) {
       if (searchResults.length === 16) {
-        return searchResults
+        return searchResults;
       }
       if ((_projects[project].blurb.toLowerCase().indexOf(queries[i]) !== -1 ||
         _projects[project].author.username.toLowerCase().indexOf(queries[i]) !== -1 ||
         _projects[project].title.toLowerCase().indexOf(queries[i]) !== -1) &&
-        !_projects[project].complete && queries[i] !== "") {
-          searchResults.push(_projects[project]);
-          break;
+        !_projects[project].complete && queries[i] !== '') {
+        searchResults.push(_projects[project]);
+        break;
       }
     }
   });
@@ -64,16 +64,16 @@ ProjectStore.search = function(searchQuery) {
 ProjectStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case ProjectConstants.PROJECTS_RECEIVED:
-      this.resetProjects(payload.projects)
-      this.__emitChange()
+      this.resetProjects(payload.projects);
+      this.__emitChange();
       break;
     case ProjectConstants.PROJECT_RECEIVED:
-      this.addProject(payload.project)
-      this.__emitChange()
+      this.addProject(payload.project);
+      this.__emitChange();
       break;
     case ProjectConstants.PROJECT_REMOVED:
-      this.removeProject(id)
-      this.__emitChange()
+      this.removeProject(id);
+      this.__emitChange();
       break;
   }
 };

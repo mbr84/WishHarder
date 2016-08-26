@@ -5,8 +5,8 @@ module.exports = {
     $.ajax({
       url: '/api/projects',
       type: 'GET',
-      success: function(res) {
-        cb(res)}
+      success: function (res) {
+        cb(res); },
     });
   },
 
@@ -14,8 +14,8 @@ module.exports = {
     $.ajax({
       url: `/api/projects/${id}`,
       type: 'GET',
-      success: function(res) {
-        cb(res)}
+      success: function (res) {
+        cb(res); },
     });
   },
 
@@ -23,19 +23,19 @@ module.exports = {
     $.ajax({
       url: '/api/projects',
       type: 'POST',
-      data: {project: project},
-      success: function(res) {
-        cb(res)}
-    })
+      data: { project: project },
+      success: function (res) {
+        cb(res); },
+    });
   },
 
   removeProject(id, cb) {
     $.ajax({
       url: `/api/projects/${id}`,
       type: 'DELETE',
-      success: function(res) {
-        cb(res)
-      }
+      success: function (res) {
+        cb(res);
+      },
     });
   },
 
@@ -44,9 +44,9 @@ module.exports = {
       url: '/api/rewards',
       type: 'POST',
       data: { reward: reward },
-      success: function(res) {
+      success: function (res) {
         cb(res);
-      }
+      },
     });
   },
 
@@ -55,9 +55,9 @@ module.exports = {
       url: '/api/rewardings',
       type: 'POST',
       data: { rewarding: rewarding },
-      success: function(res) {
+      success: function (res) {
         cb(res);
-      }
+      },
     });
   },
 
@@ -66,14 +66,14 @@ module.exports = {
       type: 'POST',
       url: '/api/checkouts',
       dataType: 'json',
-      data: { checkout: {reward_id: id, cost: cost * 100 } },
+      data: { checkout: { reward_id: id, cost: cost * 100 } },
       success: function (checkout) {
         CheckoutActions.receiveCheckout(checkout);
         successCallback(checkout);
       },
       error: function () {
         errorCallback();
-      }
+      },
     });
   },
 
@@ -87,7 +87,7 @@ module.exports = {
       },
       error: function () {
         if (errorCallback) { errorCallback(); }
-      }
+      },
     });
   },
 
@@ -103,7 +103,7 @@ module.exports = {
       },
       error: function () {
         if (errorCallback) { errorCallback(); }
-      }
+      },
     });
   },
 };

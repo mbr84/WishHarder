@@ -6,7 +6,7 @@ const hashHistory = require('react-router').hashHistory;
 
 const SessionActions = {
 
-  signup(data){
+  signup(data) {
     SessionApiUtil.signup(
       data,
       SessionActions.receiveCurrentUser,
@@ -14,7 +14,7 @@ const SessionActions = {
     );
   },
 
-  login(data){
+  login(data) {
     SessionApiUtil.login(
       data,
       SessionActions.receiveCurrentUser,
@@ -25,7 +25,7 @@ const SessionActions = {
     SessionApiUtil.logout(SessionActions.removeCurrentUser);
   },
 
-  fetchCurrentUser(complete){
+  fetchCurrentUser(complete) {
     SessionApiUtil.fetchCurrentUser(
       SessionActions.receiveCurrentUser, complete);
   },
@@ -33,16 +33,16 @@ const SessionActions = {
   receiveCurrentUser(currentUser) {
     AppDispatcher.dispatch({
       actionType: SessionConstants.LOGIN,
-      currentUser: currentUser
+      currentUser: currentUser,
     });
   },
 
   removeCurrentUser() {
     AppDispatcher.dispatch({
-      actionType: SessionConstants.LOGOUT
+      actionType: SessionConstants.LOGOUT,
     });
-    hashHistory.push("/login");
-  }
+    hashHistory.push('/login');
+  },
 
 };
 

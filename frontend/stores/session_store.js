@@ -1,26 +1,26 @@
 const Store = require('flux/utils').Store;
 const AppDispatcher = require('../dispatcher/dispatcher');
-const SessionConstants = require('../constants/session_constants')
+const SessionConstants = require('../constants/session_constants');
 
 let _currentUser = {};
 
 const SessionStore = new Store(AppDispatcher);
 
-function _login (user) {
+function _login(user) {
   _currentUser = user;
   SessionStore.__emitChange();
-};
+}
 
-function _logout () {
+function _logout() {
   _currentUser = {};
   SessionStore.__emitChange();
-};
+}
 
 SessionStore.currentUser = function () {
   return _currentUser;
 };
 
-SessionStore.isUserLoggedIn = function() {
+SessionStore.isUserLoggedIn = function () {
   if (_currentUser === undefined) {
     return false;
   }

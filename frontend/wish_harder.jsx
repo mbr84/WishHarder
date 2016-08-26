@@ -14,7 +14,7 @@ const Navbar = require('./components/navbar');
 const ProjectApiUtil = require('./util/project_api_util');
 const ProjectActions = require('./actions/project_actions');
 const ProjectIndex = require('./components/project_index');
-const ProjectStore = window.ProjectStore = require('./stores/project_store');
+const ProjectStore = require('./stores/project_store');
 const Project = require('./components/project');
 const ProjectForm = require('./components/project_form');
 const ProjectRewardsForm = require('./components/project_rewards_form');

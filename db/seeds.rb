@@ -41,7 +41,7 @@ projects = images.map do |img|
     primary_img: img,
     city: Faker::Address.city,
     state: Faker::Address.state,
-    author_id: (151..249).to_a.sample
+    author_id: rand(100)
   })
 end
 

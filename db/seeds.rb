@@ -30,7 +30,7 @@ images = ['http://res.cloudinary.com/dxbwq1eyw/image/upload/ar_1.77,c_crop/v1468
 
 projects = images.map do |img|
   Project.create!({
-    title: Faker::Hipster.sentence(3),
+    title: Faker::Hipster.sentence(1),
     content: Faker::Hipster.paragraph,
     complete: false,
     duration: (20..40).to_a.sample,

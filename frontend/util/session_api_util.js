@@ -8,8 +8,8 @@ module.exports = {
         successCallback(res);
       },
       error(xhr) {
-  			                                                            const errors = xhr.responseJSON;
-				                                                                                errorCallback('signup', errors);
+  			                                                                                                                        const errors = xhr.responseJSON;
+				                                                                                                                                                                errorCallback('signup', errors);
       },
     });
   },
@@ -23,8 +23,8 @@ module.exports = {
         successCallback(res);
       },
       error(xhr) {
-				                                                                                const errors = xhr.responseJSON;
-				                                                                                errorCallback('login', errors);
+				                                                                                                                                                                const errors = xhr.responseJSON;
+				                                                                                                                                                                errorCallback('login', errors);
       },
     });
   },

@@ -96,11 +96,6 @@ const LoginForm = React.createClass({
                          value={this.state.password} />
               </li>
               <li className="li">
-                <div className="wrong-form">
-                  Forgot your Password?
-                </div>
-              </li>
-              <li className="li">
                 <input type="submit"
                        value="Log Me In!"
                        className="login-button"/>

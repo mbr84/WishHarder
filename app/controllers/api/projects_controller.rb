@@ -12,7 +12,7 @@ class Api::ProjectsController < ApplicationController
     if @project.save
       render :show
     else
-      render json: { errors: @project.errors}
+      render json: { errors: @project.errors }
     end
   end
 
